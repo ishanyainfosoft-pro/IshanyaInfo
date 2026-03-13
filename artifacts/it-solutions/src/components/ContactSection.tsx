@@ -45,10 +45,10 @@ export default function ContactSection() {
               src={logoImg}
               alt="Ishanya Infosoft"
               style={{
-                maxWidth: 200,
+                maxWidth: 280,
                 height: "auto",
                 objectFit: "contain",
-                filter: "drop-shadow(0 0 20px rgba(247,148,29,0.3))",
+                filter: "drop-shadow(0 0 30px rgba(247,148,29,0.35))",
               }}
             />
           </div>
