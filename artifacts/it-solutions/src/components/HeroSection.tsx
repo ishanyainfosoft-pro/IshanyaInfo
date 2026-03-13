@@ -19,7 +19,7 @@ export default function HeroSection({ onGetStarted }: HeroProps) {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: BRAND.gray }}
+      style={{ background: "#000000" }}
     >
       {/* Background image */}
       <div
@@ -37,7 +37,7 @@ export default function HeroSection({ onGetStarted }: HeroProps) {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(109,110,113,0.92) 0%, rgba(247,148,29,0.12) 50%, rgba(109,110,113,0.95) 100%)",
+            "linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(247,148,29,0.12) 50%, rgba(0,0,0,0.95) 100%)",
         }}
       />
 
