@@ -53,13 +53,13 @@ export default function ContactModal({ isOpen, onClose }: Props) {
   return (
     <div
       className="fixed inset-0 z-[999] flex items-center justify-center p-4"
-      style={{ background: "rgba(193,39,122,0.72)", backdropFilter: "blur(6px)" }}
+      style={{ background: "rgba(0,0,0,0.72)", backdropFilter: "blur(6px)" }}
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
     >
       <div
         className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl"
         style={{
-          background: "rgba(193,39,122,0.1)",
+          background: "rgba(0,0,0,0.1)",
           border: "1px solid rgba(247,148,29,0.25)",
           maxHeight: "90vh",
           overflowY: "auto",

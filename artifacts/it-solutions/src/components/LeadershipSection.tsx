@@ -57,7 +57,7 @@ export default function LeadershipSection() {
             <div
               key={i}
               className="rounded-2xl overflow-hidden"
-              style={{ background: "rgba(193,39,122,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
+              style={{ background: "rgba(0,0,0,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
             >
               <div className="relative h-56 overflow-hidden">
                 <img

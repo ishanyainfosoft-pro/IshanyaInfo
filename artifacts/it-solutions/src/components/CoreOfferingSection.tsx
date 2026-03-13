@@ -22,7 +22,7 @@ export default function CoreOfferingSection() {
             </span>
             <h2
               className="text-3xl sm:text-4xl font-bold mb-4"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#C1277A" }}
+              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
             >
               Customized{" "}
               <span style={{ color: BRAND.orange }}>ERP &amp; MES</span> Solutions
@@ -33,7 +33,7 @@ export default function CoreOfferingSection() {
             <div className="flex flex-wrap gap-3 mb-8">
               {features.map((f, i) => (
                 <span key={i} className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium"
-                  style={{ background: BRAND.white, color: "#C1277A", border: `1px solid rgba(247,148,29,0.25)`, boxShadow: "0 1px 3px rgba(193,39,122,0.05)" }}>
+                  style={{ background: BRAND.white, color: "#1a1a1a", border: `1px solid rgba(247,148,29,0.25)`, boxShadow: "0 1px 3px rgba(0,0,0,0.05)" }}>
                   <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
                   {f}
                 </span>
