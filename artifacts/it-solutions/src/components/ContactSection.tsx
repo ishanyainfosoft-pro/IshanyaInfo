@@ -40,24 +40,17 @@ export default function ContactSection() {
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
 
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center justify-center">
-            <div
-              className="relative flex items-center justify-center"
+          <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-auto mb-4 lg:mb-0">
+            <img
+              src={logoImg}
+              alt="Ishanya Infosoft"
               style={{
-                width: 160,
-                height: 160,
-                borderRadius: "50%",
-                background: "rgba(247,148,29,0.08)",
-                border: "2px solid rgba(247,148,29,0.2)",
-                boxShadow: "0 0 60px rgba(247,148,29,0.15)",
+                maxWidth: 200,
+                height: "auto",
+                objectFit: "contain",
+                filter: "drop-shadow(0 0 20px rgba(247,148,29,0.3))",
               }}
-            >
-              <img
-                src={logoImg}
-                alt="Ishanya Infosoft"
-                style={{ width: 110, height: 110, objectFit: "contain" }}
-              />
-            </div>
+            />
           </div>
 
           {/* Contact details */}
