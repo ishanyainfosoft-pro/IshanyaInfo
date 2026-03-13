@@ -9,7 +9,11 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-export default function Navbar() {
+interface NavbarProps {
+  onGetStarted: () => void;
+}
+
+export default function Navbar({ onGetStarted }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -27,9 +31,7 @@ export default function Navbar() {
 
   const handleGetStarted = () => {
     setMenuOpen(false);
-    window.dispatchEvent(new CustomEvent("showContactForm"));
-    const el = document.getElementById("contact");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    onGetStarted();
   };
 
   return (

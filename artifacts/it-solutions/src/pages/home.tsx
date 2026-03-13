@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -8,13 +8,16 @@ import FlagshipSection from "@/components/FlagshipSection";
 import MoreOfferingsSection from "@/components/MoreOfferingsSection";
 import ClientsSection from "@/components/ClientsSection";
 import ContactSection from "@/components/ContactSection";
+import ContactModal from "@/components/ContactModal";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif" }}>
-      <Navbar />
-      <HeroSection />
+      <Navbar onGetStarted={() => setModalOpen(true)} />
+      <HeroSection onGetStarted={() => setModalOpen(true)} />
       <AboutSection />
       <LeadershipSection />
       <CoreOfferingSection />
@@ -23,6 +26,7 @@ export default function Home() {
       <ClientsSection />
       <ContactSection />
       <Footer />
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 }

@@ -8,7 +8,11 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-export default function HeroSection() {
+interface HeroProps {
+  onGetStarted: () => void;
+}
+
+export default function HeroSection({ onGetStarted }: HeroProps) {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -99,7 +103,7 @@ export default function HeroSection() {
             Explore Solutions
           </button>
           <button
-            onClick={() => scrollTo("contact")}
+            onClick={onGetStarted}
             className="px-8 py-3.5 rounded-xl text-base font-semibold transition-all hover:bg-white hover:text-gray-800"
             style={{
               background: "rgba(255,255,255,0.06)",
