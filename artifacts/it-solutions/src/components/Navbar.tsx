@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import logoImg from "@assets/WhatsApp_Image_2026-03-09_at_4.33.45_PM_1773388136859.jpeg";
 
 const BRAND = {
-  teal: "#009999",
-  tealDark: "#007575",
   orange: "#F7941D",
+  teal: "#009999",
   wine: "#C1277A",
   gray: "#6D6E71",
   white: "#FFFFFF",
@@ -31,25 +30,33 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
-        boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.08)" : "none",
+        boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.1)" : "none",
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
+
           {/* Logo */}
           <div
-            className="flex items-center gap-3 cursor-pointer"
+            className="flex items-center gap-3 cursor-pointer select-none"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            {/* Logo circle — white bg so the icon pops cleanly */}
+            {/*
+              The source image is a landscape JPEG with the circular
+              logo icon centred. We use a square clip with overflow:hidden
+              and scale-up + object-cover so only the inner circular
+              icon fills the rounded container — no grey border visible.
+            */}
             <div
-              className="flex-shrink-0 rounded-full overflow-hidden"
               style={{
-                width: 42,
-                height: 42,
+                width: 44,
+                height: 44,
+                borderRadius: "50%",
+                overflow: "hidden",
                 background: BRAND.white,
-                boxShadow: "0 0 0 2px rgba(0,153,153,0.3)",
+                flexShrink: 0,
+                boxShadow: `0 0 0 2.5px ${BRAND.orange}55`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -57,30 +64,34 @@ export default function Navbar() {
             >
               <img
                 src={logoImg}
-                alt="Ishanya Infosoft"
+                alt="Ishanya Infosoft logo"
                 style={{
-                  width: "100%",
-                  height: "100%",
+                  /* The circular brand icon is centred in the image and is
+                     ~58 % of the image height. Scale up so it fills the box. */
+                  width: "170%",
+                  height: "170%",
                   objectFit: "cover",
-                  objectPosition: "center",
-                  transform: "scale(1.08)",
+                  objectPosition: "center center",
+                  flexShrink: 0,
                 }}
               />
             </div>
+
             <span
-              className="text-lg font-bold"
               style={{
-                color: scrolled ? "#1a1a1a" : BRAND.white,
                 fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "1.1rem",
                 letterSpacing: "-0.02em",
+                color: scrolled ? "#1a1a1a" : BRAND.white,
               }}
             >
               Ishanya Infosoft
             </span>
           </div>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-7">
             {[
               { label: "About", id: "about" },
               { label: "Solutions", id: "core-offering" },
@@ -91,15 +102,15 @@ export default function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="text-sm font-medium transition-colors hover:opacity-70"
-                style={{ color: scrolled ? BRAND.gray : "rgba(255,255,255,0.9)" }}
+                className="text-sm font-medium transition-opacity hover:opacity-60"
+                style={{ color: scrolled ? BRAND.gray : "rgba(255,255,255,0.88)" }}
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={() => scrollTo("contact")}
-              className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90"
+              className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
               style={{ background: BRAND.orange }}
             >
               Get Started
@@ -107,19 +118,17 @@ export default function Navbar() {
           </div>
 
           {/* Mobile hamburger */}
-          <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+          <button className="md:hidden p-2 flex flex-col gap-1.5" onClick={() => setMenuOpen(!menuOpen)}>
             {[0, 1, 2].map((i) => (
               <span
                 key={i}
-                className="w-6 h-0.5 block transition-all"
+                className="block w-6 h-0.5 transition-all"
                 style={{
                   background: scrolled ? BRAND.gray : BRAND.white,
                   transform:
-                    i === 0 && menuOpen ? "rotate(45deg) translate(5px,5px)" :
-                    i === 2 && menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none",
+                    i === 0 && menuOpen ? "rotate(45deg) translate(5px,5px)"
+                    : i === 2 && menuOpen ? "rotate(-45deg) translate(5px,-5px)"
+                    : "none",
                   opacity: i === 1 && menuOpen ? 0 : 1,
                 }}
               />
@@ -138,20 +147,11 @@ export default function Navbar() {
             { label: "Clients", id: "clients" },
             { label: "Contact", id: "contact" },
           ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className="text-sm font-medium text-left"
-              style={{ color: BRAND.gray }}
-            >
+            <button key={item.id} onClick={() => scrollTo(item.id)} className="text-sm font-medium text-left" style={{ color: BRAND.gray }}>
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollTo("contact")}
-            className="px-5 py-2 rounded-lg text-sm font-semibold text-white text-center"
-            style={{ background: BRAND.orange }}
-          >
+          <button onClick={() => scrollTo("contact")} className="py-2 rounded-lg text-sm font-semibold text-white text-center" style={{ background: BRAND.orange }}>
             Get Started
           </button>
         </div>
