@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 
 const BRAND = {
   orange: "#F7941D",
-  orangeDark: "#0d0800",
-  orangeMid: "#1f1200",
   teal: "#009999",
   wine: "#C1277A",
   gray: "#6D6E71",
@@ -61,7 +59,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
       <div
         className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl"
         style={{
-          background: BRAND.orangeMid,
+          background: "rgba(0,0,0,0.1)",
           border: "1px solid rgba(247,148,29,0.25)",
           maxHeight: "90vh",
           overflowY: "auto",

@@ -2,7 +2,6 @@ import logoImg from "@assets/Gemini_Generated_Image_8nstoo8nstoo8nst-removebg-pr
 
 const BRAND = {
   orange: "#F7941D",
-  orangeDark: "#0d0800",
   white: "#FFFFFF",
 };
 
@@ -26,7 +25,7 @@ const contactItems = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-12 sm:py-16" style={{ background: BRAND.orangeDark }}>
+    <section id="contact" className="py-12 sm:py-16" style={{ background: "rgba(109,110,113,0.8)" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-6 sm:gap-8 lg:gap-12">
 

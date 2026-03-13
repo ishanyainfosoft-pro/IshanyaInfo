@@ -1,6 +1,5 @@
 const BRAND = {
   orange: "#F7941D",
-  orangeDark: "#0d0800",
   teal: "#009999",
   wine: "#C1277A",
   gray: "#6D6E71",
@@ -67,7 +66,7 @@ export default function FlagshipSection() {
           </div>
 
           {/* Solution — dark orange background */}
-          <div className="p-8 rounded-2xl" style={{ background: BRAND.orangeDark }}>
+          <div className="p-8 rounded-2xl" style={{ background: "rgba(109,110,113,0.8)" }}>
             <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: "rgba(247,148,29,0.15)", color: BRAND.orange }}>✅</span>
               Our Solution Output

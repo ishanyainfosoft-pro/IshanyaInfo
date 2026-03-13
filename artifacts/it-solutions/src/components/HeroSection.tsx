@@ -1,7 +1,5 @@
 const BRAND = {
   orange: "#F7941D",
-  orangeDark: "#0d0800",
-  orangeMid: "#1f1000",
   teal: "#009999",
   wine: "#C1277A",
   gray: "#6D6E71",
@@ -21,7 +19,7 @@ export default function HeroSection({ onGetStarted }: HeroProps) {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: BRAND.orangeDark }}
+      style={{ background: BRAND.gray }}
     >
       {/* Background image */}
       <div
@@ -39,7 +37,7 @@ export default function HeroSection({ onGetStarted }: HeroProps) {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(13,8,0,0.92) 0%, rgba(247,148,29,0.12) 50%, rgba(13,8,0,0.95) 100%)",
+            "linear-gradient(135deg, rgba(109,110,113,0.92) 0%, rgba(247,148,29,0.12) 50%, rgba(109,110,113,0.95) 100%)",
         }}
       />
 
