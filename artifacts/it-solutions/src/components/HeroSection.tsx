@@ -78,17 +78,15 @@ export default function HeroSection() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.03em", color: BRAND.white }}
         >
-          State-of-the-Art{" "}
-          <br className="hidden sm:block" />
-          <span style={{ color: BRAND.orange }}>IT System</span>{" "}
-          <span style={{ color: BRAND.teal }}>Solutions</span>
+          <span style={{ color: BRAND.orange }}>Customized ERP</span>{" "}
+          <span style={{ color: BRAND.teal }}>&amp; MES Solutions</span>
         </h1>
 
         <p
           className="text-lg sm:text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
           style={{ color: "rgba(255,255,255,0.72)" }}
         >
-          "We strive to be the most trusted partner for our clients by delivering solutions and services that foster synergy, drive collective growth."
+          Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
         </p>
 
         {/* CTAs */}
