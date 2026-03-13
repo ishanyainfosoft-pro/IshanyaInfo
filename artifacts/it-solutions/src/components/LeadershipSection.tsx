@@ -1,6 +1,7 @@
-// Brand colors
 const BRAND = {
   teal: "#009999",
+  tealDeep: "#003535",
+  tealMid: "#005050",
   orange: "#F7941D",
   wine: "#C1277A",
   gray: "#6D6E71",
@@ -48,14 +49,14 @@ export default function LeadershipSection() {
     <section
       id="leadership"
       className="py-20 sm:py-28"
-      style={{ background: "#1a1a2e" }}
+      style={{ background: BRAND.tealDeep }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "rgba(0,153,153,0.15)", color: BRAND.teal }}
+            style={{ background: "rgba(0,153,153,0.18)", color: BRAND.teal }}
           >
             Our Leadership
           </span>
@@ -66,7 +67,7 @@ export default function LeadershipSection() {
             Backed by{" "}
             <span style={{ color: BRAND.orange }}>Subject Matter Experts</span>
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.55)" }} className="max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.55)" }}>
             We are backed up with a strong, committed team of subject matter experts dedicated to delivering excellence.
           </p>
         </div>
@@ -78,8 +79,8 @@ export default function LeadershipSection() {
               key={i}
               className="rounded-2xl overflow-hidden"
               style={{
-                background: "rgba(255,255,255,0.03)",
-                border: `1px solid rgba(255,255,255,0.07)`,
+                background: BRAND.tealMid,
+                border: `1px solid rgba(0,153,153,0.2)`,
               }}
             >
               {/* Image */}
@@ -95,10 +96,10 @@ export default function LeadershipSection() {
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: `linear-gradient(to top, rgba(26,26,46,0.95) 0%, transparent 60%)`,
+                    background: `linear-gradient(to top, ${BRAND.tealDeep} 0%, transparent 60%)`,
                   }}
                 />
-                {/* Accent bar */}
+                {/* Top accent bar */}
                 <div
                   className="absolute top-0 left-0 right-0 h-1"
                   style={{ background: leader.accentColor }}
@@ -120,50 +121,48 @@ export default function LeadershipSection() {
               <div className="p-6">
                 <ul className="mb-5 space-y-2">
                   {leader.points.map((p, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
                       <span className="mt-0.5 flex-shrink-0" style={{ color: leader.accentColor }}>▸</span>
                       {p}
                     </li>
                   ))}
                 </ul>
-                <div>
-                  <p
-                    className="text-xs font-semibold uppercase tracking-wider mb-2"
-                    style={{ color: leader.accentColor }}
-                  >
-                    {leader.tagLabel}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {leader.tags.map((tag, k) => (
-                      <span
-                        key={k}
-                        className="px-2.5 py-1 rounded-md text-xs font-medium"
-                        style={{
-                          background: `${leader.accentColor}18`,
-                          color: leader.accentColor,
-                          border: `1px solid ${leader.accentColor}30`,
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <p
+                  className="text-xs font-semibold uppercase tracking-wider mb-2"
+                  style={{ color: leader.accentColor }}
+                >
+                  {leader.tagLabel}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {leader.tags.map((tag, k) => (
+                    <span
+                      key={k}
+                      className="px-2.5 py-1 rounded-md text-xs font-medium"
+                      style={{
+                        background: `${leader.accentColor}20`,
+                        color: leader.accentColor,
+                        border: `1px solid ${leader.accentColor}35`,
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Additional team roles */}
+        {/* Additional roles */}
         <div className="flex flex-wrap justify-center gap-3">
           {additionalTeam.map((role, i) => (
             <div
               key={i}
               className="px-5 py-2.5 rounded-xl text-sm font-medium"
               style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                color: "rgba(255,255,255,0.8)",
+                background: "rgba(0,153,153,0.12)",
+                border: "1px solid rgba(0,153,153,0.2)",
+                color: BRAND.white,
               }}
             >
               {role}

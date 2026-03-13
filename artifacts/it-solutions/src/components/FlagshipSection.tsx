@@ -1,6 +1,6 @@
-// Brand colors
 const BRAND = {
   teal: "#009999",
+  tealDeep: "#003535",
   orange: "#F7941D",
   wine: "#C1277A",
   gray: "#6D6E71",
@@ -88,13 +88,13 @@ export default function FlagshipSection() {
             </ol>
           </div>
 
-          {/* Solution output */}
+          {/* Solution output — dark teal, no blue */}
           <div
             className="p-8 rounded-2xl"
-            style={{ background: "#1a1a2e" }}
+            style={{ background: BRAND.tealDeep }}
           >
             <h3
-              className="text-lg font-bold text-white mb-6 flex items-center gap-2"
+              className="text-lg font-bold text-white mb-2 flex items-center gap-2"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               <span
@@ -105,7 +105,6 @@ export default function FlagshipSection() {
               </span>
               Our Solution Output
             </h3>
-            {/* Orange top border */}
             <div
               className="h-0.5 w-12 mb-6 rounded-full"
               style={{ background: BRAND.orange }}
@@ -114,7 +113,7 @@ export default function FlagshipSection() {
               {outputs.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="mt-0.5 flex-shrink-0" style={{ color: BRAND.teal }}>✓</span>
-                  <span className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  <span className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
                     {item}
                   </span>
                 </li>
