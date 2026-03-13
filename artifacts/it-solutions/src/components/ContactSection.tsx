@@ -31,18 +31,9 @@ export default function ContactSection() {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const contactSection = document.getElementById("contact");
-      if (contactSection) {
-        const rect = contactSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.75) {
-          setShowForm(true);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleShowForm = () => setShowForm(true);
+    window.addEventListener("showContactForm", handleShowForm);
+    return () => window.removeEventListener("showContactForm", handleShowForm);
   }, []);
 
   return (

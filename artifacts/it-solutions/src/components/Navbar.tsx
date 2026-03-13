@@ -25,6 +25,13 @@ export default function Navbar() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleGetStarted = () => {
+    setMenuOpen(false);
+    window.dispatchEvent(new CustomEvent("showContactForm"));
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -109,7 +116,7 @@ export default function Navbar() {
               </button>
             ))}
             <button
-              onClick={() => scrollTo("contact")}
+              onClick={handleGetStarted}
               className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
               style={{ background: BRAND.orange }}
             >
@@ -151,7 +158,7 @@ export default function Navbar() {
               {item.label}
             </button>
           ))}
-          <button onClick={() => scrollTo("contact")} className="py-2 rounded-lg text-sm font-semibold text-white text-center" style={{ background: BRAND.orange }}>
+          <button onClick={handleGetStarted} className="py-2 rounded-lg text-sm font-semibold text-white text-center" style={{ background: BRAND.orange }}>
             Get Started
           </button>
         </div>
