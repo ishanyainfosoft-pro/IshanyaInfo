@@ -39,7 +39,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
-        boxShadow: scrolled ? "0 2px 20px rgba(193,39,122,0.1) : "none",
+        boxShadow: scrolled ? "0 2px 20px rgba(193,39,122,0.1)" : "none",
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >

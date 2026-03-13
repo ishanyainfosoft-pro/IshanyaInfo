@@ -33,7 +33,7 @@ export default function CoreOfferingSection() {
             <div className="flex flex-wrap gap-3 mb-8">
               {features.map((f, i) => (
                 <span key={i} className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium"
-                  style={{ background: BRAND.white, color: "#C1277A", border: `1px solid rgba(247,148,29,0.25)`, boxShadow: "0 1px 3px rgba(193,39,122,0.05) }}>
+                  style={{ background: BRAND.white, color: "#C1277A", border: `1px solid rgba(247,148,29,0.25)`, boxShadow: "0 1px 3px rgba(193,39,122,0.05)" }}>
                   <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
                   {f}
                 </span>

@@ -59,7 +59,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
       <div
         className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl"
         style={{
-          background: "rgba(193,39,122,0.1),
+          background: "rgba(193,39,122,0.1)",
           border: "1px solid rgba(247,148,29,0.25)",
           maxHeight: "90vh",
           overflowY: "auto",
