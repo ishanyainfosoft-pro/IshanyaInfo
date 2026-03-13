@@ -3,116 +3,75 @@ import logoImg from "@assets/Gemini_Generated_Image_8nstoo8nstoo8nst-removebg-pr
 const BRAND = {
   orange: "#F7941D",
   orangeDark: "#0d0800",
-  orangeMid: "#1a0f00",
-  teal: "#009999",
-  wine: "#C1277A",
   white: "#FFFFFF",
 };
 
 const contactItems = [
   {
-    icon: "📍",
     label: "Address",
-    lines: ["Probo Prolix Pride,", "Shinde vasti, Ravet", "Pune 412 101"],
+    lines: ["Probo Prolix Pride, Shinde vasti, Ravet", "Pune 412 101"],
     href: "https://maps.google.com/?q=Ravet,Pune",
-    color: BRAND.orange,
   },
   {
-    icon: "📞",
     label: "Phone",
     lines: ["+91 98231 72231"],
     href: "tel:+919823172231",
-    color: BRAND.teal,
   },
   {
-    icon: "✉️",
     label: "Email",
     lines: ["Info@ishanyainfosoft.com", "mrunal.kulkarni79@gmail.com"],
     href: "mailto:Info@ishanyainfosoft.com",
-    color: BRAND.wine,
   },
 ];
 
 export default function ContactSection() {
   return (
     <section id="contact" className="py-20 sm:py-28" style={{ background: BRAND.orangeDark }}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
 
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-auto mb-4 lg:mb-0">
+          <div className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
             <img
               src={logoImg}
               alt="Ishanya Infosoft"
               style={{
-                maxWidth: 280,
+                maxWidth: 160,
                 height: "auto",
                 objectFit: "contain",
-                filter: "drop-shadow(0 0 30px rgba(247,148,29,0.35))",
               }}
             />
           </div>
 
           {/* Contact details */}
-          <div className="flex-1">
+          <div className="flex-1 w-full">
             <h3
-              className="text-4xl sm:text-5xl font-bold text-white mb-8"
+              className="text-3xl sm:text-4xl font-bold text-white mb-6"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
             >
               Contact <span style={{ color: BRAND.orange }}>Details</span>
             </h3>
 
-            <div className="space-y-4">
+            <div className="space-y-5">
               {contactItems.map((item, i) => (
                 <a
                   key={i}
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel="noreferrer"
-                  className="flex items-start gap-4 p-4 rounded-2xl group transition-all duration-200 cursor-pointer no-underline"
-                  style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = `${item.color}18`;
-                    (e.currentTarget as HTMLElement).style.borderColor = `${item.color}40`;
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)";
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.07)";
-                  }}
+                  className="block no-underline transition-opacity hover:opacity-80"
                 >
-                  {/* Icon bubble */}
-                  <div
-                    className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center text-xl transition-transform duration-200 group-hover:scale-110"
-                    style={{ background: `${item.color}20` }}
+                  <p
+                    className="text-xs font-semibold uppercase tracking-wider mb-1"
+                    style={{ color: BRAND.orange }}
                   >
-                    {item.icon}
-                  </div>
-
-                  {/* Text */}
-                  <div>
-                    <p
-                      className="text-xs font-semibold uppercase tracking-wider mb-1"
-                      style={{ color: item.color }}
-                    >
-                      {item.label}
+                    {item.label}
+                  </p>
+                  {item.lines.map((line, j) => (
+                    <p key={j} className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                      {line}
                     </p>
-                    {item.lines.map((line, j) => (
-                      <p key={j} className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* Arrow */}
-                  <div
-                    className="ml-auto self-center text-sm opacity-0 group-hover:opacity-100 transition-all duration-200 translate-x-0 group-hover:translate-x-1"
-                    style={{ color: item.color }}
-                  >
-                    →
-                  </div>
+                  ))}
                 </a>
               ))}
             </div>
