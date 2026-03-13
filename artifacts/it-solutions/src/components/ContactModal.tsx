@@ -10,8 +10,6 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-const industries = ["Manufacturing", "Information Technology", "Retail & Distribution", "Food & Beverages", "Healthcare", "Finance", "Other"];
-const companySizes = ["Startup (1-50)", "Small (51-200)", "Medium (201-1000)", "Large (1000+)"];
 
 const inputStyle: React.CSSProperties = {
   background: "rgba(255,255,255,0.07)",
@@ -30,7 +28,7 @@ interface Props {
 }
 
 export default function ContactModal({ isOpen, onClose }: Props) {
-  const [form, setForm] = useState({ fullName: "", workEmail: "", phone: "", website: "", industry: "", companySize: "", requirements: "", robot: false });
+  const [form, setForm] = useState({ fullName: "", workEmail: "", phone: "", requirements: "", robot: false });
   const [submitted, setSubmitted] = useState(false);
 
   /* Lock body scroll while modal is open */
@@ -40,7 +38,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
     } else {
       document.body.style.overflow = "";
       /* Reset form when modal closes */
-      setTimeout(() => { setForm({ fullName: "", workEmail: "", phone: "", website: "", industry: "", companySize: "", requirements: "", robot: false }); setSubmitted(false); }, 300);
+      setTimeout(() => { setForm({ fullName: "", workEmail: "", phone: "", requirements: "", robot: false }); setSubmitted(false); }, 300);
     }
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
@@ -119,7 +117,6 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                 { label: "Full Name", key: "fullName", type: "text", placeholder: "Full Name", required: true },
                 { label: "Work Email", key: "workEmail", type: "email", placeholder: "Work Email", required: true },
                 { label: "Phone Number", key: "phone", type: "tel", placeholder: "Phone Number", required: false },
-                { label: "Company Website", key: "website", type: "url", placeholder: "Company Website", required: false },
               ].map(({ label, key, type, placeholder, required }) => (
                 <div key={key}>
                   <label className="block text-xs font-medium mb-1.5" style={{ color: "rgba(255,255,255,0.6)" }}>{label}</label>
@@ -133,26 +130,6 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                   />
                 </div>
               ))}
-
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { label: "Industry", key: "industry", options: industries, placeholder: "Select Industry" },
-                  { label: "Company Size", key: "companySize", options: companySizes, placeholder: "Select Size" },
-                ].map(({ label, key, options, placeholder }) => (
-                  <div key={key}>
-                    <label className="block text-xs font-medium mb-1.5" style={{ color: "rgba(255,255,255,0.6)" }}>{label}</label>
-                    <select
-                      className="appearance-none"
-                      value={(form as any)[key]}
-                      onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                      style={{ ...inputStyle, color: (form as any)[key] ? "#fff" : "rgba(255,255,255,0.38)" }}
-                    >
-                      <option value="">{placeholder}</option>
-                      {options.map((o) => <option key={o} value={o} style={{ background: BRAND.orangeMid }}>{o}</option>)}
-                    </select>
-                  </div>
-                ))}
-              </div>
 
               <div>
                 <label className="block text-xs font-medium mb-1.5" style={{ color: "rgba(255,255,255,0.6)" }}>Describe your requirements</label>

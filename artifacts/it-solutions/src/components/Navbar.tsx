@@ -122,7 +122,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
               style={{ background: BRAND.orange }}
             >
-              Get Started
+              Get In Touch
             </button>
           </div>
 
@@ -161,7 +161,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             </button>
           ))}
           <button onClick={handleGetStarted} className="py-2 rounded-lg text-sm font-semibold text-white text-center" style={{ background: BRAND.orange }}>
-            Get Started
+            Get In Touch
           </button>
         </div>
       )}

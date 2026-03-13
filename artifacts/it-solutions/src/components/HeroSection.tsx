@@ -111,7 +111,7 @@ export default function HeroSection({ onGetStarted }: HeroProps) {
               border: "1px solid rgba(247,148,29,0.3)",
             }}
           >
-            Contact Us
+            Get In Touch
           </button>
         </div>
       </div>
