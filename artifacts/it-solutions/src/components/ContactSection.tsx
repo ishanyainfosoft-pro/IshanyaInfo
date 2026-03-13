@@ -26,55 +26,49 @@ const contactItems = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 sm:py-28" style={{ background: BRAND.orangeDark }}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
+    <section id="contact" className="py-12 sm:py-16" style={{ background: BRAND.orangeDark }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-6 sm:gap-8 lg:gap-12">
 
           {/* Logo */}
-          <div className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
+          <div className="flex-shrink-0">
             <img
               src={logoImg}
               alt="Ishanya Infosoft"
               style={{
-                maxWidth: 160,
+                maxWidth: 120,
                 height: "auto",
                 objectFit: "contain",
               }}
             />
           </div>
 
-          {/* Contact details */}
-          <div className="flex-1 w-full">
-            <h3
-              className="text-3xl sm:text-4xl font-bold text-white mb-6"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
-            >
-              Contact <span style={{ color: BRAND.orange }}>Details</span>
-            </h3>
+          {/* Divider */}
+          <div style={{ width: "1px", height: 60, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
 
-            <div className="space-y-5">
-              {contactItems.map((item, i) => (
-                <a
-                  key={i}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel="noreferrer"
-                  className="block no-underline transition-opacity hover:opacity-80"
+          {/* Contact items strip */}
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
+            {contactItems.map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel="noreferrer"
+                className="no-underline transition-opacity hover:opacity-80"
+              >
+                <p
+                  className="text-xs font-semibold uppercase tracking-wider mb-1 text-center sm:text-left"
+                  style={{ color: BRAND.orange }}
                 >
-                  <p
-                    className="text-xs font-semibold uppercase tracking-wider mb-1"
-                    style={{ color: BRAND.orange }}
-                  >
-                    {item.label}
+                  {item.label}
+                </p>
+                {item.lines.map((line, j) => (
+                  <p key={j} className="text-sm leading-relaxed text-center sm:text-left whitespace-nowrap" style={{ color: "rgba(255,255,255,0.7)" }}>
+                    {line}
                   </p>
-                  {item.lines.map((line, j) => (
-                    <p key={j} className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
-                      {line}
-                    </p>
-                  ))}
-                </a>
-              ))}
-            </div>
+                ))}
+              </a>
+            ))}
           </div>
         </div>
       </div>
