@@ -59,14 +59,14 @@ export default function LeadershipSection() {
               className="rounded-2xl overflow-hidden"
               style={{ background: "rgba(0,0,0,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
             >
-              <div className="relative h-56 overflow-hidden" style={{ background: "#C1277A" }}>
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={leader.image}
                   alt={leader.name}
                   className="w-full h-full object-cover object-top"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                 />
-                <div className="absolute inset-0" style={{ background: `linear-gradient(to top, rgba(193,39,122,0.85) 0%, transparent 55%)` }} />
+                <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${"rgba(109,110,113,0.8)"} 0%, transparent 55%)` }} />
                 <div className="absolute top-0 left-0 right-0 h-1" style={{ background: leader.accent }} />
                 <div className="absolute bottom-4 left-5">
                   <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{leader.name}</h3>
