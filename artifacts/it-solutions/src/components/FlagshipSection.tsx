@@ -1,3 +1,12 @@
+// Brand colors
+const BRAND = {
+  teal: "#009999",
+  orange: "#F7941D",
+  wine: "#C1277A",
+  gray: "#6D6E71",
+  white: "#FFFFFF",
+};
+
 const needs = [
   "Ease of logging / Linkage to customer portal",
   "Short term actions for quick resolution",
@@ -19,26 +28,27 @@ const outputs = [
 
 export default function FlagshipSection() {
   return (
-    <section
-      id="flagship"
-      className="py-20 sm:py-28"
-      style={{ background: "#fff" }}
-    >
+    <section id="flagship" className="py-20 sm:py-28" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "#eff6ff", color: "#1a56db" }}
+            style={{ background: "rgba(193,39,122,0.1)", color: BRAND.wine }}
           >
             Flagship Product
           </span>
           <h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
+            className="text-3xl sm:text-4xl font-bold mb-4"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              letterSpacing: "-0.02em",
+              color: "#1a1a1a",
+            }}
           >
-            Customer Complaints Processing System
+            Customer{" "}
+            <span style={{ color: BRAND.wine }}>Complaints</span> Processing System
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto" style={{ color: BRAND.gray }}>
             Successfully developed and deployed a fully customized, end-to-end processing system for a reputed multinational client.
           </p>
         </div>
@@ -46,16 +56,16 @@ export default function FlagshipSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Needs */}
           <div
-            className="p-8 rounded-2xl border border-gray-100"
-            style={{ background: "#f8fafc" }}
+            className="p-8 rounded-2xl border"
+            style={{ background: "#f9fafb", borderColor: "#f0f0f0" }}
           >
             <h3
-              className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+              className="text-lg font-bold mb-6 flex items-center gap-2"
+              style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}
             >
               <span
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-sm"
-                style={{ background: "#eff6ff", color: "#1a56db" }}
+                style={{ background: "rgba(0,153,153,0.1)", color: BRAND.teal }}
               >
                 📋
               </span>
@@ -66,11 +76,13 @@ export default function FlagshipSection() {
                 <li key={i} className="flex items-start gap-3">
                   <span
                     className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                    style={{ background: "#1a56db" }}
+                    style={{ background: BRAND.teal }}
                   >
                     {i + 1}
                   </span>
-                  <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
+                  <span className="text-sm leading-relaxed" style={{ color: BRAND.gray }}>
+                    {item}
+                  </span>
                 </li>
               ))}
             </ol>
@@ -79,9 +91,7 @@ export default function FlagshipSection() {
           {/* Solution output */}
           <div
             className="p-8 rounded-2xl"
-            style={{
-              background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)",
-            }}
+            style={{ background: "#1a1a2e" }}
           >
             <h3
               className="text-lg font-bold text-white mb-6 flex items-center gap-2"
@@ -89,17 +99,24 @@ export default function FlagshipSection() {
             >
               <span
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-sm"
-                style={{ background: "rgba(96,165,250,0.15)" }}
+                style={{ background: "rgba(247,148,29,0.15)", color: BRAND.orange }}
               >
                 ✅
               </span>
               Our Solution Output
             </h3>
+            {/* Orange top border */}
+            <div
+              className="h-0.5 w-12 mb-6 rounded-full"
+              style={{ background: BRAND.orange }}
+            />
             <ul className="space-y-3">
               {outputs.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-green-400 mt-0.5 flex-shrink-0">✓</span>
-                  <span className="text-sm text-blue-100/80 leading-relaxed">{item}</span>
+                  <span className="mt-0.5 flex-shrink-0" style={{ color: BRAND.teal }}>✓</span>
+                  <span className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+                    {item}
+                  </span>
                 </li>
               ))}
             </ul>

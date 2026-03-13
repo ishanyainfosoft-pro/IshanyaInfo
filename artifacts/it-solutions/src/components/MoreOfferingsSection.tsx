@@ -1,3 +1,12 @@
+// Brand colors
+const BRAND = {
+  teal: "#009999",
+  orange: "#F7941D",
+  wine: "#C1277A",
+  gray: "#6D6E71",
+  white: "#FFFFFF",
+};
+
 const softwareProducts = [
   {
     title: "Billing Software",
@@ -9,6 +18,8 @@ const softwareProducts = [
       "Highly Scalable",
     ],
     icon: "🧾",
+    color: BRAND.teal,
+    bg: "rgba(0,153,153,0.08)",
   },
   {
     title: "E-Commerce Platform",
@@ -20,6 +31,8 @@ const softwareProducts = [
       "WhatsApp Integration",
     ],
     icon: "🛒",
+    color: BRAND.orange,
+    bg: "rgba(247,148,29,0.08)",
   },
 ];
 
@@ -27,14 +40,17 @@ const successStories = [
   {
     title: "Trade Calculators",
     image: "https://pdf-text-extractor--aviratk.replit.app/src/assets/images/success-1.jpg",
+    accent: BRAND.teal,
   },
   {
     title: "Complaint Processing System",
     image: "https://pdf-text-extractor--aviratk.replit.app/src/assets/images/success-2.jpg",
+    accent: BRAND.orange,
   },
   {
     title: "ERP for Grampanchayat",
     image: "https://pdf-text-extractor--aviratk.replit.app/src/assets/images/success-3.jpg",
+    accent: BRAND.wine,
   },
 ];
 
@@ -47,23 +63,29 @@ const verticals = [
   "Trading and Distribution",
 ];
 
+const verticalColors = [BRAND.teal, BRAND.orange, BRAND.wine, BRAND.teal, BRAND.orange, BRAND.wine];
+
 export default function MoreOfferingsSection() {
   return (
-    <section id="more-offerings" className="py-20 sm:py-28" style={{ background: "#f8fafc" }}>
+    <section id="more-offerings" className="py-20 sm:py-28" style={{ background: "#f9fafb" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "#eff6ff", color: "#1a56db" }}
+            style={{ background: "rgba(247,148,29,0.1)", color: BRAND.orange }}
           >
             More Offerings
           </span>
           <h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
+            className="text-3xl sm:text-4xl font-bold"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              letterSpacing: "-0.02em",
+              color: "#1a1a1a",
+            }}
           >
-            Software Products
+            <span style={{ color: BRAND.orange }}>Software</span> Products
           </h2>
         </div>
 
@@ -72,32 +94,40 @@ export default function MoreOfferingsSection() {
           {softwareProducts.map((product, i) => (
             <div
               key={i}
-              className="p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-all"
-              style={{ background: "#fff" }}
+              className="p-8 rounded-2xl border hover:shadow-lg transition-all"
+              style={{ background: BRAND.white, borderColor: "#f0f0f0" }}
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5"
-                style={{ background: "#eff6ff" }}
+                style={{ background: product.bg }}
               >
                 {product.icon}
               </div>
               <h3
-                className="text-xl font-bold text-gray-900 mb-4"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                className="text-xl font-bold mb-4"
+                style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  color: "#1a1a1a",
+                }}
               >
                 {product.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {product.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
+                  <li key={j} className="flex items-center gap-2 text-sm" style={{ color: BRAND.gray }}>
                     <span
                       className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ background: "#1a56db" }}
+                      style={{ background: product.color }}
                     />
                     {f}
                   </li>
                 ))}
               </ul>
+              {/* Bottom accent */}
+              <div
+                className="mt-5 h-0.5 rounded-full"
+                style={{ background: `linear-gradient(to right, ${product.color}, transparent)` }}
+              />
             </div>
           ))}
         </div>
@@ -105,8 +135,8 @@ export default function MoreOfferingsSection() {
         {/* Success stories */}
         <div className="mb-20">
           <h3
-            className="text-2xl font-bold text-gray-900 mb-8 text-center"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-2xl font-bold mb-8 text-center"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}
           >
             Success Stories
           </h3>
@@ -115,6 +145,7 @@ export default function MoreOfferingsSection() {
               <div
                 key={i}
                 className="rounded-2xl overflow-hidden group cursor-pointer hover:shadow-xl transition-all"
+                style={{ border: `2px solid ${story.accent}30` }}
               >
                 <div className="relative h-44 overflow-hidden">
                   <img
@@ -123,18 +154,28 @@ export default function MoreOfferingsSection() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       const el = e.target as HTMLImageElement;
-                      el.style.background = "linear-gradient(135deg, #1a56db, #0ea5e9)";
+                      el.parentElement!.style.background = `linear-gradient(135deg, ${story.accent}33, ${story.accent}11)`;
+                      el.style.display = "none";
                     }}
                   />
                   <div
                     className="absolute inset-0"
                     style={{
-                      background: "linear-gradient(to top, rgba(15,23,42,0.75) 0%, transparent 60%)",
+                      background: `linear-gradient(to top, rgba(26,26,46,0.85) 0%, transparent 60%)`,
                     }}
                   />
-                  <div className="absolute bottom-3 left-4">
-                    <p className="text-white text-sm font-semibold">{story.title}</p>
-                  </div>
+                </div>
+                <div
+                  className="px-4 py-3 flex items-center gap-2"
+                  style={{ background: "#fff" }}
+                >
+                  <div
+                    className="w-2 h-2 rounded-full flex-shrink-0"
+                    style={{ background: story.accent }}
+                  />
+                  <p className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>
+                    {story.title}
+                  </p>
                 </div>
               </div>
             ))}
@@ -144,8 +185,8 @@ export default function MoreOfferingsSection() {
         {/* Industry Verticals */}
         <div>
           <h3
-            className="text-2xl font-bold text-gray-900 mb-8 text-center"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-2xl font-bold mb-8 text-center"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}
           >
             Industry Verticals
           </h3>
@@ -153,12 +194,11 @@ export default function MoreOfferingsSection() {
             {verticals.map((v, i) => (
               <span
                 key={i}
-                className="px-5 py-2.5 rounded-xl text-sm font-medium"
+                className="px-5 py-2.5 rounded-xl text-sm font-medium border transition-all hover:shadow-sm"
                 style={{
-                  background: "#fff",
-                  color: "#374151",
-                  border: "1px solid #e5e7eb",
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
+                  background: BRAND.white,
+                  color: verticalColors[i % verticalColors.length],
+                  borderColor: `${verticalColors[i % verticalColors.length]}30`,
                 }}
               >
                 {v}

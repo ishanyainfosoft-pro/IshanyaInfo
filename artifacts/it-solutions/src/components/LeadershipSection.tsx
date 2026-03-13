@@ -1,8 +1,18 @@
+// Brand colors
+const BRAND = {
+  teal: "#009999",
+  orange: "#F7941D",
+  wine: "#C1277A",
+  gray: "#6D6E71",
+  white: "#FFFFFF",
+};
+
 const leaders = [
   {
     name: "Mrunal Kulkarni",
     role: "Director / Founder",
     image: "https://pdf-text-extractor--aviratk.replit.app/src/assets/images/team_1.jpg",
+    accentColor: BRAND.teal,
     points: [
       "20+ years of IT / ITES Experience",
       "Full Stack Development",
@@ -15,6 +25,7 @@ const leaders = [
     name: "Shailendra Kulkarni",
     role: "Partner",
     image: "https://pdf-text-extractor--aviratk.replit.app/src/assets/images/team_2.jpg",
+    accentColor: BRAND.orange,
     points: [
       "25+ years Industrial Experience",
       "VP Mfg / Plant Head / Board Member",
@@ -37,14 +48,14 @@ export default function LeadershipSection() {
     <section
       id="leadership"
       className="py-20 sm:py-28"
-      style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)" }}
+      style={{ background: "#1a1a2e" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "rgba(96,165,250,0.15)", color: "#60a5fa" }}
+            style={{ background: "rgba(0,153,153,0.15)", color: BRAND.teal }}
           >
             Our Leadership
           </span>
@@ -52,9 +63,10 @@ export default function LeadershipSection() {
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
           >
-            Backed by Subject Matter Experts
+            Backed by{" "}
+            <span style={{ color: BRAND.orange }}>Subject Matter Experts</span>
           </h2>
-          <p className="text-blue-200/70 max-w-2xl mx-auto">
+          <p style={{ color: "rgba(255,255,255,0.55)" }} className="max-w-2xl mx-auto">
             We are backed up with a strong, committed team of subject matter experts dedicated to delivering excellence.
           </p>
         </div>
@@ -66,9 +78,8 @@ export default function LeadershipSection() {
               key={i}
               className="rounded-2xl overflow-hidden"
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                backdropFilter: "blur(10px)",
+                background: "rgba(255,255,255,0.03)",
+                border: `1px solid rgba(255,255,255,0.07)`,
               }}
             >
               {/* Image */}
@@ -84,8 +95,13 @@ export default function LeadershipSection() {
                 <div
                   className="absolute inset-0"
                   style={{
-                    background: "linear-gradient(to top, rgba(15,23,42,0.9) 0%, transparent 60%)",
+                    background: `linear-gradient(to top, rgba(26,26,46,0.95) 0%, transparent 60%)`,
                   }}
+                />
+                {/* Accent bar */}
+                <div
+                  className="absolute top-0 left-0 right-0 h-1"
+                  style={{ background: leader.accentColor }}
                 />
                 <div className="absolute bottom-4 left-5">
                   <h3
@@ -94,7 +110,9 @@ export default function LeadershipSection() {
                   >
                     {leader.name}
                   </h3>
-                  <p className="text-blue-300 text-sm">{leader.role}</p>
+                  <p className="text-sm mt-0.5" style={{ color: leader.accentColor }}>
+                    {leader.role}
+                  </p>
                 </div>
               </div>
 
@@ -102,14 +120,17 @@ export default function LeadershipSection() {
               <div className="p-6">
                 <ul className="mb-5 space-y-2">
                   {leader.points.map((p, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-blue-100/80">
-                      <span className="text-blue-400 mt-0.5">▸</span>
+                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+                      <span className="mt-0.5 flex-shrink-0" style={{ color: leader.accentColor }}>▸</span>
                       {p}
                     </li>
                   ))}
                 </ul>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">
+                  <p
+                    className="text-xs font-semibold uppercase tracking-wider mb-2"
+                    style={{ color: leader.accentColor }}
+                  >
                     {leader.tagLabel}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -118,9 +139,9 @@ export default function LeadershipSection() {
                         key={k}
                         className="px-2.5 py-1 rounded-md text-xs font-medium"
                         style={{
-                          background: "rgba(96,165,250,0.12)",
-                          color: "#93c5fd",
-                          border: "1px solid rgba(96,165,250,0.2)",
+                          background: `${leader.accentColor}18`,
+                          color: leader.accentColor,
+                          border: `1px solid ${leader.accentColor}30`,
                         }}
                       >
                         {tag}
@@ -138,10 +159,11 @@ export default function LeadershipSection() {
           {additionalTeam.map((role, i) => (
             <div
               key={i}
-              className="px-5 py-2.5 rounded-xl text-sm font-medium text-white"
+              className="px-5 py-2.5 rounded-xl text-sm font-medium"
               style={{
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.1)",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                color: "rgba(255,255,255,0.8)",
               }}
             >
               {role}
