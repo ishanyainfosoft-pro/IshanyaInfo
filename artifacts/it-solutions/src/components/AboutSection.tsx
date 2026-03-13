@@ -26,7 +26,7 @@ export default function AboutSection() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#C1277A" }}
           >
             Established in 2010 as a{" "}
             <span style={{ color: BRAND.orange }}>Premier Software</span> Solutions Provider
@@ -42,7 +42,7 @@ export default function AboutSection() {
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4" style={{ background: f.bg }}>
                 {f.icon}
               </div>
-              <h3 className="text-base font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>
+              <h3 className="text-base font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#C1277A" }}>
                 {f.title}
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: BRAND.gray }}>{f.desc}</p>

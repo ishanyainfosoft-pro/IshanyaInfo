@@ -38,7 +38,7 @@ export default function FlagshipSection() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#C1277A" }}
           >
             Customer{" "}
             <span style={{ color: BRAND.wine }}>Complaints</span> Processing System
@@ -51,7 +51,7 @@ export default function FlagshipSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Needs */}
           <div className="p-8 rounded-2xl border" style={{ background: "#f9fafb", borderColor: "#f0f0f0" }}>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>
+            <h3 className="text-lg font-bold mb-6 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#C1277A" }}>
               <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: "rgba(247,148,29,0.1)", color: BRAND.orange }}>📋</span>
               Needs &amp; Expectations
             </h3>

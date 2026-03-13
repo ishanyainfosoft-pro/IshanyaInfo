@@ -40,7 +40,7 @@ export default function MoreOfferingsSection() {
             style={{ background: "rgba(247,148,29,0.12)", color: BRAND.orange }}>
             More Offerings
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#C1277A" }}>
             <span style={{ color: BRAND.orange }}>Software</span> Products
           </h2>
         </div>
@@ -49,7 +49,7 @@ export default function MoreOfferingsSection() {
           {softwareProducts.map((product, i) => (
             <div key={i} className="p-8 rounded-2xl border hover:shadow-lg transition-all" style={{ background: BRAND.white, borderColor: "#f0f0f0" }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style={{ background: product.bg }}>{product.icon}</div>
-              <h3 className="text-xl font-bold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>{product.title}</h3>
+              <h3 className="text-xl font-bold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#C1277A" }}>{product.title}</h3>
               <ul className="space-y-2.5">
                 {product.features.map((f, j) => (
                   <li key={j} className="flex items-center gap-2 text-sm" style={{ color: BRAND.gray }}>
@@ -64,7 +64,7 @@ export default function MoreOfferingsSection() {
         </div>
 
         <div className="mb-20">
-          <h3 className="text-2xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>
+          <h3 className="text-2xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#C1277A" }}>
             Success Stories
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -77,7 +77,7 @@ export default function MoreOfferingsSection() {
                 </div>
                 <div className="px-4 py-3 flex items-center gap-2" style={{ background: BRAND.white }}>
                   <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: story.accent }} />
-                  <p className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>{story.title}</p>
+                  <p className="text-sm font-semibold" style={{ color: "#C1277A" }}>{story.title}</p>
                 </div>
               </div>
             ))}
@@ -85,7 +85,7 @@ export default function MoreOfferingsSection() {
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>
+          <h3 className="text-2xl font-bold mb-8 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#C1277A" }}>
             Industry Verticals
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
