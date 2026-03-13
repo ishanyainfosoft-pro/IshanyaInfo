@@ -102,9 +102,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-7">
             {[
-              { label: "About", id: "about" },
-              { label: "Solutions", id: "core-offering" },
-              { label: "Products", id: "more-offerings" },
+              { label: "About Us", id: "about" },
+              { label: "Services", id: "core-offering" },
+              { label: "Verticals", id: "more-offerings" },
               { label: "Clients", id: "clients" },
               { label: "Contact", id: "contact" },
             ].map((item) => (
@@ -150,9 +150,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
       {menuOpen && (
         <div className="md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4" style={{ borderColor: "#f0f0f0" }}>
           {[
-            { label: "About", id: "about" },
-            { label: "Solutions", id: "core-offering" },
-            { label: "Products", id: "more-offerings" },
+            { label: "About Us", id: "about" },
+            { label: "Services", id: "core-offering" },
+            { label: "Verticals", id: "more-offerings" },
             { label: "Clients", id: "clients" },
             { label: "Contact", id: "contact" },
           ].map((item) => (
