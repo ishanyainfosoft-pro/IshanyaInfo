@@ -1,45 +1,127 @@
+import logoImg from "@assets/Gemini_Generated_Image_8nstoo8nstoo8nst-removebg-preview_1773397224117.png";
+
 const BRAND = {
   orange: "#F7941D",
   orangeDark: "#0d0800",
+  orangeMid: "#1a0f00",
+  teal: "#009999",
+  wine: "#C1277A",
   white: "#FFFFFF",
 };
+
+const contactItems = [
+  {
+    icon: "📍",
+    label: "Address",
+    lines: ["Probo Prolix Pride,", "Shinde vasti, Ravet", "Pune 412 101"],
+    href: "https://maps.google.com/?q=Ravet,Pune",
+    color: BRAND.orange,
+  },
+  {
+    icon: "📞",
+    label: "Phone",
+    lines: ["+91 98231 72231"],
+    href: "tel:+919823172231",
+    color: BRAND.teal,
+  },
+  {
+    icon: "✉️",
+    label: "Email",
+    lines: ["Info@ishanyainfosoft.com", "mrunal.kulkarni79@gmail.com"],
+    href: "mailto:Info@ishanyainfosoft.com",
+    color: BRAND.wine,
+  },
+];
 
 export default function ContactSection() {
   return (
     <section id="contact" className="py-20 sm:py-28" style={{ background: BRAND.orangeDark }}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
-        <div>
-          <h3
-            className="text-xl font-bold text-white mb-6"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-          >
-            Contact Details
-          </h3>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
 
-          <div className="space-y-5">
-            {/* Address */}
-            <div className="flex items-start gap-3">
-              <span className="text-lg mt-0.5" style={{ color: BRAND.orange }}>📍</span>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
-                Probo Prolix Pride,<br />
-                Shinde vasti, Ravet<br />
-                Pune 412 101
-              </p>
+          {/* Logo */}
+          <div className="flex-shrink-0 flex items-center justify-center">
+            <div
+              className="relative flex items-center justify-center"
+              style={{
+                width: 160,
+                height: 160,
+                borderRadius: "50%",
+                background: "rgba(247,148,29,0.08)",
+                border: "2px solid rgba(247,148,29,0.2)",
+                boxShadow: "0 0 60px rgba(247,148,29,0.15)",
+              }}
+            >
+              <img
+                src={logoImg}
+                alt="Ishanya Infosoft"
+                style={{ width: 110, height: 110, objectFit: "contain" }}
+              />
             </div>
+          </div>
 
-            {/* Phone */}
-            <div className="flex items-center gap-3">
-              <span className="text-lg" style={{ color: BRAND.orange }}>📞</span>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>+91 98231 72231</p>
-            </div>
+          {/* Contact details */}
+          <div className="flex-1">
+            <h3
+              className="text-2xl font-bold text-white mb-8"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              Contact <span style={{ color: BRAND.orange }}>Details</span>
+            </h3>
 
-            {/* Email */}
-            <div className="flex items-start gap-3">
-              <span className="text-lg mt-0.5" style={{ color: BRAND.orange }}>✉️</span>
-              <div className="text-sm space-y-1" style={{ color: "rgba(255,255,255,0.75)" }}>
-                <p>Info@ishanyainfosoft.com</p>
-                <p>mrunal.kulkarni79@gmail.com</p>
-              </div>
+            <div className="space-y-4">
+              {contactItems.map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className="flex items-start gap-4 p-4 rounded-2xl group transition-all duration-200 cursor-pointer no-underline"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.07)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = `${item.color}18`;
+                    (e.currentTarget as HTMLElement).style.borderColor = `${item.color}40`;
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.07)";
+                  }}
+                >
+                  {/* Icon bubble */}
+                  <div
+                    className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center text-xl transition-transform duration-200 group-hover:scale-110"
+                    style={{ background: `${item.color}20` }}
+                  >
+                    {item.icon}
+                  </div>
+
+                  {/* Text */}
+                  <div>
+                    <p
+                      className="text-xs font-semibold uppercase tracking-wider mb-1"
+                      style={{ color: item.color }}
+                    >
+                      {item.label}
+                    </p>
+                    {item.lines.map((line, j) => (
+                      <p key={j} className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* Arrow */}
+                  <div
+                    className="ml-auto self-center text-sm opacity-0 group-hover:opacity-100 transition-all duration-200 translate-x-0 group-hover:translate-x-1"
+                    style={{ color: item.color }}
+                  >
+                    →
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
         </div>
