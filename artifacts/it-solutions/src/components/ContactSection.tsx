@@ -36,7 +36,7 @@ export default function ContactSection() {
               src={logoImg}
               alt="Ishanya Infosoft"
               style={{
-                maxWidth: 120,
+                maxWidth: 150,
                 height: "auto",
                 objectFit: "contain",
               }}
