@@ -30,7 +30,7 @@ export default function ContactSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-10">
 
           {/* Logo + Name */}
-          <div className="flex-shrink-0 flex items-center gap-3">
+          <div className="flex-shrink-0 flex items-center gap-1.5">
             <img
               src={logoImg}
               alt="Ishanya Infosoft"
@@ -44,7 +44,7 @@ export default function ContactSection() {
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 700,
-                fontSize: "18px",
+                fontSize: "22px",
                 color: BRAND.white,
                 letterSpacing: "-0.02em",
                 whiteSpace: "nowrap",
