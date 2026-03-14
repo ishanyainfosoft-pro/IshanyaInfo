@@ -25,17 +25,29 @@ const contactItems = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-12 sm:py-16" style={{ background: "rgba(0,0,0,0.8)" }}>
+    <section id="contact" className="py-5 sm:py-6" style={{ background: "rgba(0,0,0,0.8)" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-6 sm:gap-8 lg:gap-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-10">
 
-          {/* Logo */}
-          <div className="flex-shrink-0">
+          {/* Logo + Name */}
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <span
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontWeight: 700,
+                fontSize: "18px",
+                color: BRAND.white,
+                letterSpacing: "-0.02em",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Ishanya Infosoft
+            </span>
             <img
               src={logoImg}
               alt="Ishanya Infosoft"
               style={{
-                maxWidth: 250,
+                maxWidth: 160,
                 height: "auto",
                 objectFit: "contain",
               }}
@@ -43,10 +55,10 @@ export default function ContactSection() {
           </div>
 
           {/* Divider */}
-          <div style={{ width: "1px", height: 60, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
+          <div style={{ width: "1px", height: 44, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
 
           {/* Contact items strip */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 lg:gap-12">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-10">
             {contactItems.map((item, i) => (
               <a
                 key={i}
@@ -56,13 +68,13 @@ export default function ContactSection() {
                 className="no-underline transition-opacity hover:opacity-80"
               >
                 <p
-                  className="text-xs font-semibold uppercase tracking-wider mb-1 text-center sm:text-left"
-                  style={{ color: BRAND.orange }}
+                  className="text-xs font-semibold uppercase tracking-wider mb-0.5 text-center sm:text-left"
+                  style={{ color: BRAND.orange, fontSize: "10px" }}
                 >
                   {item.label}
                 </p>
                 {item.lines.map((line, j) => (
-                  <p key={j} className="text-sm leading-relaxed text-center sm:text-left whitespace-nowrap" style={{ color: "rgba(255,255,255,0.7)" }}>
+                  <p key={j} className="leading-snug text-center sm:text-left whitespace-nowrap" style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px" }}>
                     {line}
                   </p>
                 ))}
