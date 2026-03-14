@@ -90,7 +90,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 700,
-                fontSize: "1.1rem",
+                fontSize: "22px",
                 letterSpacing: "-0.02em",
                 color: scrolled ? "#1a1a1a" : BRAND.white,
               }}
