@@ -1,4 +1,4 @@
-import logoImg from "@assets/Gemini_Generated_Image_8nstoo8nstoo8nst-removebg-preview_1773397224117.png";
+import logoImg from "@assets/WhatsApp_Image_2026-03-09_at_4.33.45_PM_1773388136859.jpeg";
 
 const BRAND = {
   orange: "#F7941D",
@@ -30,16 +30,33 @@ export default function ContactSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-10">
 
           {/* Logo + Name */}
-          <div className="flex-shrink-0 flex items-center gap-1.5">
-            <img
-              src={logoImg}
-              alt="Ishanya Infosoft"
+          <div className="flex-shrink-0 flex items-center gap-3">
+            <div
               style={{
-                maxWidth: 160,
-                height: "auto",
-                objectFit: "contain",
+                width: 44,
+                height: 44,
+                borderRadius: "50%",
+                overflow: "hidden",
+                background: BRAND.white,
+                flexShrink: 0,
+                boxShadow: `0 0 0 2.5px ${BRAND.orange}55`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
-            />
+            >
+              <img
+                src={logoImg}
+                alt="Ishanya Infosoft"
+                style={{
+                  width: "170%",
+                  height: "170%",
+                  objectFit: "cover",
+                  objectPosition: "center center",
+                  flexShrink: 0,
+                }}
+              />
+            </div>
             <span
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
