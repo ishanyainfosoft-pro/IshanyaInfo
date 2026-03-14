@@ -149,26 +149,26 @@
   to   { opacity: 1; transform: translateY(0)   scale(1);    }
 }
 
-/* Custom scrollbar styling */
+/* Transparent scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #F7941D;
+  background: transparent;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e88715;
+  background: rgba(247, 148, 29, 0.3);
 }
 
 /* Firefox scrollbar */
 * {
-  scrollbar-color: #F7941D rgba(255, 255, 255, 0.05);
+  scrollbar-color: transparent transparent;
   scrollbar-width: thin;
 }
