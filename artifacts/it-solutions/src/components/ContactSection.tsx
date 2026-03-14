@@ -31,6 +31,15 @@ export default function ContactSection() {
 
           {/* Logo + Name */}
           <div className="flex-shrink-0 flex items-center gap-3">
+            <img
+              src={logoImg}
+              alt="Ishanya Infosoft"
+              style={{
+                maxWidth: 160,
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
             <span
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
@@ -43,15 +52,6 @@ export default function ContactSection() {
             >
               Ishanya Infosoft
             </span>
-            <img
-              src={logoImg}
-              alt="Ishanya Infosoft"
-              style={{
-                maxWidth: 160,
-                height: "auto",
-                objectFit: "contain",
-              }}
-            />
           </div>
 
           {/* Divider */}
