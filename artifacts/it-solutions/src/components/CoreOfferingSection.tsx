@@ -25,7 +25,7 @@ export default function CoreOfferingSection() {
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
             >
               Customized{" "}
-              <span style={{ color: BRAND.orange }}>ERP &amp; MES</span> Solutions
+              <span style={{ color: BRAND.orange }}>ERP </span> Solutions
             </h2>
             <p className="mb-8 leading-relaxed" style={{ color: BRAND.gray }}>
               Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
