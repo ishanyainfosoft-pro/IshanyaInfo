@@ -18,16 +18,6 @@ export default function AboutSection() {
           >
             About Us
           </span>
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
-          >
-            Established in 2010 as a{" "}
-            <span style={{ color: BRAND.orange }}>Premier Software</span> Solutions Provider
-          </h2>
-          <p className="max-w-2xl mx-auto text-base" style={{ color: "rgba(255,255,255,0.6)" }}>
-            We specialize in custom-designed, modular ERP / MES solutions tailored to meet the unique needs of MSME and MNC clients.
-          </p>
         </div>
 
       </div>

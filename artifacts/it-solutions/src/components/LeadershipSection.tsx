@@ -34,6 +34,16 @@ export default function LeadershipSection() {
     <section id="leadership" className="py-20 sm:py-28 pt-[122px] pb-[122px]" style={{ background: "#000000" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <h2
+            className="text-3xl sm:text-4xl font-bold mb-4"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
+          >
+            Established in 2010 as a{" "}
+            <span style={{ color: BRAND.orange }}>Premier Software</span> Solutions Provider
+          </h2>
+          <p className="max-w-2xl mx-auto text-base mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
+            We specialize in custom-designed, modular ERP / MES solutions tailored to meet the unique needs of MSME and MNC clients.
+          </p>
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(247,148,29,0.18)", color: BRAND.orange }}
