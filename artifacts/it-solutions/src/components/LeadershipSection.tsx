@@ -40,9 +40,6 @@ export default function LeadershipSection() {
           >
             Our Leadership
           </span>
-          <p className="max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.52)" }}>
-            We are backed up with a strong, committed team of subject matter experts dedicated to delivering excellence.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -90,12 +87,16 @@ export default function LeadershipSection() {
         </div>
 
         <h2
-          className="text-2xl sm:text-3xl font-bold text-white text-center mb-6"
+          className="text-2xl sm:text-3xl font-bold text-white text-center mb-4"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
         >
           Backed by{" "}
           <span style={{ color: BRAND.orange }}>Subject Matter Experts</span>
         </h2>
+
+        <p className="max-w-2xl mx-auto text-center mb-6" style={{ color: "rgba(255,255,255,0.52)" }}>
+          We are backed up with a strong, committed team of subject matter experts dedicated to delivering excellence.
+        </p>
 
         <div className="flex flex-wrap justify-center gap-3">
           {additionalTeam.map((role, i) => (
