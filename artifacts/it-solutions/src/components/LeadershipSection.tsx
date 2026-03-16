@@ -100,10 +100,6 @@ export default function LeadershipSection() {
           <span style={{ color: BRAND.orange }}>Subject Matter Experts</span>
         </h2>
 
-        <p className="max-w-2xl mx-auto text-center mb-6" style={{ color: "rgba(255,255,255,0.52)" }}>
-          We are backed up with a strong, committed team of subject matter experts dedicated to delivering excellence.
-        </p>
-
         <div className="flex flex-wrap justify-center gap-3">
           {additionalTeam.map((role, i) => (
             <div key={i} className="px-5 py-2.5 rounded-xl text-sm font-medium"
