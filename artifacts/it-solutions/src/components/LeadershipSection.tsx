@@ -1,3 +1,6 @@
+import mrunalImg from "@assets/Mrunal_Headshot_Mar_2026_1773665556253.png";
+import shailendraImg from "@assets/Shailendra_New_Mar_2026_Small_1773665583989.png";
+
 const BRAND = {
   orange: "#F7941D",
   teal: "#009999",
@@ -10,7 +13,7 @@ const leaders = [
   {
     name: "Mrunal Kulkarni",
     role: "Director / Founder",
-    image: "https://pdf-text-extractor--aviratk.replit.app/src/assets/images/team_1.jpg",
+    image: mrunalImg,
     accent: BRAND.orange,
     points: ["20+ years of IT / ITES Experience", "Full Stack Development", "Customized applications across India & APAC"],
     tagLabel: "Tech Stack",
@@ -19,7 +22,7 @@ const leaders = [
   {
     name: "Shailendra Kulkarni",
     role: "Partner",
-    image: "https://pdf-text-extractor--aviratk.replit.app/src/assets/images/team_2.jpg",
+    image: shailendraImg,
     accent: BRAND.teal,
     points: ["25+ years Industrial Experience", "VP Mfg / Plant Head / Board Member", "Director of Operation Excellence"],
     tagLabel: "Specialization",
