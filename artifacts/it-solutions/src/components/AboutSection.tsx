@@ -9,7 +9,7 @@ const BRAND = {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 sm:py-28 pb-[1px] pt-[1px]" style={{ background: "#000000" }}>
+    <section id="about" className="py-1" style={{ background: "#000000" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span
