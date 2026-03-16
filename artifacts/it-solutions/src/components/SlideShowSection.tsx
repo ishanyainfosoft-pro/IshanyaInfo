@@ -44,26 +44,37 @@ export default function SlideShowSection() {
 
   return (
     <section
-      className="w-full py-16 sm:py-24 flex items-center justify-center relative overflow-hidden"
+      className="w-full py-12 sm:py-16 flex items-center justify-center relative overflow-hidden"
       style={{ background: "#000000" }}
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
     >
-      <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main slide container */}
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ height: "500px" }}>
+        <div
+          className="relative rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
+          style={{
+            height: "550px",
+            background: "#fafafa",
+          }}
+        >
           {/* Slides */}
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="absolute inset-0 transition-opacity duration-700 flex items-center justify-center p-4"
-              style={{ opacity: i === current ? 1 : 0, background: "#f5f5f5" }}
+              className="absolute inset-0 transition-opacity duration-700 flex items-center justify-center"
+              style={{ opacity: i === current ? 1 : 0 }}
             >
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="max-w-full max-h-full object-contain"
-                style={{ width: "auto", height: "auto" }}
+                style={{
+                  maxWidth: "95%",
+                  maxHeight: "95%",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "scale-down",
+                }}
               />
             </div>
           ))}
@@ -80,7 +91,7 @@ export default function SlideShowSection() {
           {/* Left Arrow */}
           <button
             onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg"
             style={{ background: BRAND.orange, color: BRAND.white }}
             aria-label="Previous slide"
           >
@@ -90,7 +101,7 @@ export default function SlideShowSection() {
           {/* Right Arrow */}
           <button
             onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg"
             style={{ background: BRAND.orange, color: BRAND.white }}
             aria-label="Next slide"
           >
@@ -98,7 +109,7 @@ export default function SlideShowSection() {
           </button>
 
           {/* Title overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black to-transparent p-4">
             <h3
               className="text-xl sm:text-2xl font-bold text-white"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
