@@ -81,7 +81,7 @@ export default function SlideShowSection() {
           ))}
 
           {/* Gradient overlay on top */}
-          <div className="absolute top-0 left-0 right-0 z-10 pointer-events-none bg-gradient-to-b from-black via-black to-transparent" style={{ height: "100px" }} />
+          <div className="absolute top-0 left-0 right-0 z-10 pointer-events-none" style={{ height: "80px", background: "linear-gradient(to bottom, rgba(0,0,0,0.15), transparent)" }} />
 
           {/* Floating frame effect */}
           <div
@@ -113,7 +113,7 @@ export default function SlideShowSection() {
           </button>
 
           {/* Title overlay */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black to-transparent p-4">
+          <div className="absolute bottom-0 left-0 right-0 p-4" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)" }}>
             <h3
               className="text-xl sm:text-2xl font-bold text-white"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
