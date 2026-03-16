@@ -9,8 +9,8 @@ const BRAND = {
 export default function HeroSection() {
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden"
-      style={{ background: "#000000", minHeight: "95vh" }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ background: "#000000" }}
     >
       {/* Background image */}
       <div
