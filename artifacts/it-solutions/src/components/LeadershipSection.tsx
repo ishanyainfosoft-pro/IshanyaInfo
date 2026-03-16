@@ -58,21 +58,20 @@ export default function LeadershipSection() {
               className="rounded-2xl overflow-hidden"
               style={{ background: "rgba(0,0,0,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
             >
-              <div className="relative overflow-hidden" style={{ height: "520px" }}>
-                <img
-                  src={leader.image}
-                  alt={leader.name}
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                />
-                <div className="absolute inset-0" style={{ background: `linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 55%)` }} />
-                <div className="absolute top-0 left-0 right-0 h-1" style={{ background: leader.accent }} />
-                <div className="absolute bottom-4 left-5">
-                  <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{leader.name}</h3>
-                  <p className="text-sm mt-0.5" style={{ color: leader.accent }}>{leader.role}</p>
+              <div className="h-1 w-full" style={{ background: leader.accent }} />
+              <div className="flex flex-col items-center pt-6 pb-2 px-6">
+                <div className="rounded-xl overflow-hidden mb-4" style={{ width: "160px", height: "160px" }}>
+                  <img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-full h-full object-cover object-top"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                  />
                 </div>
+                <h3 className="text-xl font-bold text-white text-center" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{leader.name}</h3>
+                <p className="text-sm mt-1 mb-2 text-center" style={{ color: leader.accent }}>{leader.role}</p>
               </div>
-              <div className="p-6">
+              <div className="p-6 pt-2">
                 <ul className="mb-5 space-y-2">
                   {leader.points.map((p, j) => (
                     <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
