@@ -49,7 +49,7 @@ export default function SlideShowSection() {
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
     >
-      <div className="w-full max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
         {/* Main slide container */}
         <div
           className="relative rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
@@ -69,8 +69,8 @@ export default function SlideShowSection() {
                 src={slide.image}
                 alt={slide.title}
                 style={{
-                  maxWidth: "85%",
-                  maxHeight: "85%",
+                  maxWidth: "95%",
+                  maxHeight: "95%",
                   width: "auto",
                   height: "auto",
                   aspectRatio: "3/2",
