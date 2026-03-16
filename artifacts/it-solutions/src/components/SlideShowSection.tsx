@@ -62,18 +62,16 @@ export default function SlideShowSection() {
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="absolute inset-0 transition-opacity duration-700 flex items-center justify-center"
+              className="absolute inset-0 transition-opacity duration-700"
               style={{ opacity: i === current ? 1 : 0 }}
             >
               <img
                 src={slide.image}
                 alt={slide.title}
                 style={{
-                  maxWidth: "95%",
-                  maxHeight: "95%",
-                  width: "auto",
-                  height: "auto",
-                  objectFit: "scale-down",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
                 }}
               />
             </div>
