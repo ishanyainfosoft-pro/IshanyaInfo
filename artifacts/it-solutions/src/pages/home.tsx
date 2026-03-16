@@ -5,6 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import LeadershipSection from "@/components/LeadershipSection";
 import CoreOfferingSection from "@/components/CoreOfferingSection";
 import MESSection from "@/components/MESSection";
+import SlideShowSection from "@/components/SlideShowSection";
 import FlagshipSection from "@/components/FlagshipSection";
 import MoreOfferingsSection from "@/components/MoreOfferingsSection";
 import ClientsSection from "@/components/ClientsSection";
@@ -23,6 +24,7 @@ export default function Home() {
       <LeadershipSection />
       <CoreOfferingSection />
       <MESSection />
+      <SlideShowSection />
       <FlagshipSection />
       <MoreOfferingsSection />
       <ClientsSection />
