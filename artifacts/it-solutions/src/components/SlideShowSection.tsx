@@ -1,4 +1,9 @@
 import { useState, useEffect } from "react";
+import Dashboard from "@/assets/Dashboard.png";
+import Report from "@/assets/Report.png";
+import ECommerce from "@/assets/ECommerce.png";
+import ComplaintManagement from "@/assets/ComplaintManagement.png";
+import MESDashboard from "@/assets/MESDashboard.png";
 
 const BRAND = {
   orange: "#F7941D",
@@ -8,11 +13,11 @@ const BRAND = {
 };
 
 const slides = [
-  { image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90", title: "Dashboard" },
-  { image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=90", title: "Report" },
-  { image: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=90", title: "E-Commerce" },
-  { image: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=1200&q=90", title: "Complaint Management" },
-  { image: "https://images.unsplash.com/photo-1633356122544-f134324ef6f2?w=1200&q=90", title: "MES Dashboard" },
+  { image: Dashboard, title: "Dashboard" },
+  { image: Report, title: "Report" },
+  { image: ECommerce, title: "E-Commerce" },
+  { image: ComplaintManagement, title: "Complaint Management" },
+  { image: MESDashboard, title: "MES Dashboard" },
 ];
 
 export default function SlideShowSection() {
@@ -42,35 +47,10 @@ export default function SlideShowSection() {
   return (
     <section
       className="w-full min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(0,153,153,0.1) 50%, rgba(0,0,0,0.95) 100%)",
-      }}
+      style={{ background: "#000000" }}
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
     >
-      {/* Blurred background slide */}
-      {slides.map((slide, i) => (
-        <div
-          key={`bg-${i}`}
-          className="absolute inset-0 transition-opacity duration-1000"
-          style={{
-            opacity: i === current ? 1 : 0,
-            backgroundImage: `url(${slide.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "blur(40px) scale(1.1)",
-          }}
-        />
-      ))}
-
-      {/* Gradient overlay */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%)",
-        }}
-      />
-
       {/* Main content */}
       <div className="relative z-10 w-full h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-5xl">
@@ -80,14 +60,13 @@ export default function SlideShowSection() {
             {slides.map((slide, i) => (
               <div
                 key={i}
-                className="absolute inset-0 transition-opacity duration-700"
-                style={{ opacity: i === current ? 1 : 0 }}
+                className="absolute inset-0 transition-opacity duration-700 flex items-center justify-center"
+                style={{ opacity: i === current ? 1 : 0, background: "#ffffff" }}
               >
                 <img
                   src={slide.image}
                   alt={slide.title}
                   className="w-full h-full object-contain"
-                  style={{ background: "rgba(255,255,255,0.02)" }}
                 />
               </div>
             ))}
