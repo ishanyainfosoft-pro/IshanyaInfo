@@ -69,8 +69,8 @@ export default function SlideShowSection() {
                 src={slide.image}
                 alt={slide.title}
                 style={{
-                  maxWidth: "50%",
-                  maxHeight: "50%",
+                  maxWidth: "20%",
+                  maxHeight: "20%",
                   width: "auto",
                   height: "auto",
                   aspectRatio: "3/2",
