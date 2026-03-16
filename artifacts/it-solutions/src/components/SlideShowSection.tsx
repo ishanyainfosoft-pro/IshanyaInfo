@@ -54,7 +54,7 @@ export default function SlideShowSection() {
         <div
           className="relative rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
           style={{
-            aspectRatio: "21/9",
+            aspectRatio: "16/9",
             background: "#fafafa",
           }}
         >
