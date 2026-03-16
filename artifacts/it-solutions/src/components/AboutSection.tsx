@@ -7,7 +7,6 @@ const BRAND = {
 };
 
 const features = [
-  { icon: "🎯", color: BRAND.orange, bg: "rgba(247,148,29,0.09)", title: "Best-in-Class Support", desc: "Ensuring seamless operation and ongoing client satisfaction." },
   { icon: "💰", color: BRAND.wine,   bg: "rgba(193,39,122,0.08)",  title: "Competitive Pricing", desc: "Delivering premium-quality solutions at a cost-effective offer." },
 ];
 
@@ -34,9 +33,9 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="flex justify-center">
           {features.map((f, i) => (
-            <div key={i} className="p-6 rounded-2xl border hover:shadow-lg transition-all" style={{ background: "#f9fafb", borderColor: "#f0f0f0" }}>
+            <div key={i} className="p-6 rounded-2xl border hover:shadow-lg transition-all" style={{ background: "#f9fafb", borderColor: "#f0f0f0", maxWidth: 360, width: "100%" }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4" style={{ background: f.bg }}>
                 {f.icon}
               </div>
