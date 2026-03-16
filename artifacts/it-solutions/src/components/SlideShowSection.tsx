@@ -144,12 +144,6 @@ export default function SlideShowSection() {
           ))}
         </div>
 
-        {/* Slide counter */}
-        <div className="text-center mt-6">
-          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px" }}>
-            {current + 1} / {slides.length}
-          </p>
-        </div>
       </div>
     </section>
   );
