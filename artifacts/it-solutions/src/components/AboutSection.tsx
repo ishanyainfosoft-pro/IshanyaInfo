@@ -6,9 +6,6 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-const features = [
-  { icon: "💰", color: BRAND.wine,   bg: "rgba(193,39,122,0.08)",  title: "Competitive Pricing", desc: "Delivering premium-quality solutions at a cost-effective offer." },
-];
 
 export default function AboutSection() {
   return (
@@ -33,20 +30,6 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="flex justify-center">
-          {features.map((f, i) => (
-            <div key={i} className="p-6 rounded-2xl border hover:shadow-lg transition-all" style={{ background: "#f9fafb", borderColor: "#f0f0f0", maxWidth: 360, width: "100%" }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4" style={{ background: f.bg }}>
-                {f.icon}
-              </div>
-              <h3 className="text-base font-semibold mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>
-                {f.title}
-              </h3>
-              <p className="text-sm leading-relaxed" style={{ color: BRAND.gray }}>{f.desc}</p>
-              <div className="mt-4 h-0.5 w-8 rounded-full" style={{ background: f.color }} />
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
