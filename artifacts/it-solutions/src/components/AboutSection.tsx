@@ -7,7 +7,6 @@ const BRAND = {
 };
 
 const features = [
-  { icon: "🖥️", color: BRAND.orange, bg: "rgba(247,148,29,0.09)", title: "Simple & User-Friendly", desc: "Creating intuitive and efficient systems designed around client needs." },
   { icon: "🎯", color: BRAND.orange, bg: "rgba(247,148,29,0.09)", title: "Best-in-Class Support", desc: "Ensuring seamless operation and ongoing client satisfaction." },
   { icon: "🔒", color: BRAND.teal,   bg: "rgba(0,153,153,0.08)",   title: "Robust Data Security", desc: "Offering comprehensive safeguards while keeping data fully in client's control." },
   { icon: "💰", color: BRAND.wine,   bg: "rgba(193,39,122,0.08)",  title: "Competitive Pricing", desc: "Delivering premium-quality solutions at a cost-effective offer." },
@@ -36,7 +35,7 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <div key={i} className="p-6 rounded-2xl border hover:shadow-lg transition-all" style={{ background: "#f9fafb", borderColor: "#f0f0f0" }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4" style={{ background: f.bg }}>
