@@ -80,6 +80,15 @@ export default function SlideShowSection() {
             </div>
           ))}
 
+          {/* Gradient overlay on top */}
+          <div
+            className="absolute top-0 left-0 right-0 z-10 pointer-events-none"
+            style={{
+              height: "100px",
+              background: "linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+
           {/* Floating frame effect */}
           <div
             className="absolute inset-0 rounded-2xl pointer-events-none"
