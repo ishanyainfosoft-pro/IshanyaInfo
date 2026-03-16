@@ -14,7 +14,7 @@ const leaders = [
     accent: BRAND.orange,
     points: ["20+ years of IT / ITES Experience", "Full Stack Development", "Customized applications across India & APAC"],
     tagLabel: "Tech Stack",
-    tags: ["React JS", "Node JS", "Python", "SQL Server", "Flutter"],
+    tags: ["React JS", "Node JS", "Python", "SQL Server", "Flutter", "ASP.Net"],
   },
   {
     name: "Shailendra Kulkarni",
