@@ -33,7 +33,7 @@ export default function LeadershipSection() {
   return (
     <section id="leadership" className="py-20 sm:py-28 pt-[122px] pb-[122px]" style={{ background: "#000000" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-6">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(247,148,29,0.12)", color: BRAND.orange }}
