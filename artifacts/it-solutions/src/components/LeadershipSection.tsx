@@ -46,9 +46,6 @@ export default function LeadershipSection() {
           >
             A <span style={{ color: BRAND.orange }}>Trusted Software Solution</span> Provider Since 2010
           </h2>
-          <p className="max-w-2xl mx-auto text-base mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
-            We specialize in custom-designed, modular ERP / MES solutions tailored to meet the unique needs of MSME and MNC clients.
-          </p>
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
             style={{ background: "rgba(247,148,29,0.18)", color: BRAND.orange }}
