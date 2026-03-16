@@ -93,7 +93,7 @@ export default function LeadershipSection() {
         </div>
 
         <h2
-          className="text-2xl sm:text-3xl font-bold text-white text-center mb-4"
+          className="sm:text-3xl font-bold text-white text-center mb-4 text-[25px]"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
         >
           Our Team Of{" "}
