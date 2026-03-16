@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif" }}>
       <Navbar onGetStarted={() => setModalOpen(true)} />
-      <HeroSection onGetStarted={() => setModalOpen(true)} />
+      <HeroSection />
       <AboutSection />
       <LeadershipSection />
       <CoreOfferingSection />

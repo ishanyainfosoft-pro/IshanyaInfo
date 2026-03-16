@@ -6,16 +6,7 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-interface HeroProps {
-  onGetStarted: () => void;
-}
-
-export default function HeroSection({ onGetStarted }: HeroProps) {
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
+export default function HeroSection() {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
@@ -91,20 +82,6 @@ export default function HeroSection({ onGetStarted }: HeroProps) {
           Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={onGetStarted}
-            className="px-8 py-3.5 rounded-xl text-base font-semibold transition-all hover:bg-white hover:text-gray-800"
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              color: BRAND.white,
-              border: "1px solid rgba(247,148,29,0.3)",
-            }}
-          >
-            Get In Touch
-          </button>
-        </div>
       </div>
 
       {/* Scroll indicator */}
