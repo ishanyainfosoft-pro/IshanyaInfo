@@ -21,10 +21,6 @@ export default function ClientsSection() {
   return (
     <section id="clients" className="py-20 sm:py-28 overflow-hidden" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-          style={{ background: "rgba(193,39,122,0.09)", color: BRAND.wine }}>
-          Our Network
-        </span>
         <h2 className="text-3xl sm:text-4xl font-bold"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>
           Our Esteemed{" "}<span style={{ color: BRAND.orange }}>Clients</span>
