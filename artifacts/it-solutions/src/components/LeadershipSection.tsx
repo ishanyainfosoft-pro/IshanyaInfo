@@ -59,7 +59,7 @@ export default function LeadershipSection() {
               style={{ background: "rgba(0,0,0,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
             >
               <div className="h-1 w-full" style={{ background: leader.accent }} />
-              <div className="flex flex-col items-center pt-6 pb-2 px-6">
+              <div className="flex flex-col items-start pt-6 pb-2 px-6">
                 <div className="rounded-xl overflow-hidden mb-4" style={{ width: "160px", height: "160px" }}>
                   <img
                     src={leader.image}
@@ -68,8 +68,8 @@ export default function LeadershipSection() {
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white text-center" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{leader.name}</h3>
-                <p className="text-sm mt-1 mb-2 text-center" style={{ color: leader.accent }}>{leader.role}</p>
+                <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{leader.name}</h3>
+                <p className="text-sm mt-1 mb-2" style={{ color: leader.accent }}>{leader.role}</p>
               </div>
               <div className="p-6 pt-2">
                 <ul className="mb-5 space-y-2">
