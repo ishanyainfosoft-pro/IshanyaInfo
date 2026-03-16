@@ -84,13 +84,6 @@ export default function HeroSection() {
 
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>Scroll down</span>
-        <div className="w-5 h-8 rounded-full flex items-start justify-center p-1" style={{ border: "1px solid rgba(247,148,29,0.3)" }}>
-          <div className="w-1 h-2 rounded-full" style={{ background: BRAND.orange, animation: "bounce 2s infinite" }} />
-        </div>
-      </div>
     </section>
   );
 }
