@@ -94,13 +94,6 @@ export default function HeroSection({ onGetStarted }: HeroProps) {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
-            onClick={() => scrollTo("core-offering")}
-            className="px-8 py-3.5 rounded-xl text-base font-semibold text-white transition-all hover:opacity-90 active:scale-95"
-            style={{ background: BRAND.orange, boxShadow: "0 6px 28px rgba(247,148,29,0.45)" }}
-          >
-            Explore Solutions
-          </button>
-          <button
             onClick={onGetStarted}
             className="px-8 py-3.5 rounded-xl text-base font-semibold transition-all hover:bg-white hover:text-gray-800"
             style={{
