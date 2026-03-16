@@ -19,7 +19,7 @@ export default function ClientsSection() {
   const all = [...clients, ...clients];
 
   return (
-    <section id="clients" className="py-20 sm:py-28 overflow-hidden" style={{ background: BRAND.white }}>
+    <section id="clients" className="py-10 sm:py-14 overflow-hidden" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>

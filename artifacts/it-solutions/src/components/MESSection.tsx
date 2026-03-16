@@ -21,7 +21,7 @@ const ACCENT = BRAND.teal;
 
 export default function MESSection() {
   return (
-    <section id="mes-offering" className="py-20 sm:py-28" style={{ background: BRAND.white }}>
+    <section id="mes-offering" className="py-10 sm:py-14" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

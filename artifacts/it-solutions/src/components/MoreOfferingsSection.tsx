@@ -33,7 +33,7 @@ const verticals = ["Paper and Printing", "Ceramics and Metals", "Food and Bevera
 
 export default function MoreOfferingsSection() {
   return (
-    <section id="more-offerings" className="py-20 sm:py-28" style={{ background: "#f9fafb" }}>
+    <section id="more-offerings" className="py-10 sm:py-14" style={{ background: "#f9fafb" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
