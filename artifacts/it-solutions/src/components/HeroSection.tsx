@@ -9,7 +9,7 @@ const BRAND = {
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative py-16 sm:py-20 flex items-center justify-center overflow-hidden"
       style={{ background: "#000000" }}
     >
       {/* Background image */}
