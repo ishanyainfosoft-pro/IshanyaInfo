@@ -7,8 +7,6 @@ import MESDashboard from "@/assets/MESDashboard.png";
 
 const BRAND = {
   orange: "#F7941D",
-  teal: "#009999",
-  wine: "#C1277A",
   white: "#FFFFFF",
 };
 
@@ -46,98 +44,96 @@ export default function SlideShowSection() {
 
   return (
     <section
-      className="w-full min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="w-full py-16 sm:py-24 flex items-center justify-center relative overflow-hidden"
       style={{ background: "#000000" }}
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
     >
-      {/* Main content */}
-      <div className="relative z-10 w-full h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-5xl">
-          {/* Main slide container */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl" style={{ aspectRatio: "16/9" }}>
-            {/* Slides */}
-            {slides.map((slide, i) => (
-              <div
-                key={i}
-                className="absolute inset-0 transition-opacity duration-700 flex items-center justify-center"
-                style={{ opacity: i === current ? 1 : 0, background: "#ffffff" }}
-              >
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            ))}
-
-            {/* Floating frame effect */}
+      <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Main slide container */}
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ height: "500px" }}>
+          {/* Slides */}
+          {slides.map((slide, i) => (
             <div
-              className="absolute inset-0 rounded-3xl pointer-events-none"
-              style={{
-                border: `2px solid rgba(247,148,29,0.2)`,
-                boxShadow: `0 0 60px rgba(0,153,153,0.15), inset 0 0 30px rgba(193,39,122,0.05)`,
-              }}
-            />
-
-            {/* Left Arrow */}
-            <button
-              onClick={prev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all opacity-0 hover:scale-110"
-              style={{ background: BRAND.orange, color: BRAND.white }}
-              aria-label="Previous slide"
+              key={i}
+              className="absolute inset-0 transition-opacity duration-700 flex items-center justify-center p-4"
+              style={{ opacity: i === current ? 1 : 0, background: "#f5f5f5" }}
             >
-              <span style={{ fontSize: "24px" }}>‹</span>
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              onClick={next}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all opacity-0 hover:scale-110"
-              style={{ background: BRAND.orange, color: BRAND.white }}
-              aria-label="Next slide"
-            >
-              <span style={{ fontSize: "24px" }}>›</span>
-            </button>
-
-            {/* Title overlay */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-              <h3
-                className="text-2xl sm:text-3xl font-bold text-white"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              >
-                {slides[current].title}
-              </h3>
-            </div>
-          </div>
-
-          {/* Navigation dots */}
-          <div className="flex justify-center gap-3 mt-8">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  setCurrent(i);
-                  setAutoPlay(false);
-                  setTimeout(() => setAutoPlay(true), 10000);
-                }}
-                className="rounded-full transition-all duration-300 hover:scale-125"
-                style={{
-                  width: i === current ? "36px" : "10px",
-                  height: "10px",
-                  background: i === current ? BRAND.orange : "rgba(255,255,255,0.3)",
-                }}
-                aria-label={`Go to slide ${i + 1}`}
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="max-w-full max-h-full object-contain"
+                style={{ width: "auto", height: "auto" }}
               />
-            ))}
-          </div>
+            </div>
+          ))}
 
-          {/* Slide counter */}
-          <div className="text-center mt-6">
-            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px" }}>
-              {current + 1} / {slides.length}
-            </p>
+          {/* Floating frame effect */}
+          <div
+            className="absolute inset-0 rounded-2xl pointer-events-none"
+            style={{
+              border: `2px solid rgba(247,148,29,0.15)`,
+              boxShadow: `0 8px 32px rgba(0,0,0,0.2)`,
+            }}
+          />
+
+          {/* Left Arrow */}
+          <button
+            onClick={prev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            style={{ background: BRAND.orange, color: BRAND.white }}
+            aria-label="Previous slide"
+          >
+            <span style={{ fontSize: "24px" }}>‹</span>
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            onClick={next}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            style={{ background: BRAND.orange, color: BRAND.white }}
+            aria-label="Next slide"
+          >
+            <span style={{ fontSize: "24px" }}>›</span>
+          </button>
+
+          {/* Title overlay */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3
+              className="text-xl sm:text-2xl font-bold text-white"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              {slides[current].title}
+            </h3>
           </div>
+        </div>
+
+        {/* Navigation dots */}
+        <div className="flex justify-center gap-3 mt-8">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setCurrent(i);
+                setAutoPlay(false);
+                setTimeout(() => setAutoPlay(true), 10000);
+              }}
+              className="rounded-full transition-all duration-300 hover:scale-125"
+              style={{
+                width: i === current ? "36px" : "10px",
+                height: "10px",
+                background: i === current ? BRAND.orange : "rgba(255,255,255,0.3)",
+              }}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Slide counter */}
+        <div className="text-center mt-6">
+          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px" }}>
+            {current + 1} / {slides.length}
+          </p>
         </div>
       </div>
     </section>
