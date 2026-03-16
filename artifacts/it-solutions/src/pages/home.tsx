@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import SlideShowSection from "@/components/SlideShowSection";
 import AboutSection from "@/components/AboutSection";
 import LeadershipSection from "@/components/LeadershipSection";
 import CoreOfferingSection from "@/components/CoreOfferingSection";
 import MESSection from "@/components/MESSection";
-import SlideShowSection from "@/components/SlideShowSection";
 import FlagshipSection from "@/components/FlagshipSection";
 import MoreOfferingsSection from "@/components/MoreOfferingsSection";
 import ClientsSection from "@/components/ClientsSection";
@@ -20,11 +20,11 @@ export default function Home() {
     <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif" }}>
       <Navbar onGetStarted={() => setModalOpen(true)} />
       <HeroSection />
+      <SlideShowSection />
       <AboutSection />
       <LeadershipSection />
       <CoreOfferingSection />
       <MESSection />
-      <SlideShowSection />
       <FlagshipSection />
       <MoreOfferingsSection />
       <ClientsSection />
