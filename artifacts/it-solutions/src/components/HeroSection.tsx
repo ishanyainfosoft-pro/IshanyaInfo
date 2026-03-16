@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       className="relative flex items-center justify-center overflow-hidden"
-      style={{ background: "#000000", minHeight: "88vh" }}
+      style={{ background: "#000000", minHeight: "95vh" }}
     >
       {/* Background image */}
       <div
