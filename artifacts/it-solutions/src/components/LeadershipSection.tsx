@@ -1,5 +1,5 @@
-import mrunalImg from "@assets/Mrunal_Headshot_Mar_2026_1773665556253.png";
-import shailendraImg from "@assets/Shailendra_New_Mar_2026_Small_1773665583989.png";
+import mrunalImg from "@/assets/Mrunal_Headshot_Mar_2026_1773665556253.png";
+import shailendraImg from "@/assets/Shailendra_New_Mar_2026_Small_1773665583989.png";
 
 const BRAND = {
   orange: "#F7941D",
@@ -58,7 +58,7 @@ export default function LeadershipSection() {
               className="rounded-2xl overflow-hidden"
               style={{ background: "rgba(0,0,0,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
             >
-              <div className="relative h-36 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={leader.image}
                   alt={leader.name}
