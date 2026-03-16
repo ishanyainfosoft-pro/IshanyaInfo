@@ -46,12 +46,6 @@ export default function LeadershipSection() {
           >
             A <span style={{ color: BRAND.orange }}>Trusted Software Solution</span> Provider Since 2010
           </h2>
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "rgba(247,148,29,0.18)", color: BRAND.orange }}
-          >
-            Our Leadership
-          </span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
