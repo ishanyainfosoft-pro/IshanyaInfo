@@ -73,7 +73,8 @@ export default function SlideShowSection() {
                   maxHeight: "90%",
                   width: "auto",
                   height: "auto",
-                  objectFit: "scale-down",
+                  aspectRatio: "3/2",
+                  objectFit: "cover",
                 }}
               />
             </div>
