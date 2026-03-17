@@ -1,3 +1,5 @@
+import ERPDashboard from "@assets/ChatGPT_1_1773751903542.png";
+
 const BRAND = {
   orange: "#F7941D",
   teal: "#009999",
@@ -34,13 +36,9 @@ export default function CoreOfferingSection() {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+                src={ERPDashboard}
                 alt="ERP Dashboard"
-                className="w-full h-72 object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80";
-                }}
+                className="w-full object-cover"
               />
             </div>
             <div

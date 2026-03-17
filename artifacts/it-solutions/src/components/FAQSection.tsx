@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Fragment } from "react";
 
 const BRAND = {
   orange: "#F7941D",
@@ -254,7 +254,7 @@ export default function FAQSection() {
         */}
         <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 24px", alignItems: "start" }}>
           {rows.map((i) => (
-            <>
+            <Fragment key={i}>
               {/* Left item (Q1–Q5) */}
               <AccordionItem
                 key={`l${i}`}
@@ -275,7 +275,7 @@ export default function FAQSection() {
                 isVisible={isVisible}
                 delay={110 + i * 55}
               />
-            </>
+            </Fragment>
           ))}
         </div>
 
