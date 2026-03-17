@@ -1,3 +1,5 @@
+import logoImg from "@assets/WhatsApp_Image_2026-03-09_at_4.33.45_PM_1773388136859.jpeg";
+
 const BRAND = {
   orange: "#F7941D",
   teal: "#009999",
@@ -9,6 +11,46 @@ export default function HeroSection() {
   return (
     <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "78vh" }}>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+        {/* Big centered logo */}
+        <div className="flex flex-col items-center gap-4 mb-10">
+          <div
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: "50%",
+              overflow: "hidden",
+              background: "#ffffff",
+              flexShrink: 0,
+              boxShadow: `0 0 0 4px ${BRAND.orange}55, 0 8px 32px rgba(247,148,29,0.18)`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src={logoImg}
+              alt="Ishanya Infosoft logo"
+              style={{
+                width: "170%",
+                height: "170%",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            />
+          </div>
+          <span
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(28px, 4vw, 42px)",
+              letterSpacing: "-0.02em",
+              color: "#1a1a1a",
+            }}
+          >
+            Ishanya Infosoft
+          </span>
+        </div>
 
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
           {["Customer Centric", "Trust", "Reliable Service Support"].map((tag, i) => (
