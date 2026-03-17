@@ -46,7 +46,7 @@ export default function LeadershipSection() {
             className="text-3xl sm:text-4xl font-bold mb-4"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
           >
-            A <span style={{ color: BRAND.orange }}>Trusted Software Solution</span> Provider Since 2010
+            <span style={{ color: BRAND.teal }}>A Trusted Software Solution Provider Since 2010</span>
           </h2>
         </div>
 
@@ -102,8 +102,7 @@ export default function LeadershipSection() {
           className="sm:text-3xl font-bold text-center mb-4 text-[25px]"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
         >
-          Our Team Of{" "}
-          <span style={{ color: BRAND.orange }}>Subject Matter Experts</span>
+          <span style={{ color: BRAND.orange }}>Our Team Of Subject Matter Experts</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3">
