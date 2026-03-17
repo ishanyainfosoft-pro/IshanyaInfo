@@ -23,39 +23,7 @@ export default function CoreOfferingSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left — text */}
-          <div>
-
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
-            >
-              Customized{" "}
-              <span style={{ color: BRAND.wine }}>ERP</span>{" "}Solutions
-            </h2>
-            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
-              Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
-            </p>
-            <div className="flex flex-wrap gap-2.5 mb-8">
-              {features.map((f, i) => (
-                <span
-                  key={i}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
-                  style={{
-                    background: "rgba(255,255,255,0.6)",
-                    color: "#333333",
-                    border: "1px solid rgba(0,153,153,0.25)",
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
-                  {f}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — image */}
+          {/* Left — image */}
           <div className="relative pb-8">
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
@@ -86,6 +54,37 @@ export default function CoreOfferingSection() {
                 </div>
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(0,153,153,0.10)" }}>📈</div>
               </div>
+            </div>
+          </div>
+
+          {/* Right — text */}
+          <div>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
+              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
+            >
+              Customized{" "}
+              <span style={{ color: BRAND.wine }}>ERP</span>{" "}Solutions
+            </h2>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
+              Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
+            </p>
+            <div className="flex flex-wrap gap-2.5 mb-8">
+              {features.map((f, i) => (
+                <span
+                  key={i}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
+                  style={{
+                    background: "rgba(255,255,255,0.6)",
+                    color: "#333333",
+                    border: "1px solid rgba(0,153,153,0.25)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
+                  {f}
+                </span>
+              ))}
             </div>
           </div>
 
