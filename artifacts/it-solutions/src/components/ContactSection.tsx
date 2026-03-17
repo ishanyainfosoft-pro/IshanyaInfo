@@ -31,7 +31,7 @@ const socialLinks = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-0" style={{ background: "rgba(0,0,0,0.8)", height: "80px" }}>
+    <section id="contact" className="py-0" style={{ background: "rgba(0,0,0,0.8)", height: "120px" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-10 h-full">
 
