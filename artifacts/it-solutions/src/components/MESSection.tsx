@@ -29,29 +29,28 @@ export default function MESSection() {
           {/* Left — text (40%) */}
           <div className="w-full" style={{ flex: "2" }}>
             <h2
-              className="text-3xl sm:text-4xl font-bold mb-4"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: ACCENT }}
             >
               Customized{" "}
-              <span style={{ color: ACCENT }}>MES </span> Solutions
+              <span style={{ color: ACCENT }}>MES</span>{" "}Solutions
             </h2>
-            <p className="mb-8 leading-relaxed" style={{ color: BRAND.gray }}>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
               Our highly customized MES system helps manufacturers monitor shop-floor operations, improve production visibility, enhance quality management, and streamline manufacturing processes.
             </p>
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-2.5 mb-8">
               {features.map((f, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all hover:shadow-md"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                   style={{
                     background: "rgba(255,255,255,0.6)",
-                    color: "#1a1a1a",
+                    color: "#333333",
                     border: `1px solid rgba(0,153,153,0.25)`,
-                    boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
                     backdropFilter: "blur(6px)",
                   }}
                 >
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: ACCENT }} />
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
                   {f}
                 </span>
               ))}
