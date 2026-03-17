@@ -15,23 +15,11 @@ export default function CoreOfferingSection() {
       className="py-14 sm:py-20 relative overflow-hidden"
       style={{ background: "#020d0d" }}
     >
-      {/* Rich teal radial gradient backdrop */}
+      {/* Simple teal gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `
-            radial-gradient(ellipse 90% 70% at 10% 50%, rgba(0,153,153,0.60) 0%, transparent 55%),
-            radial-gradient(ellipse 60% 50% at 90% 20%, rgba(0,200,200,0.25) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 60% at 60% 90%, rgba(0,120,120,0.30) 0%, transparent 50%)
-          `,
-        }}
-      />
-
-      {/* Subtle diagonal light beam */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(120deg, transparent 40%, rgba(0,180,180,0.07) 50%, transparent 60%)",
+          background: "linear-gradient(135deg, #005f5f 0%, #009999 50%, #00cccc 100%)",
         }}
       />
 

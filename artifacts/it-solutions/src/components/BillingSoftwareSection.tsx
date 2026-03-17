@@ -28,23 +28,11 @@ export default function BillingSoftwareSection() {
       className="py-14 sm:py-20 relative overflow-hidden"
       style={{ background: "#0d0700" }}
     >
-      {/* Rich orange radial gradient backdrop */}
+      {/* Simple orange gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `
-            radial-gradient(ellipse 90% 70% at 10% 50%, rgba(247,148,29,0.60) 0%, transparent 55%),
-            radial-gradient(ellipse 60% 50% at 85% 15%, rgba(255,180,80,0.22) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 60% at 55% 90%, rgba(210,110,0,0.30) 0%, transparent 50%)
-          `,
-        }}
-      />
-
-      {/* Subtle diagonal light beam */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(120deg, transparent 40%, rgba(255,160,40,0.06) 50%, transparent 60%)",
+          background: "linear-gradient(135deg, #b85e00 0%, #F7941D 50%, #ffb84d 100%)",
         }}
       />
 

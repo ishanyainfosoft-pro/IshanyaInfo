@@ -12,58 +12,20 @@ export default function HeroSection() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: "#050505" }}
     >
-      {/* === Rich multi-colour gradient backdrop === */}
+      {/* Simple linear gradient */}
       <div
         className="absolute inset-0"
         style={{
-          background: `
-            radial-gradient(ellipse 80% 60% at 15% 40%, rgba(0,153,153,0.55) 0%, transparent 55%),
-            radial-gradient(ellipse 70% 55% at 85% 30%, rgba(247,148,29,0.50) 0%, transparent 55%),
-            radial-gradient(ellipse 60% 50% at 50% 85%, rgba(193,39,122,0.40) 0%, transparent 55%),
-            linear-gradient(160deg, #030d0d 0%, #08040a 50%, #0d0600 100%)
-          `,
+          background: "linear-gradient(135deg, #009999 0%, #1a0a12 50%, #F7941D 100%)",
         }}
       />
 
-      {/* Background image — very low opacity for texture */}
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url('https://pdf-text-extractor--aviratk.replit.app/assets/hero-bg-BgaErTfm.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.07,
-          mixBlendMode: "luminosity",
-        }}
-      />
-
-      {/* Noise / grain overlay for depth */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          backgroundSize: "256px 256px",
-        }}
-      />
-
-      {/* Sharp colour beams (decorative lines) */}
-      <div
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
-        style={{
-          background: `
-            linear-gradient(105deg, transparent 30%, rgba(0,153,153,0.06) 30.2%, transparent 30.5%),
-            linear-gradient(105deg, transparent 45%, rgba(247,148,29,0.05) 45.2%, transparent 45.5%),
-            linear-gradient(105deg, transparent 60%, rgba(193,39,122,0.05) 60.2%, transparent 60.5%)
-          `,
-        }}
-      />
-
-      {/* Bottom blend into next section */}
+      {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 pointer-events-none"
         style={{
-          height: "160px",
-          background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.85) 100%)",
+          height: "120px",
+          background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 100%)",
         }}
       />
 

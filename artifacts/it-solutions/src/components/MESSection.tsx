@@ -24,23 +24,11 @@ export default function MESSection() {
       className="py-14 sm:py-20 relative overflow-hidden"
       style={{ background: "#0d0208" }}
     >
-      {/* Rich wine radial gradient backdrop */}
+      {/* Simple wine gradient */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `
-            radial-gradient(ellipse 90% 70% at 90% 50%, rgba(193,39,122,0.60) 0%, transparent 55%),
-            radial-gradient(ellipse 60% 50% at 10% 20%, rgba(220,60,140,0.22) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 60% at 40% 90%, rgba(150,20,90,0.30) 0%, transparent 50%)
-          `,
-        }}
-      />
-
-      {/* Subtle diagonal light beam */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(120deg, transparent 40%, rgba(220,60,140,0.06) 50%, transparent 60%)",
+          background: "linear-gradient(135deg, #7a1549 0%, #C1277A 50%, #e0459a 100%)",
         }}
       />
 
