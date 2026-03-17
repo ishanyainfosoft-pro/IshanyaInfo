@@ -172,3 +172,110 @@
   scrollbar-color: #F7941D transparent;
   scrollbar-width: thin;
 }
+
+/* ── Dark Mode Overrides ── */
+.dark-mode {
+  color-scheme: dark;
+}
+
+/* General text */
+.dark-mode p,
+.dark-mode li,
+.dark-mode td,
+.dark-mode th {
+  color: rgba(220, 230, 240, 0.88) !important;
+}
+
+/* Dark headings that become light */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Sections with white/light background */
+.dark-mode section,
+.dark-mode footer {
+  background: transparent !important;
+}
+
+/* Cards / frosted-glass boxes */
+.dark-mode [style*="rgba(255,255,255"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Label chips and tags */
+.dark-mode [style*="background: #f"],
+.dark-mode [style*="background:#f"] {
+  background: rgba(255,255,255,0.08) !important;
+}
+
+/* Borders */
+.dark-mode [style*="borderColor: #"],
+.dark-mode [style*="border-color: #"] {
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+/* Explicit dark text colors overridden for dark mode */
+.dark-mode [style*="color: #1a1a1a"],
+.dark-mode [style*="color: #111"],
+.dark-mode [style*="color: #222"],
+.dark-mode [style*="color: #333"],
+.dark-mode [style*="color: #3a3a3a"],
+.dark-mode [style*="color: #444"],
+.dark-mode [style*="color: #555"],
+.dark-mode [style*="color: #666"],
+.dark-mode [style*="color: #6D6E71"],
+.dark-mode [style*="color: rgb("] {
+  color: rgba(220, 230, 240, 0.88) !important;
+}
+
+/* White backgrounds on section wrappers */
+.dark-mode [style*="background: white"],
+.dark-mode [style*="background: #fff"],
+.dark-mode [style*="background: #ffffff"],
+.dark-mode [style*="background:#fff"],
+.dark-mode [style*="background:#ffffff"] {
+  background: rgba(255,255,255,0.04) !important;
+}
+
+/* Light gray backgrounds */
+.dark-mode [style*="background: #f0f0f0"],
+.dark-mode [style*="background: #f5f5f5"],
+.dark-mode [style*="background: #fafafa"],
+.dark-mode [style*="background: #eeeeee"] {
+  background: rgba(255,255,255,0.06) !important;
+}
+
+/* Inputs and textareas */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background: rgba(255,255,255,0.06) !important;
+  color: rgba(220,230,240,0.9) !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: rgba(200,215,230,0.45) !important;
+}
+
+/* FAQ accordion items */
+.dark-mode [style*="background: #fafafa"],
+.dark-mode [style*="background:#fafafa"] {
+  background: rgba(255,255,255,0.05) !important;
+}
+
+/* Mobile menu */
+.dark-mode .md\:hidden {
+  background: #0a1428 !important;
+}
+
+/* Dividers */
+.dark-mode hr,
+.dark-mode [style*="borderBottom"],
+.dark-mode [style*="border-bottom"] {
+  border-color: rgba(255,255,255,0.1) !important;
+}
