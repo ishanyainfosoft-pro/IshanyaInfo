@@ -29,16 +29,7 @@ export default function BillingSoftwareSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{
-                background: "rgba(247,148,29,0.12)",
-                color: BRAND.orange,
-                border: "1px solid rgba(247,148,29,0.28)",
-              }}
-            >
-              Billing Solutions
-            </span>
+
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.orange }}
