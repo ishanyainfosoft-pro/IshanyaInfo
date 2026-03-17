@@ -6,7 +6,6 @@ import SlideShowSection from "@/components/SlideShowSection";
 import MESSection from "@/components/MESSection";
 import CoreOfferingSection from "@/components/CoreOfferingSection";
 import BillingSoftwareSection from "@/components/BillingSoftwareSection";
-import ERPPricingSection from "@/components/ERPPricingSection";
 import ECommerceSection from "@/components/ECommerceSection";
 import FlagshipSection from "@/components/FlagshipSection";
 import ClientsSection from "@/components/ClientsSection";
@@ -32,7 +31,6 @@ export default function Home() {
       <SlideShowSection />
       <MESSection />
       <CoreOfferingSection />
-      <ERPPricingSection />
       <ECommerceSection />
       <BillingSoftwareSection />
       <FlagshipSection />

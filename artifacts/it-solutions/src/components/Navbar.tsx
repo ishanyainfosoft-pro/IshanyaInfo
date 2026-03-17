@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import logoImg from "@assets/WhatsApp_Image_2026-03-09_at_4.33.45_PM_1773388136859.jpeg";
 
 const BRAND = {
@@ -16,6 +17,7 @@ interface NavbarProps {
 export default function Navbar({ onGetStarted }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [, navigate] = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -110,6 +112,13 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               </button>
             ))}
             <button
+              onClick={() => { setMenuOpen(false); navigate("/pricing"); }}
+              className="text-sm font-medium transition-opacity hover:opacity-60"
+              style={{ color: BRAND.teal, fontWeight: 600 }}
+            >
+              Pricing
+            </button>
+            <button
               onClick={handleGetStarted}
               className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
               style={{ background: BRAND.orange }}
@@ -151,6 +160,13 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               {item.label}
             </button>
           ))}
+          <button
+            onClick={() => { setMenuOpen(false); navigate("/pricing"); }}
+            className="text-sm font-medium text-left"
+            style={{ color: BRAND.teal, fontWeight: 600 }}
+          >
+            Pricing
+          </button>
           <button onClick={handleGetStarted} className="py-2 rounded-lg text-sm font-semibold text-white text-center" style={{ background: BRAND.orange }}>
             Get In Touch
           </button>
