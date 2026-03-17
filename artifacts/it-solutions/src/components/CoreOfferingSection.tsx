@@ -13,16 +13,7 @@ export default function CoreOfferingSection() {
     <section
       id="core-offering"
       className="py-14 sm:py-20 relative overflow-hidden"
-      style={{ background: "#020d0d" }}
     >
-      {/* Simple teal gradient */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(135deg, #001f1f 0%, #005f5f 50%, #009999 100%)",
-        }}
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>

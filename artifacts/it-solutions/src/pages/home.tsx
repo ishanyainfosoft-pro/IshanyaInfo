@@ -19,7 +19,7 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif" }}>
+    <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif", background: "linear-gradient(to bottom, #002e2e 0%, #030303 12%, #020202 22%, #001515 28%, #009999 36%, #280818 42%, #C1277A 48%, #3d1e00 53%, #F7941D 59%, #fce8d0 64%, #ffffff 72%, #fce8d0 80%, #d9f2f2 87%, #030303 93%, #000000 100%)" }}>
       <Navbar onGetStarted={() => setModalOpen(true)} />
       <HeroSection />
       <SlideShowSection />

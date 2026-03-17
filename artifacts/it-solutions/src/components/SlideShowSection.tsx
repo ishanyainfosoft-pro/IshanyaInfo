@@ -49,9 +49,7 @@ export default function SlideShowSection() {
   return (
     <section
       className="w-full py-4 sm:py-6 flex items-center justify-center relative overflow-hidden"
-      style={{
-        background: `linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(247,148,29,0.6) 25%, rgba(0,153,153,0.6) 50%, rgba(193,39,122,0.6) 75%, rgba(0,0,0,0.5) 100%)`,
-      }}
+      style={{ background: "transparent" }}
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
     >

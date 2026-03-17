@@ -22,16 +22,7 @@ export default function MESSection() {
     <section
       id="mes-offering"
       className="py-14 sm:py-20 relative overflow-hidden"
-      style={{ background: "#0d0208" }}
     >
-      {/* Simple wine gradient */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(135deg, #280818 0%, #7a1549 50%, #C1277A 100%)",
-        }}
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 

@@ -10,25 +10,7 @@ export default function HeroSection() {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: "#050505" }}
     >
-      {/* Simple linear gradient */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(135deg, #002e2e 0%, #08030a 50%, #6b3c00 100%)",
-        }}
-      />
-
-      {/* Bottom fade */}
-      <div
-        className="absolute bottom-0 left-0 right-0 pointer-events-none"
-        style={{
-          height: "120px",
-          background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 100%)",
-        }}
-      />
-
       {/* ===  Content === */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 

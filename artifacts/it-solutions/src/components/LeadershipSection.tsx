@@ -34,7 +34,7 @@ const additionalTeam = ["UI/UX Specialist", "API Specialist", "Data / Security A
 
 export default function LeadershipSection() {
   return (
-    <section id="leadership" className="py-10 sm:py-14 pt-[40px] pb-[60px]" style={{ background: "#000000" }}>
+    <section id="leadership" className="py-10 sm:py-14 pt-[40px] pb-[60px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6">
           <span
