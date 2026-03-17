@@ -6,6 +6,7 @@ import SlideShowSection from "@/components/SlideShowSection";
 import MESSection from "@/components/MESSection";
 import CoreOfferingSection from "@/components/CoreOfferingSection";
 import BillingSoftwareSection from "@/components/BillingSoftwareSection";
+import ECommerceSection from "@/components/ECommerceSection";
 import FlagshipSection from "@/components/FlagshipSection";
 import MoreOfferingsSection from "@/components/MoreOfferingsSection";
 import ClientsSection from "@/components/ClientsSection";
@@ -26,6 +27,7 @@ export default function Home() {
       <MESSection />
       <CoreOfferingSection />
       <BillingSoftwareSection />
+      <ECommerceSection />
       <FlagshipSection />
       <MoreOfferingsSection />
       <ClientsSection />
