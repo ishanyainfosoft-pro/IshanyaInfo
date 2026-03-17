@@ -26,7 +26,7 @@ interface Props {
 }
 
 export default function ContactModal({ isOpen, onClose }: Props) {
-  const [form, setForm] = useState({ fullName: "", workEmail: "", phone: "", requirements: "", robot: false });
+  const [form, setForm] = useState({ fullName: "", workEmail: "", phone: "", requirements: "" });
   const [submitted, setSubmitted] = useState(false);
 
   /* Lock body scroll while modal is open */
@@ -36,7 +36,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
     } else {
       document.body.style.overflow = "";
       /* Reset form when modal closes */
-      setTimeout(() => { setForm({ fullName: "", workEmail: "", phone: "", requirements: "", robot: false }); setSubmitted(false); }, 300);
+      setTimeout(() => { setForm({ fullName: "", workEmail: "", phone: "", requirements: "" }); setSubmitted(false); }, 300);
     }
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
@@ -112,12 +112,11 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
 
               {[
-                { label: "Full Name", key: "fullName", type: "text", placeholder: "Full Name", required: true },
-                { label: "Work Email", key: "workEmail", type: "email", placeholder: "Work Email", required: true },
-                { label: "Phone Number", key: "phone", type: "tel", placeholder: "Phone Number", required: false },
-              ].map(({ label, key, type, placeholder, required }) => (
+                { key: "fullName", type: "text", placeholder: "Full Name", required: true },
+                { key: "workEmail", type: "email", placeholder: "Work Email", required: true },
+                { key: "phone", type: "tel", placeholder: "Phone Number", required: false },
+              ].map(({ key, type, placeholder, required }) => (
                 <div key={key}>
-                  <label className="block text-xs font-medium mb-1.5" style={{ color: "rgba(255,255,255,0.6)" }}>{label}</label>
                   <input
                     type={type}
                     placeholder={placeholder}
@@ -130,7 +129,6 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               ))}
 
               <div>
-                <label className="block text-xs font-medium mb-1.5" style={{ color: "rgba(255,255,255,0.6)" }}>Describe your requirements</label>
                 <textarea
                   placeholder="Describe your requirements"
                   rows={3}
@@ -139,17 +137,6 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                   onChange={(e) => setForm({ ...form, requirements: e.target.value })}
                   style={inputStyle}
                 />
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-5 h-5 rounded border-2 flex items-center justify-center cursor-pointer flex-shrink-0 transition-all"
-                  style={{ borderColor: form.robot ? BRAND.orange : "rgba(255,255,255,0.25)", background: form.robot ? BRAND.orange : "transparent" }}
-                  onClick={() => setForm({ ...form, robot: !form.robot })}
-                >
-                  {form.robot && <span className="text-white" style={{ fontSize: 10, fontWeight: 700 }}>✓</span>}
-                </div>
-                <span className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>I'm not a robot (Captcha verification)</span>
               </div>
 
               <button
