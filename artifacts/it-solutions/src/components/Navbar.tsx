@@ -51,7 +51,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
           {/* Logo */}
           <div
             className="flex items-center gap-3 cursor-pointer select-none"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => { navigate("/"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           >
             <div
               style={{
