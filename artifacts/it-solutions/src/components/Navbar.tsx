@@ -112,13 +112,6 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               </button>
             ))}
             <button
-              onClick={() => { setMenuOpen(false); navigate("/pricing"); }}
-              className="text-sm font-medium transition-opacity hover:opacity-60"
-              style={{ color: BRAND.teal, fontWeight: 600 }}
-            >
-              Pricing
-            </button>
-            <button
               onClick={handleGetStarted}
               className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
               style={{ background: BRAND.orange }}
@@ -160,13 +153,6 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               {item.label}
             </button>
           ))}
-          <button
-            onClick={() => { setMenuOpen(false); navigate("/pricing"); }}
-            className="text-sm font-medium text-left"
-            style={{ color: BRAND.teal, fontWeight: 600 }}
-          >
-            Pricing
-          </button>
           <button onClick={handleGetStarted} className="py-2 rounded-lg text-sm font-semibold text-white text-center" style={{ background: BRAND.orange }}>
             Get In Touch
           </button>
