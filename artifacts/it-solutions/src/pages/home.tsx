@@ -29,8 +29,8 @@ export default function Home() {
       <Navbar onGetStarted={() => setModalOpen(true)} />
       <HeroSection />
       <SlideShowSection />
-      <MESSection />
       <CoreOfferingSection />
+      <MESSection />
       <ECommerceSection />
       <BillingSoftwareSection />
       <FlagshipSection />

@@ -1,3 +1,5 @@
+import MESDashboardImg from "@assets/ChatGPT2_1773752074389.png";
+
 const BRAND = {
   orange: "#F7941D",
   teal: "#009999",
@@ -61,13 +63,9 @@ export default function MESSection() {
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-30" style={{ background: ACCENT }} />
             <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `3px solid rgba(0,153,153,0.25)` }}>
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
+                src={MESDashboardImg}
                 alt="MES Manufacturing Dashboard"
-                className="w-full h-72 object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=600&q=80";
-                }}
+                className="w-full object-cover"
               />
             </div>
             {/* Floating stat card */}
