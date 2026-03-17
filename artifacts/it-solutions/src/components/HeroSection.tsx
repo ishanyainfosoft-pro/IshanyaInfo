@@ -7,7 +7,7 @@ const BRAND = {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "78vh" }}>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
