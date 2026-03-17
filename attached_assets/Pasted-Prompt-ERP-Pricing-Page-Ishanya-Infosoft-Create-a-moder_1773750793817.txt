@@ -1,0 +1,191 @@
+Prompt – ERP Pricing Page (Ishanya Infosoft)
+
+Create a modern, premium ERP Pricing page similar to the reference design, but customized for Ishanya Infosoft branding and business model.
+
+Hero Section (Top Area)
+
+Center-aligned content
+
+Small breadcrumb text:
+
+ERP / PRICING
+
+Main Heading (Large & Bold):
+
+ERP pricing that's straightforward, flexible, and future-ready
+
+Highlight key words using Teal / Wine brand colors
+
+Sub Points (Below Heading)
+
+Add 3 inline highlights with icons or dots:
+
+No hidden charges
+
+One-time cost model
+
+Scalable for growing businesses
+
+Style:
+
+Horizontal layout
+
+Small icons or square bullets
+
+Use Orange / Teal accents
+
+Main Pricing Section Layout
+
+Create a 3-column layout:
+
+Left Panel – Billing Info
+
+Title: Billing Model
+
+Content:
+
+Show:
+
+One-Time Payment
+
+Optional: Custom pricing based on scope
+
+Add toggle UI (optional visual only):
+
+“Standard” / “Custom”
+
+Add small options:
+
+☐ Expand all features
+
+☐ Hide common features
+
+Center Panel – Core Plan
+
+Label: STANDARD SOLUTION
+
+Price:
+
+Example:
+
+₹ Custom Quote
+
+Subtext:
+
+One-time cost based on modules, customization, and deployment scope
+
+Description:
+
+Ideal for MSMEs and manufacturing businesses looking for a complete ERP system without recurring subscription costs.
+
+Button:
+
+“Request Quote”
+
+Right Panel – Advanced Plan
+
+Label: ADVANCED / ENTERPRISE
+
+No fixed price:
+
+Contact for Pricing
+
+Description:
+
+Designed for large-scale enterprises requiring advanced integrations, MES capabilities, and multi-plant management.
+
+Button:
+
+“Contact Us”
+
+Design Style (VERY IMPORTANT)
+
+Apply your new design system:
+
+Background:
+
+#E7DCCB (Beige)
+
+Cards:
+
+#F3EBDD (Cream)
+
+Rounded corners (16px)
+
+Soft shadow
+
+Accent:
+
+#D9C4A5
+
+Typography
+
+Headings: Playfair Display
+
+Body: Inter
+
+Text Colors (Use Brand Only)
+
+Teal → Main headings
+
+Wine → Sub headings / emphasis
+
+Orange → Buttons & CTAs
+
+White → On dark buttons
+
+Buttons
+
+Rounded
+
+Orange or Teal background
+
+Hover:
+
+Glow effect
+
+Slight scale (1.05)
+
+Interactions
+
+Smooth hover effects on cards
+
+Slight lift animation on hover
+
+Toggle switch animation (if used)
+
+Scroll reveal animation
+
+Responsiveness
+
+Desktop → 3 columns
+
+Tablet → 2 columns
+
+Mobile → stacked layout
+
+Extra Enhancements
+
+Add subtle gradient overlay in hero section
+
+Soft divider lines using accent color
+
+Maintain clean SaaS + premium feel
+
+Goal
+
+The pricing page should feel:
+
+Premium
+
+Transparent
+
+Professional
+
+Trustworthy
+
+Tailored to ERP business (NOT SaaS subscription heavy)
+
+If you want next step, I can:
+🔥 Convert this into exact pixel-perfect HTML + CSS + JS
+🔥 Or match it exactly with your ERP section UI style

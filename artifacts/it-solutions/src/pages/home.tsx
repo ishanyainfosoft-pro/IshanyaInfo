@@ -31,8 +31,8 @@ export default function Home() {
       <SlideShowSection />
       <MESSection />
       <CoreOfferingSection />
-      <BillingSoftwareSection />
       <ECommerceSection />
+      <BillingSoftwareSection />
       <FlagshipSection />
       <ClientsSection />
       <FAQSection />
