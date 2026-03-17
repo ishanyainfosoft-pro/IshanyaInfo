@@ -5,7 +5,6 @@ const BRAND = {
   teal: "#009999",
   tealDark: "#007a7a",
   wine: "#C1277A",
-  wineDark: "#a01f64",
   gray: "#6D6E71",
   white: "#FFFFFF",
 };
@@ -63,6 +62,9 @@ const faqs = [
   },
 ];
 
+const leftFaqs = faqs.slice(0, 5);
+const rightFaqs = faqs.slice(5, 10);
+
 function formatAnswer(text: string) {
   const lines = text.split("\n");
   return lines.map((line, i) => {
@@ -87,6 +89,7 @@ function formatAnswer(text: string) {
 function AccordionItem({
   faq,
   index,
+  globalIndex,
   isOpen,
   onToggle,
   isVisible,
@@ -94,27 +97,27 @@ function AccordionItem({
 }: {
   faq: { question: string; answer: string };
   index: number;
+  globalIndex: number;
   isOpen: boolean;
   onToggle: () => void;
   isVisible: boolean;
   delay: number;
 }) {
-  const bodyRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
-
   const barBg = isOpen ? BRAND.wine : hovered ? BRAND.wine : BRAND.teal;
 
   return (
     <div
-      className={`rounded-xl overflow-hidden transition-all duration-700`}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateY(0)" : "translateY(24px)",
-        transitionDelay: `${delay}ms`,
+        transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
+        borderRadius: 12,
+        overflow: "hidden",
+        marginBottom: 10,
         boxShadow: isOpen
           ? "0 8px 28px rgba(193,39,122,0.18)"
-          : "0 2px 12px rgba(0,153,153,0.12)",
-        marginBottom: 10,
+          : "0 2px 10px rgba(0,153,153,0.10)",
       }}
     >
       {/* Question bar */}
@@ -122,41 +125,41 @@ function AccordionItem({
         onClick={onToggle}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="w-full flex items-center justify-between gap-4 text-left"
+        className="w-full flex items-center justify-between gap-3 text-left"
         style={{
           background: barBg,
           color: BRAND.white,
-          padding: "18px 24px",
+          padding: "16px 20px",
           border: "none",
           outline: "none",
           cursor: "pointer",
           transition: "background 0.3s ease",
           fontFamily: "'Inter', sans-serif",
           fontWeight: 700,
-          fontSize: "1rem",
-          lineHeight: 1.4,
+          fontSize: "0.9rem",
+          lineHeight: 1.45,
           borderRadius: isOpen ? "12px 12px 0 0" : "12px",
         }}
       >
         <span style={{ flex: 1 }}>
-          {index + 1}. {faq.question}
+          {globalIndex + 1}. {faq.question}
         </span>
 
         {/* Icon */}
         <span
           style={{
             flexShrink: 0,
-            width: 28,
-            height: 28,
+            width: 26,
+            height: 26,
             borderRadius: "50%",
             background: "rgba(247,148,29,0.25)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "1.25rem",
+            fontSize: "1.1rem",
             fontWeight: 900,
             color: BRAND.orange,
-            transition: "transform 0.35s ease, background 0.3s ease",
+            transition: "transform 0.35s ease",
             transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
             lineHeight: 1,
           }}
@@ -165,11 +168,10 @@ function AccordionItem({
         </span>
       </button>
 
-      {/* Answer panel — max-height transition */}
+      {/* Answer panel */}
       <div
-        ref={bodyRef}
         style={{
-          maxHeight: isOpen ? "600px" : "0px",
+          maxHeight: isOpen ? "500px" : "0px",
           overflow: "hidden",
           transition: "max-height 0.4s ease-in-out",
         }}
@@ -177,11 +179,11 @@ function AccordionItem({
         <div
           style={{
             background: `linear-gradient(160deg, ${BRAND.tealDark} 0%, #006666 100%)`,
-            padding: "20px 24px 24px",
+            padding: "18px 20px 22px",
             borderRadius: "0 0 12px 12px",
             color: BRAND.white,
             fontFamily: "'Inter', sans-serif",
-            fontSize: "0.95rem",
+            fontSize: "0.88rem",
             lineHeight: 1.75,
             animation: isOpen ? "faqFadeIn 0.35s ease-out" : "none",
           }}
@@ -193,8 +195,40 @@ function AccordionItem({
   );
 }
 
+function AccordionColumn({
+  items,
+  startIndex,
+  isVisible,
+  baseDelay,
+}: {
+  items: typeof faqs;
+  startIndex: number;
+  isVisible: boolean;
+  baseDelay: number;
+}) {
+  const [openIndex, setOpenIndex] = useState<number | null>(startIndex === 0 ? 0 : null);
+
+  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+
+  return (
+    <div>
+      {items.map((faq, i) => (
+        <AccordionItem
+          key={i}
+          faq={faq}
+          index={i}
+          globalIndex={startIndex + i}
+          isOpen={openIndex === i}
+          onToggle={() => toggle(i)}
+          isVisible={isVisible}
+          delay={baseDelay + i * 60}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -206,13 +240,11 @@ export default function FAQSection() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <section
@@ -225,10 +257,8 @@ export default function FAQSection() {
       <div
         className="absolute pointer-events-none"
         style={{
-          top: "5%",
-          right: "-6%",
-          width: 340,
-          height: 340,
+          top: "5%", right: "-6%",
+          width: 340, height: 340,
           borderRadius: "50%",
           background: BRAND.teal,
           opacity: 0.04,
@@ -238,10 +268,8 @@ export default function FAQSection() {
       <div
         className="absolute pointer-events-none"
         style={{
-          bottom: "5%",
-          left: "-6%",
-          width: 280,
-          height: 280,
+          bottom: "5%", left: "-6%",
+          width: 280, height: 280,
           borderRadius: "50%",
           background: BRAND.wine,
           opacity: 0.05,
@@ -249,7 +277,7 @@ export default function FAQSection() {
         }}
       />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <div
           className="text-center mb-12"
@@ -281,7 +309,7 @@ export default function FAQSection() {
             Everything you need to know about our ERP &amp; MES solutions.
           </p>
 
-          {/* Decorative accent line */}
+          {/* Accent line */}
           <div className="flex justify-center mt-5 gap-1">
             <div style={{ width: 48, height: 3, borderRadius: 2, background: BRAND.teal }} />
             <div style={{ width: 12, height: 3, borderRadius: 2, background: BRAND.orange }} />
@@ -289,19 +317,22 @@ export default function FAQSection() {
           </div>
         </div>
 
-        {/* Accordion list */}
-        <div>
-          {faqs.map((faq, i) => (
-            <AccordionItem
-              key={i}
-              faq={faq}
-              index={i}
-              isOpen={openIndex === i}
-              onToggle={() => toggle(i)}
-              isVisible={isVisible}
-              delay={80 + i * 40}
-            />
-          ))}
+        {/* Two-column accordion grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          {/* Left — Q1–Q5 */}
+          <AccordionColumn
+            items={leftFaqs}
+            startIndex={0}
+            isVisible={isVisible}
+            baseDelay={80}
+          />
+          {/* Right — Q6–Q10 */}
+          <AccordionColumn
+            items={rightFaqs}
+            startIndex={5}
+            isVisible={isVisible}
+            baseDelay={140}
+          />
         </div>
 
         {/* Footer note */}
