@@ -8,13 +8,6 @@ const BRAND = {
 
 const softwareProducts = [
   {
-    title: "Billing Software",
-    features: ["Seamless invoicing", "Payment Tracking", "Stock Tracking", "User friendly interface", "Highly Scalable"],
-    icon: "🧾",
-    color: BRAND.orange,
-    bg: "rgba(247,148,29,0.09)",
-  },
-  {
     title: "E-Commerce Platform",
     features: ["Product listing & Management", "Promotions & Scheme engines", "Seller's Customized Store", "Advanced Cart Management", "WhatsApp Integration"],
     icon: "🛒",
