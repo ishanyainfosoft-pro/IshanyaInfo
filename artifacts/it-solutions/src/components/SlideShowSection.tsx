@@ -49,7 +49,7 @@ export default function SlideShowSection() {
   return (
     <section
       className="w-full flex items-center justify-center relative overflow-hidden"
-      style={{ background: "transparent", paddingTop: 0, paddingBottom: 0, marginTop: -80 }}
+      style={{ background: "transparent", paddingTop: 0, paddingBottom: 0, marginTop: -200 }}
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
     >
