@@ -30,12 +30,7 @@ export default function FlagshipSection() {
     <section id="flagship" className="py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "rgba(193,39,122,0.1)", color: BRAND.wine }}
-          >
-            Flagship Product
-          </span>
+
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
