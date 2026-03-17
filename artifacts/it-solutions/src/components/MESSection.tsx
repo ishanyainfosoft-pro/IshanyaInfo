@@ -24,40 +24,8 @@ export default function MESSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left — image */}
-          <div className="relative order-1">
-            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-30" style={{ background: ACCENT }} />
-
-            <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `3px solid rgba(0,153,153,0.25)` }}>
-              <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
-                alt="MES Manufacturing Dashboard"
-                className="w-full h-72 object-cover"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=600&q=80";
-                }}
-              />
-            </div>
-
-            {/* Floating stat card */}
-            <div
-              className="absolute -bottom-6 -right-4 sm:-right-8 rounded-2xl px-6 py-4 shadow-2xl"
-              style={{ background: ACCENT, color: "#ffffff" }}
-            >
-              <div className="flex items-center gap-3">
-                <div>
-                  <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>+40%</div>
-                  <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.85)" }}>Productivity</div>
-                </div>
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)" }}>🏭</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right — text */}
-          <div className="order-2">
-
+          {/* Left — text */}
+          <div>
             <h2
               className="text-3xl sm:text-4xl font-bold mb-4"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: ACCENT }}
@@ -85,6 +53,35 @@ export default function MESSection() {
                   {f}
                 </span>
               ))}
+            </div>
+          </div>
+
+          {/* Right — image */}
+          <div className="relative">
+            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-30" style={{ background: ACCENT }} />
+            <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `3px solid rgba(0,153,153,0.25)` }}>
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"
+                alt="MES Manufacturing Dashboard"
+                className="w-full h-72 object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=600&q=80";
+                }}
+              />
+            </div>
+            {/* Floating stat card */}
+            <div
+              className="absolute -bottom-6 -right-4 sm:-right-8 rounded-2xl px-6 py-4 shadow-2xl"
+              style={{ background: ACCENT, color: "#ffffff" }}
+            >
+              <div className="flex items-center gap-3">
+                <div>
+                  <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>+40%</div>
+                  <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.85)" }}>Productivity</div>
+                </div>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)" }}>🏭</div>
+              </div>
             </div>
           </div>
 
