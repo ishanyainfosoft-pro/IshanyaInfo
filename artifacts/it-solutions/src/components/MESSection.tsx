@@ -28,7 +28,7 @@ export default function MESSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(135deg, #7a1549 0%, #C1277A 50%, #e0459a 100%)",
+          background: "linear-gradient(135deg, #280818 0%, #7a1549 50%, #C1277A 100%)",
         }}
       />
 

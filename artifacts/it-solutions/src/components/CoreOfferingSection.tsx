@@ -19,7 +19,7 @@ export default function CoreOfferingSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(135deg, #005f5f 0%, #009999 50%, #00cccc 100%)",
+          background: "linear-gradient(135deg, #001f1f 0%, #005f5f 50%, #009999 100%)",
         }}
       />
 

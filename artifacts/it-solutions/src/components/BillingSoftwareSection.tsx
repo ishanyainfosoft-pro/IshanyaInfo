@@ -32,7 +32,7 @@ export default function BillingSoftwareSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "linear-gradient(135deg, #b85e00 0%, #F7941D 50%, #ffb84d 100%)",
+          background: "linear-gradient(135deg, #3d1e00 0%, #b85e00 50%, #F7941D 100%)",
         }}
       />
 
