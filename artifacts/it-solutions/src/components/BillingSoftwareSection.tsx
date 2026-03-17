@@ -1,3 +1,5 @@
+import BillingDashboard from "@assets/ChatGPT6_1773735384919.png";
+
 const BRAND = {
   orange: "#F7941D",
   teal: "#009999",
@@ -58,7 +60,7 @@ export default function BillingSoftwareSection() {
 
             <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `3px solid rgba(0,153,153,0.2)` }}>
               <img
-                src={require("@assets/ChatGPT6_1773735384919.png")}
+                src={BillingDashboard}
                 alt="Billing Software Dashboard"
                 className="w-full h-auto object-cover"
               />
