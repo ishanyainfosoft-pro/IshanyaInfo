@@ -1,0 +1,83 @@
+FAQ – Customized ERP Solution | Ishanya Infosoft
+1. Is the ERP system already pre-built, tested and suitable for our application?
+Our ERP system is a customized solution designed around the specific needs of each client. However, many general-purpose modules are already pre-built and thoroughly tested, based on our experience across multiple industries.
+During implementation, these proven modules are adapted and integrated with client-specific workflows, ensuring faster deployment while still meeting your unique business requirements.
+________________________________________
+2. Is the ERP system easy to use for shop-floor and office teams?
+Yes. Our ERP system is designed to be simple, practical and user-friendly, especially considering the working environment of MSME organizations and manufacturing teams.
+We focus on:
+•	Simple screens and intuitive navigation
+•	Minimal data entry effort
+•	Practical workflows aligned with real shop-floor processes
+•	Quick training for operators, supervisors and office staff
+This ensures smooth adoption by users and faster system deployment.
+________________________________________
+3. Can our existing records, forms and processes continue in the new system?
+Yes. Our approach is to adapt the ERP system to your existing processes wherever practical, instead of forcing you to change everything.
+We can incorporate:
+•	Existing business forms
+•	Standard reports
+•	Current approval workflows
+•	Existing operational processes
+At the same time, we help streamline and digitize processes where improvements are beneficial.
+________________________________________
+4. Can the ERP be customized according to our business process?
+Yes. The ERP is fully customizable and designed as a modular system.
+This allows us to configure the system to match:
+•	Your operational workflows
+•	Industry-specific requirements
+•	Management reporting needs
+•	Customer-specific documentation
+This flexibility ensures the ERP works exactly the way your business operates.
+________________________________________
+5. Can the ERP support multiple plants, branches or users?
+Yes. The system supports multi-user, multi-plant and multi-site operations.
+As your business grows, the ERP can scale to manage:
+•	Multiple manufacturing plants
+•	Multiple warehouses or offices
+•	Large number of users across departments
+This ensures the system remains future-ready and scalable as your business expands.
+________________________________________
+6. Can the ERP integrate with our existing software or systems?
+Yes. Our ERP supports integration with a wide range of systems, including:
+•	Tally Accounting Software
+•	SAP / SAP S4 HANA
+•	SCADA or machine data systems
+•	Barcode / QR code systems
+•	WhatsApp integration
+•	Email and SMS alerts
+We can also integrate with other existing business software or customer portals, ensuring seamless data flow across systems.
+________________________________________
+7. How does the ERP help improve manufacturing productivity?
+Our ERP includes Smart Production and MES capabilities that help manufacturers monitor and optimize operations.
+Key features include:
+•	Production planning and scheduling
+•	Machine performance monitoring
+•	Productivity tracking
+•	Downtime monitoring
+•	Quality control and traceability
+This enables management to identify bottlenecks, improve efficiency and make data-driven decisions.
+________________________________________
+8. How secure is our business data in the ERP system?
+Data security and ownership are very important for our clients.
+For maximum control and security, we generally recommend and implement on-premise servers at the client’s location, ensuring that data ownership remains fully with the client.
+However, cloud deployment is also possible if the client prefers cloud-based infrastructure.
+________________________________________
+9. What is the pricing model for the ERP system?
+We charge all-inclusive one-time fees for development and deployment, based on the scope and terms defined in the contract.
+This pricing typically covers:
+•	System design and development
+•	Customization
+•	Deployment and implementation
+•	User training
+This model provides cost transparency and avoids recurring subscription costs.
+________________________________________
+10. What support does Ishanya Infosoft provide after implementation?
+We provide reliable after-sales service and long-term support to ensure smooth system operation.
+Our support includes:
+•	ERP implementation and training
+•	System customization and enhancements
+•	Technical support and troubleshooting
+•	Continuous improvement and upgrades
+Our objective is to be a long-term digital transformation partner for our clients.
+

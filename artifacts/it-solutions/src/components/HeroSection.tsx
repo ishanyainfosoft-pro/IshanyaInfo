@@ -46,6 +46,16 @@ export default function HeroSection() {
         style={{ background: BRAND.teal, opacity: 0.06 }}
       />
 
+      {/* Blend gradient to slideshow section */}
+      <div
+        className="absolute bottom-0 left-0 right-0"
+        style={{
+          height: "200px",
+          background: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(247,148,29,0.08) 33%, rgba(0,153,153,0.08) 66%, rgba(193,39,122,0.08) 100%)`,
+          pointerEvents: "none",
+        }}
+      />
+
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Chips */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
