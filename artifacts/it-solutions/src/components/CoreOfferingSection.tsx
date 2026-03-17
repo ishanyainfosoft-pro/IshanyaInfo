@@ -10,30 +10,52 @@ const features = ["Multi User + Multi Plant", "Simple, User Friendly", "Bar Code
 
 export default function CoreOfferingSection() {
   return (
-    <section id="core-offering" className="py-10 sm:py-14" style={{ background: BRAND.teal }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="core-offering"
+      className="py-14 sm:py-20 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #007a7a 0%, #009999 45%, #00b3b3 100%)",
+      }}
+    >
+      {/* Subtle background glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.07) 0%, transparent 60%)",
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ background: "rgba(255,255,255,0.2)", color: BRAND.white }}
+              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
+              style={{ background: "rgba(255,255,255,0.15)", color: BRAND.white, backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)" }}
             >
               Core Offering
             </span>
             <h2
-              className="text-3xl sm:text-4xl font-bold mb-4"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
             >
               Customized{" "}
-              <span style={{ color: BRAND.orange }}>ERP </span> Solutions
+              <span style={{ color: BRAND.orange }}>ERP</span>{" "}Solutions
             </h2>
-            <p className="mb-8 leading-relaxed" style={{ color: "rgba(255,255,255,0.85)" }}>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.82)" }}>
               Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
             </p>
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-2.5 mb-8">
               {features.map((f, i) => (
-                <span key={i} className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium"
-                  style={{ background: "rgba(255,255,255,0.18)", color: BRAND.white, border: "1px solid rgba(255,255,255,0.3)", boxShadow: "0 1px 3px rgba(0,0,0,0.1)" }}>
+                <span
+                  key={i}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-white/25"
+                  style={{
+                    background: "rgba(255,255,255,0.12)",
+                    color: BRAND.white,
+                    border: "1px solid rgba(255,255,255,0.22)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
                   <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
                   {f}
                 </span>
@@ -41,11 +63,17 @@ export default function CoreOfferingSection() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative pb-8">
             {/* Decorative block */}
-            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-30" style={{ background: BRAND.white }} />
+            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.white }} />
 
-            <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: "3px solid rgba(255,255,255,0.3)" }}>
+            <div
+              className="rounded-2xl overflow-hidden"
+              style={{
+                border: "2px solid rgba(255,255,255,0.25)",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05)",
+              }}
+            >
               <img
                 src="https://pdf-text-extractor--aviratk.replit.app/src/assets/images/success-1.jpg"
                 alt="ERP Dashboard"
@@ -56,15 +84,18 @@ export default function CoreOfferingSection() {
 
             {/* Floating stat card */}
             <div
-              className="absolute -bottom-6 -right-4 sm:-right-8 rounded-2xl px-6 py-4 shadow-2xl"
-              style={{ background: BRAND.white, color: BRAND.teal }}
+              className="absolute -bottom-2 -right-4 sm:-right-6 rounded-2xl px-6 py-4"
+              style={{
+                background: BRAND.white,
+                boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
+              }}
             >
               <div className="flex items-center gap-3">
                 <div>
                   <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: BRAND.teal }}>+34%</div>
-                  <div className="text-xs mt-0.5" style={{ color: BRAND.gray }}>Efficiency</div>
+                  <div className="text-xs mt-0.5 font-medium" style={{ color: BRAND.gray }}>Efficiency Gain</div>
                 </div>
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(0,153,153,0.1)" }}>📈</div>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(0,153,153,0.12)" }}>📈</div>
               </div>
             </div>
           </div>
