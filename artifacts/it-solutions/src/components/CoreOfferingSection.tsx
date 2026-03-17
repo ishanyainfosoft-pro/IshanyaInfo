@@ -25,16 +25,7 @@ export default function CoreOfferingSection() {
 
           {/* Left — text */}
           <div>
-            <span
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{
-                background: "rgba(0,153,153,0.12)",
-                color: BRAND.teal,
-                border: "1px solid rgba(0,153,153,0.28)",
-              }}
-            >
-              Core Offering
-            </span>
+
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
