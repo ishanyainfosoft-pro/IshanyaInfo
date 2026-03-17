@@ -132,7 +132,7 @@ export default function ContactSection() {
                     fontSize: "14px",
                     fontWeight: "bold",
                   }}
-                >
+                  className="bg-[#009999]">
                   {link.icon}
                 </span>
               </a>
