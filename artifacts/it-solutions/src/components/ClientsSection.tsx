@@ -23,7 +23,7 @@ export default function ClientsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>
-          Our Esteemed{" "}<span style={{ color: BRAND.orange }}>Clients</span>
+          <span style={{ color: BRAND.orange }}>Our Esteemed Clients</span>
         </h2>
       </div>
 

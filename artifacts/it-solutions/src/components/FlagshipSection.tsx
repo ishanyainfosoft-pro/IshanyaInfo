@@ -35,8 +35,7 @@ export default function FlagshipSection() {
             className="text-3xl sm:text-4xl font-bold mb-4"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
           >
-            Customer{" "}
-            <span style={{ color: BRAND.wine }}>Complaints</span> Processing System
+            <span style={{ color: BRAND.wine }}>Customer Complaints Processing System</span>
           </h2>
           <p className="max-w-2xl mx-auto" style={{ color: BRAND.gray }}>
             Successfully developed and deployed a fully customized, end-to-end processing system for a reputed multinational client.
