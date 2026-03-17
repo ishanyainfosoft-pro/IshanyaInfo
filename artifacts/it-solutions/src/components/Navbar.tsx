@@ -86,7 +86,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 letterSpacing: "-0.02em",
                 color: "#1a1a1a",
               }}
-            >
+              className="text-[29px]">
               Ishanya Infosoft
             </span>
           </div>
@@ -137,7 +137,6 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
           </button>
         </div>
       </div>
-
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4" style={{ borderColor: "#f0f0f0" }}>
