@@ -9,6 +9,7 @@ import MESSection from "@/components/MESSection";
 import FlagshipSection from "@/components/FlagshipSection";
 import MoreOfferingsSection from "@/components/MoreOfferingsSection";
 import ClientsSection from "@/components/ClientsSection";
+import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import ContactModal from "@/components/ContactModal";
 import Footer from "@/components/Footer";
@@ -28,6 +29,7 @@ export default function Home() {
       <FlagshipSection />
       <MoreOfferingsSection />
       <ClientsSection />
+      <FAQSection />
       <ContactSection />
       <Footer />
       <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />

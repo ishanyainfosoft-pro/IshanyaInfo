@@ -1,0 +1,132 @@
+Create a modern, interactive FAQ section that appears immediately below the Client Section on the Ishanya Infosoft website.
+
+Layout Structure
+
+The section should be full-width and well-spaced from the Client Section above.
+
+Use a two-column layout:
+
+Left Side (Questions Panel)
+
+Display 10 FAQ questions in a vertical list.
+
+Each question should be:
+
+Styled as a rounded card / pill button
+
+Clearly readable
+
+Add a highlight effect for the active/hovered question
+
+Right Side (Answer Panel)
+
+Show the corresponding answer dynamically
+
+Only one answer visible at a time
+
+The answer should appear inside a:
+
+Clean card box
+
+With smooth animation
+
+Interaction (Important)
+
+When the user hovers over a question:
+
+The corresponding answer should:
+
+Fade in + slight slide (right → left or bottom → top)
+
+The previous answer should fade out smoothly
+
+Transition timing: 0.3s–0.5s ease-in-out
+
+Also support:
+
+Click interaction for mobile users (accordion style)
+
+Design Style (Strictly Brand Colors)
+
+Use only:
+
+Teal → hover, highlights
+
+Wine → active state / selection
+
+Orange → icons / small accents
+
+White → background & readability
+
+Visual Enhancements
+Left Side
+
+Rounded corners
+
+Soft shadows
+
+Hover glow (Teal/Wine mix)
+
+Optional vertical active indicator line
+
+Right Side
+
+Light gradient background (Teal → White)
+
+Soft shadow for depth
+
+Smooth text animation
+
+Proper padding for readability
+
+Content Handling
+
+Use the 10 FAQ questions and answers provided
+
+Format answers with:
+
+Paragraphs
+
+Bullet points where required
+
+Clean spacing
+
+Advanced UI Effects
+
+Add scroll reveal animation when this section enters viewport
+
+Subtle background gradient or abstract shapes using brand colors
+
+Smooth and premium feel (no harsh animations)
+
+Responsiveness
+
+Desktop: Two-column layout
+
+Tablet/Mobile:
+
+Stack layout
+
+Questions on top
+
+Answers below (tap to open)
+
+Spacing Requirement
+
+Add proper margin-top so it clearly appears separated below Client Section
+
+Maintain consistent spacing with rest of website sections
+
+Goal
+
+The section should feel:
+
+Premium
+
+Interactive
+
+Smooth
+
+Easy to explore
+
+Visually aligned with ERP & MES design style

@@ -1,0 +1,127 @@
+Create a modern, interactive FAQ section for the “Customized ERP Solution” page with a two-column layout and smooth hover interaction.
+
+Layout Structure
+
+The section should be full-width and responsive.
+
+Divide into two sides:
+
+Left Side (Questions Panel)
+
+Display 10 FAQ questions in a vertical list.
+
+Each question should appear as a rounded card or pill-style button.
+
+Highlight the active/hovered question.
+
+Right Side (Answer Panel)
+
+Show the corresponding answer dynamically.
+
+Only one answer visible at a time.
+
+Content should appear in a smooth animated paragraph box.
+
+Interaction (Important)
+
+When user hovers over a question:
+
+The corresponding answer should fade/slide in smoothly on the right side.
+
+Previous answer should fade out gracefully.
+
+Add soft transition (0.3s–0.5s ease-in-out).
+
+Optional:
+
+Also support click for mobile devices.
+
+Design Style
+
+Use company brand colors only:
+
+Teal → primary highlights & hover state
+
+Wine → active selection / accents
+
+Orange → icons / subtle emphasis
+
+White → background & text contrast
+
+Visual Elements
+
+Left questions:
+
+Rounded corners
+
+Soft shadows
+
+Hover glow effect (Teal/Wine)
+
+Right answer box:
+
+Clean card design
+
+Light gradient background (very subtle Teal → White)
+
+Smooth text animation
+
+Content (Use this exact FAQ data)
+
+Include all 10 questions and answers provided:
+
+Pre-built & tested ERP
+
+Ease of use
+
+Existing processes compatibility
+
+Customization flexibility
+
+Multi-plant & scalability
+
+Integration capabilities
+
+Productivity & MES features
+
+Data security
+
+Pricing model
+
+After-sales support
+
+Format answers with:
+
+Paragraph + bullet points where needed
+
+Proper spacing for readability
+
+Advanced UI Enhancements
+
+Add a vertical progress indicator or highlight bar beside active question
+
+Smooth scroll reveal animation when section enters viewport
+
+Add subtle background gradient or abstract shapes using brand colors
+
+Responsiveness
+
+On desktop → side-by-side layout
+
+On mobile:
+
+Stack layout (Questions on top, Answers below)
+
+Tap to expand/collapse (accordion style)
+
+Goal
+
+The FAQ section should feel:
+
+Premium & interactive
+
+Easy to navigate
+
+Visually aligned with ERP/MES modern UI
+
+Focused on smooth UX and clarity
