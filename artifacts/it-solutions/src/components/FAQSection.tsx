@@ -62,33 +62,22 @@ const faqs = [
   },
 ];
 
-const leftFaqs = faqs.slice(0, 5);
-const rightFaqs = faqs.slice(5, 10);
-
 function formatAnswer(text: string) {
-  const lines = text.split("\n");
-  return lines.map((line, i) => {
+  return text.split("\n").map((line, i) => {
     if (line.startsWith("•")) {
       return (
         <div key={i} className="flex items-start gap-2 mt-1">
-          <span style={{ color: BRAND.orange, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>
-            ›
-          </span>
+          <span style={{ color: BRAND.orange, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>›</span>
           <span>{line.slice(1).trim()}</span>
         </div>
       );
     }
-    return line ? (
-      <p key={i} className="mt-2 first:mt-0">
-        {line}
-      </p>
-    ) : null;
+    return line ? <p key={i} className="mt-2 first:mt-0">{line}</p> : null;
   });
 }
 
 function AccordionItem({
   faq,
-  index,
   globalIndex,
   isOpen,
   onToggle,
@@ -96,7 +85,6 @@ function AccordionItem({
   delay,
 }: {
   faq: { question: string; answer: string };
-  index: number;
   globalIndex: number;
   isOpen: boolean;
   onToggle: () => void;
@@ -104,23 +92,24 @@ function AccordionItem({
   delay: number;
 }) {
   const [hovered, setHovered] = useState(false);
-  const barBg = isOpen ? BRAND.wine : hovered ? BRAND.wine : BRAND.teal;
+  const barBg = isOpen || hovered ? BRAND.wine : BRAND.teal;
 
   return (
     <div
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(24px)",
+        transform: isVisible ? "translateY(0)" : "translateY(20px)",
         transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
         borderRadius: 12,
         overflow: "hidden",
-        marginBottom: 10,
         boxShadow: isOpen
           ? "0 8px 28px rgba(193,39,122,0.18)"
           : "0 2px 10px rgba(0,153,153,0.10)",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {/* Question bar */}
+      {/* Question bar — fixed min-height so all bars are visually consistent */}
       <button
         onClick={onToggle}
         onMouseEnter={() => setHovered(true)}
@@ -139,13 +128,12 @@ function AccordionItem({
           fontSize: "0.9rem",
           lineHeight: 1.45,
           borderRadius: isOpen ? "12px 12px 0 0" : "12px",
+          flex: "none",
         }}
       >
         <span style={{ flex: 1 }}>
           {globalIndex + 1}. {faq.question}
         </span>
-
-        {/* Icon */}
         <span
           style={{
             flexShrink: 0,
@@ -195,56 +183,30 @@ function AccordionItem({
   );
 }
 
-function AccordionColumn({
-  items,
-  startIndex,
-  isVisible,
-  baseDelay,
-}: {
-  items: typeof faqs;
-  startIndex: number;
-  isVisible: boolean;
-  baseDelay: number;
-}) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
-
-  return (
-    <div>
-      {items.map((faq, i) => (
-        <AccordionItem
-          key={i}
-          faq={faq}
-          index={i}
-          globalIndex={startIndex + i}
-          isOpen={openIndex === i}
-          onToggle={() => toggle(i)}
-          isVisible={isVisible}
-          delay={baseDelay + i * 60}
-        />
-      ))}
-    </div>
-  );
-}
-
 export default function FAQSection() {
+  const [openLeft, setOpenLeft] = useState<number | null>(null);
+  const [openRight, setOpenRight] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { setIsVisible(true); observer.unobserve(entry.target); }
       },
       { threshold: 0.06 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const toggleLeft  = (i: number) => setOpenLeft(openLeft === i ? null : i);
+  const toggleRight = (i: number) => setOpenRight(openRight === i ? null : i);
+
+  /* Interleave left[0..4] and right[0..4] into a flat paired array for the grid.
+     Grid is 2-col, so pairs sit on the same CSS row → rows auto-size to the tallest
+     item in that row, keeping both columns horizontally aligned at every step. */
+  const rows = Array.from({ length: 5 }, (_, i) => i);
 
   return (
     <section
@@ -253,29 +215,9 @@ export default function FAQSection() {
       className="w-full py-14 sm:py-20 relative overflow-hidden"
       style={{ background: "transparent" }}
     >
-      {/* Subtle background blobs */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: "5%", right: "-6%",
-          width: 340, height: 340,
-          borderRadius: "50%",
-          background: BRAND.teal,
-          opacity: 0.04,
-          filter: "blur(60px)",
-        }}
-      />
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          bottom: "5%", left: "-6%",
-          width: 280, height: 280,
-          borderRadius: "50%",
-          background: BRAND.wine,
-          opacity: 0.05,
-          filter: "blur(50px)",
-        }}
-      />
+      {/* Background blobs */}
+      <div className="absolute pointer-events-none" style={{ top: "5%", right: "-6%", width: 340, height: 340, borderRadius: "50%", background: BRAND.teal, opacity: 0.04, filter: "blur(60px)" }} />
+      <div className="absolute pointer-events-none" style={{ bottom: "5%", left: "-6%", width: 280, height: 280, borderRadius: "50%", background: BRAND.wine, opacity: 0.05, filter: "blur(50px)" }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
@@ -287,70 +229,61 @@ export default function FAQSection() {
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
-          <p
-            className="text-sm font-semibold tracking-widest uppercase mb-3"
-            style={{ color: BRAND.orange, fontFamily: "'Inter', sans-serif" }}
-          >
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3"
+            style={{ color: BRAND.orange, fontFamily: "'Inter', sans-serif" }}>
             Got Questions?
           </p>
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4 leading-tight"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              letterSpacing: "-0.02em",
-              color: "#1a1a1a",
-            }}
-          >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight"
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>
             Frequently Asked Questions
           </h2>
-          <p
-            className="text-base sm:text-lg max-w-xl mx-auto"
-            style={{ color: BRAND.gray, fontFamily: "'Inter', sans-serif" }}
-          >
+          <p className="text-base sm:text-lg max-w-xl mx-auto"
+            style={{ color: BRAND.gray, fontFamily: "'Inter', sans-serif" }}>
             Everything you need to know about our ERP &amp; MES solutions.
           </p>
-
-          {/* Accent line */}
           <div className="flex justify-center mt-5 gap-1">
             <div style={{ width: 48, height: 3, borderRadius: 2, background: BRAND.teal }} />
             <div style={{ width: 12, height: 3, borderRadius: 2, background: BRAND.orange }} />
-            <div style={{ width: 6, height: 3, borderRadius: 2, background: BRAND.wine }} />
+            <div style={{ width: 6,  height: 3, borderRadius: 2, background: BRAND.wine }} />
           </div>
         </div>
 
-        {/* Two-column accordion grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Left — Q1–Q5 */}
-          <AccordionColumn
-            items={leftFaqs}
-            startIndex={0}
-            isVisible={isVisible}
-            baseDelay={80}
-          />
-          {/* Right — Q6–Q10 */}
-          <AccordionColumn
-            items={rightFaqs}
-            startIndex={5}
-            isVisible={isVisible}
-            baseDelay={140}
-          />
+        {/*
+          Single CSS grid — 2 equal columns, items placed L then R per row.
+          Each row height = tallest item in that row → perfect horizontal alignment.
+        */}
+        <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 24px", alignItems: "start" }}>
+          {rows.map((i) => (
+            <>
+              {/* Left item (Q1–Q5) */}
+              <AccordionItem
+                key={`l${i}`}
+                faq={faqs[i]}
+                globalIndex={i}
+                isOpen={openLeft === i}
+                onToggle={() => toggleLeft(i)}
+                isVisible={isVisible}
+                delay={80 + i * 55}
+              />
+              {/* Right item (Q6–Q10) */}
+              <AccordionItem
+                key={`r${i}`}
+                faq={faqs[i + 5]}
+                globalIndex={i + 5}
+                isOpen={openRight === i}
+                onToggle={() => toggleRight(i)}
+                isVisible={isVisible}
+                delay={110 + i * 55}
+              />
+            </>
+          ))}
         </div>
 
         {/* Footer note */}
-        <p
-          className="text-center text-sm mt-10"
-          style={{
-            color: BRAND.gray,
-            fontFamily: "'Inter', sans-serif",
-            opacity: isVisible ? 1 : 0,
-            transition: "opacity 1s ease 1s",
-          }}
-        >
+        <p className="text-center text-sm mt-10"
+          style={{ color: BRAND.gray, fontFamily: "'Inter', sans-serif", opacity: isVisible ? 1 : 0, transition: "opacity 1s ease 1s" }}>
           Still have questions?{" "}
-          <a
-            href="#contact"
-            style={{ color: BRAND.teal, fontWeight: 600, textDecoration: "underline" }}
-          >
+          <a href="#contact" style={{ color: BRAND.teal, fontWeight: 600, textDecoration: "underline" }}>
             Contact our team
           </a>{" "}
           — we're happy to help.
@@ -361,6 +294,9 @@ export default function FAQSection() {
         @keyframes faqFadeIn {
           from { opacity: 0; transform: translateY(-6px); }
           to   { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 639px) {
+          #faq .faq-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
