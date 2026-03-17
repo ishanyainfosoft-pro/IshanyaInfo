@@ -120,22 +120,6 @@ export default function FAQSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
-            {/* Active Question Number Display */}
-            <div className="mb-8">
-              <div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl font-bold text-4xl"
-                style={{
-                  background: `linear-gradient(135deg, ${BRAND.teal}, ${BRAND.orange})`,
-                  color: BRAND.white,
-                }}
-              >
-                {activeIndex + 1}
-              </div>
-              <p className="mt-3 text-sm font-semibold" style={{ color: BRAND.gray }}>
-                Question {activeIndex + 1} of {faqs.length}
-              </p>
-            </div>
-
             <div className="space-y-3">
               {faqs.map((faq, i) => (
                 <button
