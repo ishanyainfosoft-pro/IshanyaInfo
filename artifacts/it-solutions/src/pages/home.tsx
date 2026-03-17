@@ -8,7 +8,7 @@ import CoreOfferingSection from "@/components/CoreOfferingSection";
 import BillingSoftwareSection from "@/components/BillingSoftwareSection";
 import ECommerceSection from "@/components/ECommerceSection";
 import FlagshipSection from "@/components/FlagshipSection";
-import MoreOfferingsSection from "@/components/MoreOfferingsSection";
+
 import ClientsSection from "@/components/ClientsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
@@ -29,7 +29,7 @@ export default function Home() {
       <BillingSoftwareSection />
       <ECommerceSection />
       <FlagshipSection />
-      <MoreOfferingsSection />
+
       <ClientsSection />
       <FAQSection />
       <ContactSection />
