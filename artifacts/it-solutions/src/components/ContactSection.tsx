@@ -26,7 +26,7 @@ const contactItems = [
 const socialLinks = [
   { icon: "in", label: "LinkedIn", href: "https://www.linkedin.com/company/ishanya-infosoft" },
   { icon: "f", label: "Facebook", href: "https://www.facebook.com/ishanyainfosoft" },
-  { icon: "▶", label: "YouTube", href: "https://www.youtube.com/@ishanyainfosoft" },
+  { icon: "🎥", label: "YouTube", href: "https://www.youtube.com/@ishanyainfosoft" },
 ];
 
 export default function ContactSection() {
