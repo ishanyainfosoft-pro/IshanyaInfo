@@ -141,7 +141,7 @@ export default function SlideShowSection() {
               style={{
                 width: i === current ? "36px" : "10px",
                 height: "10px",
-                background: i === current ? BRAND.orange : "rgba(255,255,255,0.3)",
+                background: i === current ? BRAND.orange : "rgba(0,0,0,0.18)",
               }}
               aria-label={`Go to slide ${i + 1}`}
             />

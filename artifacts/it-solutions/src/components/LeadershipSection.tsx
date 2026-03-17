@@ -6,7 +6,6 @@ const BRAND = {
   teal: "#009999",
   wine: "#C1277A",
   gray: "#6D6E71",
-  white: "#FFFFFF",
 };
 
 const leaders = [
@@ -45,7 +44,7 @@ export default function LeadershipSection() {
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
           >
             A <span style={{ color: BRAND.orange }}>Trusted Software Solution</span> Provider Since 2010
           </h2>
@@ -56,7 +55,12 @@ export default function LeadershipSection() {
             <div
               key={i}
               className="rounded-2xl overflow-hidden"
-              style={{ background: "rgba(0,0,0,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
+              style={{
+                background: "rgba(255,255,255,0.55)",
+                border: `1px solid rgba(247,148,29,0.18)`,
+                backdropFilter: "blur(8px)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
+              }}
             >
               <div className="h-1 w-full" style={{ background: leader.accent }} />
               <div className="flex flex-col items-start pt-6 pb-2 px-6">
@@ -68,13 +72,13 @@ export default function LeadershipSection() {
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{leader.name}</h3>
+                <h3 className="text-xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>{leader.name}</h3>
                 <p className="text-sm mt-1 mb-2" style={{ color: leader.accent }}>{leader.role}</p>
               </div>
               <div className="p-6 pt-2">
                 <ul className="mb-5 space-y-2">
                   {leader.points.map((p, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "#555555" }}>
                       <span className="mt-0.5 flex-shrink-0" style={{ color: leader.accent }}>▸</span>
                       {p}
                     </li>
@@ -84,7 +88,7 @@ export default function LeadershipSection() {
                 <div className="flex flex-wrap gap-2">
                   {leader.tags.map((tag, k) => (
                     <span key={k} className="px-2.5 py-1 rounded-md text-xs font-medium"
-                      style={{ background: `${leader.accent}20`, color: leader.accent, border: `1px solid ${leader.accent}35` }}>
+                      style={{ background: `${leader.accent}18`, color: leader.accent, border: `1px solid ${leader.accent}40` }}>
                       {tag}
                     </span>
                   ))}
@@ -95,8 +99,8 @@ export default function LeadershipSection() {
         </div>
 
         <h2
-          className="sm:text-3xl font-bold text-white text-center mb-4 text-[25px]"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
+          className="sm:text-3xl font-bold text-center mb-4 text-[25px]"
+          style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
         >
           Our Team Of{" "}
           <span style={{ color: BRAND.orange }}>Subject Matter Experts</span>
@@ -105,7 +109,7 @@ export default function LeadershipSection() {
         <div className="flex flex-wrap justify-center gap-3">
           {additionalTeam.map((role, i) => (
             <div key={i} className="px-5 py-2.5 rounded-xl text-sm font-medium"
-              style={{ background: "rgba(247,148,29,0.1)", border: "1px solid rgba(247,148,29,0.18)", color: BRAND.white }}>
+              style={{ background: "rgba(255,255,255,0.55)", border: "1px solid rgba(247,148,29,0.22)", color: "#333333", backdropFilter: "blur(6px)" }}>
               {role}
             </div>
           ))}

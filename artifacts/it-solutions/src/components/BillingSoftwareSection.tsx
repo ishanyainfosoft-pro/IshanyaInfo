@@ -5,7 +5,6 @@ const BRAND = {
   teal: "#009999",
   wine: "#C1277A",
   gray: "#6D6E71",
-  white: "#FFFFFF",
 };
 
 const billingFeatures = [
@@ -33,22 +32,21 @@ export default function BillingSoftwareSection() {
             <span
               className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
               style={{
-                background: "rgba(247,148,29,0.25)",
-                color: BRAND.white,
-                border: "1px solid rgba(247,148,29,0.4)",
-                backdropFilter: "blur(8px)",
+                background: "rgba(247,148,29,0.12)",
+                color: BRAND.orange,
+                border: "1px solid rgba(247,148,29,0.28)",
               }}
             >
               Billing Solutions
             </span>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
+              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
             >
               Customized{" "}
               <span style={{ color: BRAND.orange }}>Billing</span>{" "}Software
             </h2>
-            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.72)" }}>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
               Our customized Billing Software is designed to simplify invoicing, streamline financial operations, and improve accuracy across your business. It offers a complete solution for billing, taxation, reporting, and customer management tailored to your workflow.
             </p>
             <div className="flex flex-wrap gap-2.5 mb-8">
@@ -57,13 +55,13 @@ export default function BillingSoftwareSection() {
                   key={i}
                   className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                   style={{
-                    background: "rgba(247,148,29,0.18)",
-                    color: BRAND.white,
-                    border: "1px solid rgba(247,148,29,0.35)",
+                    background: "rgba(255,255,255,0.6)",
+                    color: "#333333",
+                    border: "1px solid rgba(247,148,29,0.28)",
                     backdropFilter: "blur(6px)",
                   }}
                 >
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.white }} />
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
                   {f}
                 </span>
               ))}
@@ -75,8 +73,8 @@ export default function BillingSoftwareSection() {
             <div
               className="rounded-2xl overflow-hidden"
               style={{
-                border: "2px solid rgba(247,148,29,0.35)",
-                boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(247,148,29,0.15)",
+                border: "2px solid rgba(247,148,29,0.30)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.12), 0 0 30px rgba(247,148,29,0.10)",
               }}
             >
               <img
@@ -87,14 +85,14 @@ export default function BillingSoftwareSection() {
             </div>
             <div
               className="absolute -bottom-2 -right-4 sm:-right-6 rounded-2xl px-6 py-4"
-              style={{ background: BRAND.white, boxShadow: "0 12px 40px rgba(0,0,0,0.3)" }}
+              style={{ background: "#ffffff", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
             >
               <div className="flex items-center gap-3">
                 <div>
                   <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: BRAND.orange }}>+40%</div>
                   <div className="text-xs mt-0.5 font-medium" style={{ color: BRAND.gray }}>Faster Billing</div>
                 </div>
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(247,148,29,0.1)" }}>💰</div>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(247,148,29,0.10)" }}>💰</div>
               </div>
             </div>
           </div>
