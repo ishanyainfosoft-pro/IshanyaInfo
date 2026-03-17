@@ -74,7 +74,7 @@ export default function FAQSection() {
   return (
     <section
       ref={ref}
-      className="w-full py-16 sm:py-20 relative overflow-hidden"
+      className="w-full py-8 sm:py-10 relative overflow-hidden"
       style={{ background: "#FFFFFF" }}
     >
       {/* Background shapes */}
