@@ -27,7 +27,7 @@ const outputs = [
 
 export default function FlagshipSection() {
   return (
-    <section id="flagship" className="py-10 sm:py-14" style={{ background: BRAND.white }}>
+    <section id="flagship" className="py-10 sm:py-14" style={{ background: "linear-gradient(135deg, #d9f2f2 0%, #ffffff 45%, #fce8d0 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span

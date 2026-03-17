@@ -75,7 +75,7 @@ export default function FAQSection() {
     <section
       ref={ref}
       className="w-full py-8 sm:py-10 relative overflow-hidden"
-      style={{ background: "#FFFFFF" }}
+      style={{ background: "linear-gradient(135deg, #d9f2f2 0%, #ffffff 45%, #fce8d0 100%)" }}
     >
       {/* Background shapes */}
       <div

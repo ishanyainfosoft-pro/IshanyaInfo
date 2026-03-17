@@ -19,7 +19,7 @@ export default function ClientsSection() {
   const all = [...clients, ...clients];
 
   return (
-    <section id="clients" className="py-10 sm:py-14 overflow-hidden" style={{ background: BRAND.white }}>
+    <section id="clients" className="py-10 sm:py-14 overflow-hidden" style={{ background: "linear-gradient(135deg, #fce8d0 0%, #ffffff 45%, #d9f2f2 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>
@@ -29,9 +29,9 @@ export default function ClientsSection() {
 
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: `linear-gradient(to right, ${BRAND.white}, transparent)` }} />
+          style={{ background: "linear-gradient(to right, #fce8d0, transparent)" }} />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: `linear-gradient(to left, ${BRAND.white}, transparent)` }} />
+          style={{ background: "linear-gradient(to left, #d9f2f2, transparent)" }} />
 
         <div className="flex gap-6 animate-marquee" style={{ width: "max-content" }}>
           {all.map((client, i) => (
