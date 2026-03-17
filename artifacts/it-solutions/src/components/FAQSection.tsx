@@ -206,7 +206,7 @@ function AccordionColumn({
   isVisible: boolean;
   baseDelay: number;
 }) {
-  const [openIndex, setOpenIndex] = useState<number | null>(startIndex === 0 ? 0 : null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
