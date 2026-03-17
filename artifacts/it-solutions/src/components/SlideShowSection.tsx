@@ -7,7 +7,11 @@ import MESDashboard from "@/assets/MESDashboard.png";
 
 const BRAND = {
   orange: "#F7941D",
+  teal: "#009999",
+  wine: "#C1277A",
+  gray: "#6D6E71",
   white: "#FFFFFF",
+  black: "#000000",
 };
 
 const slides = [
@@ -46,7 +50,7 @@ export default function SlideShowSection() {
     <section
       className="w-full py-4 sm:py-6 flex items-center justify-center relative overflow-hidden"
       style={{
-        background: `linear-gradient(135deg, #000000 0%, #1a3a3a 50%, #000000 100%)`,
+        background: `linear-gradient(135deg, ${BRAND.black} 0%, rgba(247,148,29,0.15) 25%, rgba(0,153,153,0.15) 50%, rgba(193,39,122,0.15) 75%, ${BRAND.black} 100%)`,
       }}
       onMouseEnter={() => setAutoPlay(false)}
       onMouseLeave={() => setAutoPlay(true)}
