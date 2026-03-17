@@ -107,10 +107,9 @@ function AccordionItem({
           : "0 2px 10px rgba(0,153,153,0.10)",
         display: "flex",
         flexDirection: "column",
-        height: "100%",
       }}
     >
-      {/* Question bar — flex:1 so it fills the full row height from the grid */}
+      {/* Question bar — minHeight keeps all bars uniform; expanding one won't affect the paired box */}
       <button
         onClick={onToggle}
         onMouseEnter={() => setHovered(true)}
@@ -120,6 +119,7 @@ function AccordionItem({
           background: barBg,
           color: BRAND.white,
           padding: "16px 20px",
+          minHeight: 76,
           border: "none",
           outline: "none",
           cursor: "pointer",
@@ -129,7 +129,7 @@ function AccordionItem({
           fontSize: "0.9rem",
           lineHeight: 1.45,
           borderRadius: isOpen ? "12px 12px 0 0" : "12px",
-          flex: "1 0 auto",
+          flex: "none",
         }}
       >
         <span style={{ flex: 1 }}>
@@ -253,7 +253,7 @@ export default function FAQSection() {
           Single CSS grid — 2 equal columns, items placed L then R per row.
           Each row height = tallest item in that row → perfect horizontal alignment.
         */}
-        <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 24px", alignItems: "stretch" }}>
+        <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 24px", alignItems: "start" }}>
           {rows.map((i) => (
             <Fragment key={i}>
               {/* Left item (Q1–Q5) */}
