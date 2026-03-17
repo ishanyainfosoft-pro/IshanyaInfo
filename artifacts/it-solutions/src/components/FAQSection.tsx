@@ -296,7 +296,8 @@ export default function FAQSection() {
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4 leading-tight"
             style={{
-              fontFamily: "'Playfair Display', serif",
+              fontFamily: "'Space Grotesk', sans-serif",
+              letterSpacing: "-0.02em",
               color: "#1a1a1a",
             }}
           >
