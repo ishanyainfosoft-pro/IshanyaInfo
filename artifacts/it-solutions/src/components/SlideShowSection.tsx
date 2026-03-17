@@ -61,7 +61,7 @@ export default function SlideShowSection() {
           className="relative rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
           style={{
             aspectRatio: "4/3",
-            background: "#fafafa",
+            background: "#000000",
           }}
         >
           {/* Slides */}
