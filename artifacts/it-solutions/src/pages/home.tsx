@@ -31,6 +31,7 @@ export default function Home() {
       <SlideShowSection />
       <CoreOfferingSection />
       <MESSection />
+      <div style={{ height: 80 }} />
       <ECommerceSection />
       <BillingSoftwareSection />
       <FlagshipSection />
