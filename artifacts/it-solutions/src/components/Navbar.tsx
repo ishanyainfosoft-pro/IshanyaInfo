@@ -117,7 +117,23 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 fontSize: "18px",
               }}
             >
-              {isDark ? "☀️" : "🌙"}
+              {isDark ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="5" fill="#F7941D" stroke="#F7941D" strokeWidth="0.5"/>
+                  <line x1="12" y1="2" x2="12" y2="5" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="12" y1="19" x2="12" y2="22" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="2" y1="12" x2="5" y2="12" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="19" y1="12" x2="22" y2="12" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="19.78" y1="4.22" x2="17.66" y2="6.34" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="6.34" y1="17.66" x2="4.22" y2="19.78" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              ) : (
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="#009999" stroke="#009999" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )}
             </button>
 
             <button
@@ -136,10 +152,25 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               className="w-8 h-8 rounded-full flex items-center justify-center"
               style={{
                 background: isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.07)",
-                fontSize: "16px",
               }}
             >
-              {isDark ? "☀️" : "🌙"}
+              {isDark ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="5" fill="#F7941D"/>
+                  <line x1="12" y1="2" x2="12" y2="5" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="12" y1="19" x2="12" y2="22" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="2" y1="12" x2="5" y2="12" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="19" y1="12" x2="22" y2="12" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="19.78" y1="4.22" x2="17.66" y2="6.34" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                  <line x1="6.34" y1="17.66" x2="4.22" y2="19.78" stroke="#F7941D" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              ) : (
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="#009999"/>
+                </svg>
+              )}
             </button>
             <button className="p-2 flex flex-col gap-1.5" onClick={() => setMenuOpen(!menuOpen)}>
               {[0, 1, 2].map((i) => (
