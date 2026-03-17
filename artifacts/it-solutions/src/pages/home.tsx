@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setModalOpen(true);
-    }, 55000);
+    }, 120000);
     return () => clearInterval(timer);
   }, []);
 
