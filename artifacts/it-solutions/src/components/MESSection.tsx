@@ -6,16 +6,6 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-const features = [
-  "Process Digitalization",
-  "Real-Time Production Monitoring",
-  "Quality & Customer Interface System",
-  "Production Tracking",
-  "Multi User + Multi Plant",
-  "Barcode / QR Code Integration",
-  "Data Traceability",
-  "Manufacturing Analytics",
-];
 
 export default function MESSection() {
   return (
@@ -24,10 +14,10 @@ export default function MESSection() {
       className="py-14 sm:py-20 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="flex justify-center">
 
-          {/* Left — image */}
-          <div className="relative order-1 pb-8">
+          {/* Image */}
+          <div className="relative pb-8 w-full max-w-2xl">
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.wine }} />
             <div
               className="rounded-2xl overflow-hidden"
@@ -57,48 +47,6 @@ export default function MESSection() {
                 </div>
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(193,39,122,0.1)" }}>🏭</div>
               </div>
-            </div>
-          </div>
-
-          {/* Right — text */}
-          <div className="order-2">
-            <span
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{
-                background: "rgba(193,39,122,0.25)",
-                color: BRAND.white,
-                border: "1px solid rgba(193,39,122,0.4)",
-                backdropFilter: "blur(8px)",
-              }}
-            >
-              Core Offering
-            </span>
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
-            >
-              Customized{" "}
-              <span style={{ color: BRAND.orange }}>MES</span>{" "}Solutions
-            </h2>
-            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.72)" }}>
-              Our highly customized MES system helps manufacturers monitor shop-floor operations, improve production visibility, enhance quality management, and streamline manufacturing processes.
-            </p>
-            <div className="flex flex-wrap gap-2.5 mb-8">
-              {features.map((f, i) => (
-                <span
-                  key={i}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
-                  style={{
-                    background: "rgba(193,39,122,0.18)",
-                    color: BRAND.white,
-                    border: "1px solid rgba(193,39,122,0.35)",
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
-                  {f}
-                </span>
-              ))}
             </div>
           </div>
 
