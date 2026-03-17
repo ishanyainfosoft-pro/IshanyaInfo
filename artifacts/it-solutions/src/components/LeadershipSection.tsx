@@ -34,20 +34,21 @@ const additionalTeam = ["UI/UX Specialist", "API Specialist", "Data / Security A
 
 export default function LeadershipSection() {
   return (
-    <section id="leadership" className="py-10 sm:py-14 pt-[40px] pb-[60px]" style={{ background: "#000000" }}>
+    <section id="leadership" className="py-10 sm:py-14 pt-[40px] pb-[60px]" style={{ background: "#0a0a0a" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "rgba(247,148,29,0.12)", color: BRAND.orange }}
+            style={{ background: "rgba(247,148,29,0.15)", color: BRAND.orange, border: "1px solid rgba(247,148,29,0.3)" }}
           >
             About Us
           </span>
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
+            style={{ fontFamily: "'Playfair Display', serif", color: BRAND.white }}
           >
-            A <span style={{ color: BRAND.orange }}>Trusted Software Solution</span> Provider Since 2010
+            A <span style={{ color: BRAND.orange }}>Trusted Software Solution</span>{" "}
+            <span style={{ color: BRAND.teal }}>Provider Since 2010</span>
           </h2>
         </div>
 
@@ -55,12 +56,16 @@ export default function LeadershipSection() {
           {leaders.map((leader, i) => (
             <div
               key={i}
-              className="rounded-2xl overflow-hidden"
-              style={{ background: "rgba(0,0,0,0.1)", border: `1px solid rgba(247,148,29,0.15)` }}
+              className="rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                border: `1px solid rgba(247,148,29,0.18)`,
+                boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+              }}
             >
-              <div className="h-1 w-full" style={{ background: leader.accent }} />
+              <div className="h-1 w-full" style={{ background: `linear-gradient(to right, ${leader.accent}, transparent)` }} />
               <div className="flex flex-col items-start pt-6 pb-2 px-6">
-                <div className="rounded-xl overflow-hidden mb-4" style={{ width: "160px", height: "160px" }}>
+                <div className="rounded-xl overflow-hidden mb-4" style={{ width: "160px", height: "160px", border: `2px solid ${leader.accent}30` }}>
                   <img
                     src={leader.image}
                     alt={leader.name}
@@ -68,14 +73,17 @@ export default function LeadershipSection() {
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                   />
                 </div>
-                <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{leader.name}</h3>
-                <p className="text-sm mt-1 mb-2" style={{ color: leader.accent }}>{leader.role}</p>
+                <h3
+                  className="text-xl font-bold text-white"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >{leader.name}</h3>
+                <p className="text-sm mt-1 mb-2 font-medium" style={{ color: leader.accent }}>{leader.role}</p>
               </div>
               <div className="p-6 pt-2">
                 <ul className="mb-5 space-y-2">
                   {leader.points.map((p, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
-                      <span className="mt-0.5 flex-shrink-0" style={{ color: leader.accent }}>▸</span>
+                    <li key={j} className="flex items-start gap-2 text-sm" style={{ color: "rgba(255,255,255,0.75)", fontFamily: "'Inter', sans-serif" }}>
+                      <span className="mt-0.5 flex-shrink-0 font-bold" style={{ color: leader.accent }}>▸</span>
                       {p}
                     </li>
                   ))}
@@ -83,8 +91,16 @@ export default function LeadershipSection() {
                 <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: leader.accent }}>{leader.tagLabel}</p>
                 <div className="flex flex-wrap gap-2">
                   {leader.tags.map((tag, k) => (
-                    <span key={k} className="px-2.5 py-1 rounded-md text-xs font-medium"
-                      style={{ background: `${leader.accent}20`, color: leader.accent, border: `1px solid ${leader.accent}35` }}>
+                    <span
+                      key={k}
+                      className="px-2.5 py-1 rounded-md text-xs font-medium transition-all duration-300 hover:scale-105"
+                      style={{
+                        background: `${leader.accent}20`,
+                        color: leader.accent,
+                        border: `1px solid ${leader.accent}35`,
+                        fontFamily: "'Inter', sans-serif",
+                      }}
+                    >
                       {tag}
                     </span>
                   ))}
@@ -96,7 +112,7 @@ export default function LeadershipSection() {
 
         <h2
           className="sm:text-3xl font-bold text-white text-center mb-4 text-[25px]"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
+          style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Our Team Of{" "}
           <span style={{ color: BRAND.orange }}>Subject Matter Experts</span>
@@ -104,8 +120,16 @@ export default function LeadershipSection() {
 
         <div className="flex flex-wrap justify-center gap-3">
           {additionalTeam.map((role, i) => (
-            <div key={i} className="px-5 py-2.5 rounded-xl text-sm font-medium"
-              style={{ background: "rgba(247,148,29,0.1)", border: "1px solid rgba(247,148,29,0.18)", color: BRAND.white }}>
+            <div
+              key={i}
+              className="px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-md"
+              style={{
+                background: "rgba(247,148,29,0.1)",
+                border: "1px solid rgba(247,148,29,0.22)",
+                color: BRAND.white,
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
               {role}
             </div>
           ))}
