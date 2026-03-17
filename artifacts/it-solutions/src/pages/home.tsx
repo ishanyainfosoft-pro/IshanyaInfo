@@ -29,6 +29,7 @@ export default function Home() {
       <Navbar onGetStarted={() => setModalOpen(true)} />
       <HeroSection />
       <SlideShowSection />
+      <div style={{ height: 80 }} />
       <CoreOfferingSection />
       <div style={{ height: 80 }} />
       <MESSection />
