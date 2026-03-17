@@ -97,7 +97,7 @@ export default function ContactSection() {
                   {item.label}
                 </p>
                 {item.lines.map((line, j) => (
-                  <p key={j} className="leading-snug text-center sm:text-left whitespace-nowrap" style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px" }}>
+                  <p key={j} className="leading-snug text-center sm:text-left whitespace-nowrap" style={{ color: "rgba(255,255,255,0.7)", fontSize: "16px" }}>
                     {line}
                   </p>
                 ))}
