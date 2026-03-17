@@ -68,7 +68,7 @@ export default function ContactSection() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 700,
                 fontSize: "22px",
-                color: BRAND.white,
+                color: "#1a1a1a",
                 letterSpacing: "-0.02em",
                 whiteSpace: "nowrap",
               }}
@@ -78,7 +78,7 @@ export default function ContactSection() {
           </div>
 
           {/* Divider */}
-          <div style={{ width: "1px", height: 60, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
+          <div style={{ width: "1px", height: 60, background: "rgba(0,0,0,0.12)" }} className="hidden sm:block" />
 
           {/* Contact items strip */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-10">
@@ -97,7 +97,7 @@ export default function ContactSection() {
                   {item.label}
                 </p>
                 {item.lines.map((line, j) => (
-                  <p key={j} className="leading-snug text-center sm:text-left whitespace-nowrap" style={{ color: "rgba(255,255,255,0.7)", fontSize: "16px" }}>
+                  <p key={j} className="leading-snug text-center sm:text-left whitespace-nowrap" style={{ color: "#444444", fontSize: "16px" }}>
                     {line}
                   </p>
                 ))}
@@ -106,7 +106,7 @@ export default function ContactSection() {
           </div>
 
           {/* Divider */}
-          <div style={{ width: "1px", height: 60, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
+          <div style={{ width: "1px", height: 60, background: "rgba(0,0,0,0.12)" }} className="hidden sm:block" />
 
           {/* Social Links */}
           <div className="flex items-center gap-4">

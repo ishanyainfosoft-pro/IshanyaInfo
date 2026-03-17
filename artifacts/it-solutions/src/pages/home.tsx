@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import MESSection from "@/components/MESSection";
 import FlagshipSection from "@/components/FlagshipSection";
@@ -15,9 +14,8 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif", background: "linear-gradient(to bottom, #002e2e 0%, #030303 15%, #280818 22%, #C1277A 38%, #fce8d0 50%, #ffffff 62%, #fce8d0 72%, #d9f2f2 82%, #030303 93%, #000000 100%)" }}>
+    <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif", background: "linear-gradient(to bottom, #e8f7f7 0%, #ffffff 18%, #fff4e8 35%, #ffffff 50%, #e8f7f7 65%, #ffffff 78%, #fce8d0 88%, #e8f7f7 94%, #f0f0f0 100%)" }}>
       <Navbar onGetStarted={() => setModalOpen(true)} />
-      <HeroSection />
       <AboutSection />
       <MESSection />
       <FlagshipSection />

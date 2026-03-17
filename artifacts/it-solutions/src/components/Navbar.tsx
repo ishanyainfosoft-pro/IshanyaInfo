@@ -84,7 +84,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 fontWeight: 700,
                 fontSize: "22px",
                 letterSpacing: "-0.02em",
-                color: scrolled ? "#1a1a1a" : BRAND.white,
+                color: "#1a1a1a",
               }}
             >
               Ishanya Infosoft
@@ -104,7 +104,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
                 className="text-sm font-medium transition-opacity hover:opacity-60"
-                style={{ color: scrolled ? BRAND.gray : "rgba(255,255,255,0.88)" }}
+                style={{ color: BRAND.gray }}
               >
                 {item.label}
               </button>
@@ -125,7 +125,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 key={i}
                 className="block w-6 h-0.5 transition-all"
                 style={{
-                  background: scrolled ? BRAND.gray : BRAND.white,
+                  background: BRAND.gray,
                   transform:
                     i === 0 && menuOpen ? "rotate(45deg) translate(5px,5px)"
                     : i === 2 && menuOpen ? "rotate(-45deg) translate(5px,-5px)"
