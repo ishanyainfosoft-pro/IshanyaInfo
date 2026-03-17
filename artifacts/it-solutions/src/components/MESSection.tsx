@@ -22,15 +22,25 @@ export default function MESSection() {
     <section
       id="mes-offering"
       className="py-14 sm:py-20 relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #9e1f63 0%, #C1277A 45%, #d93d8e 100%)",
-      }}
+      style={{ background: "#0d0208" }}
     >
-      {/* Subtle background glow */}
+      {/* Rich wine radial gradient backdrop */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.07) 0%, transparent 60%)",
+          background: `
+            radial-gradient(ellipse 90% 70% at 90% 50%, rgba(193,39,122,0.60) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 50% at 10% 20%, rgba(220,60,140,0.22) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 60% at 40% 90%, rgba(150,20,90,0.30) 0%, transparent 50%)
+          `,
+        }}
+      />
+
+      {/* Subtle diagonal light beam */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(120deg, transparent 40%, rgba(220,60,140,0.06) 50%, transparent 60%)",
         }}
       />
 
@@ -39,13 +49,12 @@ export default function MESSection() {
 
           {/* Left — image */}
           <div className="relative order-1 pb-8">
-            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.white }} />
-
+            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.wine }} />
             <div
               className="rounded-2xl overflow-hidden"
               style={{
-                border: "2px solid rgba(255,255,255,0.25)",
-                boxShadow: "0 25px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05)",
+                border: "2px solid rgba(193,39,122,0.35)",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(193,39,122,0.15)",
               }}
             >
               <img
@@ -58,14 +67,9 @@ export default function MESSection() {
                 }}
               />
             </div>
-
-            {/* Floating stat card */}
             <div
               className="absolute -bottom-2 -right-4 sm:-right-6 rounded-2xl px-6 py-4"
-              style={{
-                background: BRAND.white,
-                boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
-              }}
+              style={{ background: BRAND.white, boxShadow: "0 12px 40px rgba(0,0,0,0.3)" }}
             >
               <div className="flex items-center gap-3">
                 <div>
@@ -81,7 +85,12 @@ export default function MESSection() {
           <div className="order-2">
             <span
               className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{ background: "rgba(255,255,255,0.15)", color: BRAND.white, backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)" }}
+              style={{
+                background: "rgba(193,39,122,0.25)",
+                color: BRAND.white,
+                border: "1px solid rgba(193,39,122,0.4)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               Core Offering
             </span>
@@ -92,18 +101,18 @@ export default function MESSection() {
               Customized{" "}
               <span style={{ color: BRAND.orange }}>MES</span>{" "}Solutions
             </h2>
-            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.82)" }}>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.72)" }}>
               Our highly customized MES system helps manufacturers monitor shop-floor operations, improve production visibility, enhance quality management, and streamline manufacturing processes.
             </p>
             <div className="flex flex-wrap gap-2.5 mb-8">
               {features.map((f, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-white/25"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                   style={{
-                    background: "rgba(255,255,255,0.12)",
+                    background: "rgba(193,39,122,0.18)",
                     color: BRAND.white,
-                    border: "1px solid rgba(255,255,255,0.22)",
+                    border: "1px solid rgba(193,39,122,0.35)",
                     backdropFilter: "blur(6px)",
                   }}
                 >

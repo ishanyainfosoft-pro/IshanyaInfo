@@ -13,15 +13,25 @@ export default function CoreOfferingSection() {
     <section
       id="core-offering"
       className="py-14 sm:py-20 relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #007a7a 0%, #009999 45%, #00b3b3 100%)",
-      }}
+      style={{ background: "#020d0d" }}
     >
-      {/* Subtle background glow */}
+      {/* Rich teal radial gradient backdrop */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.07) 0%, transparent 60%)",
+          background: `
+            radial-gradient(ellipse 90% 70% at 10% 50%, rgba(0,153,153,0.60) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 50% at 90% 20%, rgba(0,200,200,0.25) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 60% at 60% 90%, rgba(0,120,120,0.30) 0%, transparent 50%)
+          `,
+        }}
+      />
+
+      {/* Subtle diagonal light beam */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(120deg, transparent 40%, rgba(0,180,180,0.07) 50%, transparent 60%)",
         }}
       />
 
@@ -30,7 +40,12 @@ export default function CoreOfferingSection() {
           <div>
             <span
               className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{ background: "rgba(255,255,255,0.15)", color: BRAND.white, backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.2)" }}
+              style={{
+                background: "rgba(0,153,153,0.25)",
+                color: BRAND.white,
+                border: "1px solid rgba(0,153,153,0.4)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               Core Offering
             </span>
@@ -41,18 +56,18 @@ export default function CoreOfferingSection() {
               Customized{" "}
               <span style={{ color: BRAND.orange }}>ERP</span>{" "}Solutions
             </h2>
-            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.82)" }}>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.72)" }}>
               Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
             </p>
             <div className="flex flex-wrap gap-2.5 mb-8">
               {features.map((f, i) => (
                 <span
                   key={i}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-white/25"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                   style={{
-                    background: "rgba(255,255,255,0.12)",
+                    background: "rgba(0,153,153,0.18)",
                     color: BRAND.white,
-                    border: "1px solid rgba(255,255,255,0.22)",
+                    border: "1px solid rgba(0,153,153,0.35)",
                     backdropFilter: "blur(6px)",
                   }}
                 >
@@ -64,14 +79,12 @@ export default function CoreOfferingSection() {
           </div>
 
           <div className="relative pb-8">
-            {/* Decorative block */}
-            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.white }} />
-
+            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
               className="rounded-2xl overflow-hidden"
               style={{
-                border: "2px solid rgba(255,255,255,0.25)",
-                boxShadow: "0 25px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.05)",
+                border: "2px solid rgba(0,153,153,0.35)",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,153,153,0.15)",
               }}
             >
               <img
@@ -81,14 +94,9 @@ export default function CoreOfferingSection() {
                 onError={(e) => { (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"; }}
               />
             </div>
-
-            {/* Floating stat card */}
             <div
               className="absolute -bottom-2 -right-4 sm:-right-6 rounded-2xl px-6 py-4"
-              style={{
-                background: BRAND.white,
-                boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
-              }}
+              style={{ background: BRAND.white, boxShadow: "0 12px 40px rgba(0,0,0,0.3)" }}
             >
               <div className="flex items-center gap-3">
                 <div>

@@ -26,15 +26,25 @@ export default function BillingSoftwareSection() {
     <section
       id="billing-software"
       className="py-14 sm:py-20 relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #d97a0c 0%, #F7941D 45%, #ffaa44 100%)",
-      }}
+      style={{ background: "#0d0700" }}
     >
-      {/* Subtle background glow */}
+      {/* Rich orange radial gradient backdrop */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.08) 0%, transparent 60%)",
+          background: `
+            radial-gradient(ellipse 90% 70% at 10% 50%, rgba(247,148,29,0.60) 0%, transparent 55%),
+            radial-gradient(ellipse 60% 50% at 85% 15%, rgba(255,180,80,0.22) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 60% at 55% 90%, rgba(210,110,0,0.30) 0%, transparent 50%)
+          `,
+        }}
+      />
+
+      {/* Subtle diagonal light beam */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(120deg, transparent 40%, rgba(255,160,40,0.06) 50%, transparent 60%)",
         }}
       />
 
@@ -43,7 +53,12 @@ export default function BillingSoftwareSection() {
           <div>
             <span
               className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-5"
-              style={{ background: "rgba(0,0,0,0.12)", color: BRAND.white, border: "1px solid rgba(0,0,0,0.1)" }}
+              style={{
+                background: "rgba(247,148,29,0.25)",
+                color: BRAND.white,
+                border: "1px solid rgba(247,148,29,0.4)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               Billing Solutions
             </span>
@@ -52,9 +67,9 @@ export default function BillingSoftwareSection() {
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.white }}
             >
               Customized{" "}
-              <span style={{ color: "#1a1a1a" }}>Billing</span>{" "}Software
+              <span style={{ color: BRAND.orange }}>Billing</span>{" "}Software
             </h2>
-            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.9)" }}>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "rgba(255,255,255,0.72)" }}>
               Our customized Billing Software is designed to simplify invoicing, streamline financial operations, and improve accuracy across your business. It offers a complete solution for billing, taxation, reporting, and customer management tailored to your workflow.
             </p>
             <div className="flex flex-wrap gap-2.5 mb-8">
@@ -63,12 +78,13 @@ export default function BillingSoftwareSection() {
                   key={i}
                   className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                   style={{
-                    background: "rgba(0,0,0,0.1)",
+                    background: "rgba(247,148,29,0.18)",
                     color: BRAND.white,
-                    border: "1px solid rgba(0,0,0,0.12)",
+                    border: "1px solid rgba(247,148,29,0.35)",
+                    backdropFilter: "blur(6px)",
                   }}
                 >
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: "#1a1a1a" }} />
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.white }} />
                   {f}
                 </span>
               ))}
@@ -76,14 +92,12 @@ export default function BillingSoftwareSection() {
           </div>
 
           <div className="relative pb-8">
-            {/* Decorative block */}
-            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: "#1a1a1a" }} />
-
+            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.orange }} />
             <div
               className="rounded-2xl overflow-hidden"
               style={{
-                border: "2px solid rgba(255,255,255,0.3)",
-                boxShadow: "0 25px 60px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.05)",
+                border: "2px solid rgba(247,148,29,0.35)",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(247,148,29,0.15)",
               }}
             >
               <img
@@ -92,14 +106,9 @@ export default function BillingSoftwareSection() {
                 className="w-full h-auto object-cover"
               />
             </div>
-
-            {/* Floating stat card */}
             <div
               className="absolute -bottom-2 -right-4 sm:-right-6 rounded-2xl px-6 py-4"
-              style={{
-                background: BRAND.white,
-                boxShadow: "0 12px 40px rgba(0,0,0,0.2)",
-              }}
+              style={{ background: BRAND.white, boxShadow: "0 12px 40px rgba(0,0,0,0.3)" }}
             >
               <div className="flex items-center gap-3">
                 <div>
