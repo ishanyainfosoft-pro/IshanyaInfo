@@ -30,6 +30,7 @@ export default function Home() {
       <HeroSection />
       <SlideShowSection />
       <CoreOfferingSection />
+      <div style={{ height: 80 }} />
       <MESSection />
       <div style={{ height: 80 }} />
       <ECommerceSection />
