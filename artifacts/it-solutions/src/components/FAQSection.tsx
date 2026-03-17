@@ -118,16 +118,16 @@ function AccordionItem({
         style={{
           background: barBg,
           color: BRAND.white,
-          padding: "16px 20px",
-          minHeight: 76,
+          padding: "20px 24px",
+          minHeight: 88,
           border: "none",
           outline: "none",
           cursor: "pointer",
           transition: "background 0.3s ease",
           fontFamily: "'Inter', sans-serif",
           fontWeight: 700,
-          fontSize: "0.9rem",
-          lineHeight: 1.45,
+          fontSize: "1rem",
+          lineHeight: 1.5,
           borderRadius: isOpen ? "12px 12px 0 0" : "12px",
           flex: "none",
         }}
@@ -168,12 +168,12 @@ function AccordionItem({
         <div
           style={{
             background: `linear-gradient(160deg, ${BRAND.tealDark} 0%, #006666 100%)`,
-            padding: "18px 20px 22px",
+            padding: "22px 24px 28px",
             borderRadius: "0 0 12px 12px",
             color: BRAND.white,
             fontFamily: "'Inter', sans-serif",
-            fontSize: "0.88rem",
-            lineHeight: 1.75,
+            fontSize: "0.97rem",
+            lineHeight: 1.8,
             animation: isOpen ? "faqFadeIn 0.35s ease-out" : "none",
           }}
         >
@@ -253,7 +253,7 @@ export default function FAQSection() {
           Single CSS grid — 2 equal columns, items placed L then R per row.
           Each row height = tallest item in that row → perfect horizontal alignment.
         */}
-        <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px 24px", alignItems: "start" }}>
+        <div className="faq-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px 32px", alignItems: "start" }}>
           {rows.map((i) => (
             <Fragment key={i}>
               {/* Left item (Q1–Q5) */}
