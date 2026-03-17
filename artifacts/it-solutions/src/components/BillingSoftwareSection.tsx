@@ -74,7 +74,7 @@ export default function BillingSoftwareSection() {
               <div className="flex items-center gap-3">
                 <div>
                   <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>+40%</div>
-                  <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.8)" }}>Efficiency</div>
+                  <div className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.8)" }}>Faster Billing</div>
                 </div>
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)" }}>💰</div>
               </div>
