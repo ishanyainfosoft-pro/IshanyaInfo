@@ -10,44 +10,44 @@ const BRAND = {
 
 const faqs = [
   {
-    question: "What makes your ERP system customizable?",
-    answer: "Our ERP system is built with a modular architecture that allows us to customize every aspect according to your business requirements. We work closely with your team to understand your processes and configure the system accordingly.",
+    question: "Is the ERP system already pre-built, tested and suitable for our application?",
+    answer: "Our ERP system is a customized solution designed around the specific needs of each client. However, many general-purpose modules are already pre-built and thoroughly tested, based on our experience across multiple industries. During implementation, these proven modules are adapted and integrated with client-specific workflows, ensuring faster deployment while still meeting your unique business requirements.",
   },
   {
-    question: "How long does implementation typically take?",
-    answer: "Implementation timelines vary based on complexity and scope. Most projects range from 3-8 months. We provide a detailed project plan during the discovery phase to give you accurate estimates.",
+    question: "Is the ERP system easy to use for shop-floor and office teams?",
+    answer: "Yes. Our ERP system is designed to be simple, practical and user-friendly, especially considering the working environment of MSME organizations and manufacturing teams. We focus on simple screens and intuitive navigation, minimal data entry effort, practical workflows aligned with real shop-floor processes, and quick training for operators, supervisors and office staff. This ensures smooth adoption by users and faster system deployment.",
   },
   {
-    question: "Do you offer training and support?",
-    answer: "Yes, we provide comprehensive training programs for your team and ongoing 24/7 technical support. Our support team is available via phone, email, and live chat to assist with any issues.",
+    question: "Can our existing records, forms and processes continue in the new system?",
+    answer: "Yes. Our approach is to adapt the ERP system to your existing processes wherever practical, instead of forcing you to change everything. We can incorporate existing business forms, standard reports, current approval workflows, and existing operational processes. At the same time, we help streamline and digitize processes where improvements are beneficial.",
   },
   {
-    question: "Can the system integrate with our existing software?",
-    answer: "Absolutely. Our ERP system can integrate with most existing software through APIs and custom connectors. We assess your current tech stack and design integration solutions accordingly.",
+    question: "Can the ERP be customized according to our business process?",
+    answer: "Yes. The ERP is fully customizable and designed as a modular system. This allows us to configure the system to match your operational workflows, industry-specific requirements, management reporting needs, and customer-specific documentation. This flexibility ensures the ERP works exactly the way your business operates.",
   },
   {
-    question: "What about data security and compliance?",
-    answer: "Security is paramount. We implement enterprise-grade encryption, regular backups, role-based access control, and comply with ISO 27001, GDPR, and industry-specific regulations.",
+    question: "Can the ERP support multiple plants, branches or users?",
+    answer: "Yes. The system supports multi-user, multi-plant and multi-site operations. As your business grows, the ERP can scale to manage multiple manufacturing plants, multiple warehouses or offices, and large numbers of users across departments. This ensures the system remains future-ready and scalable as your business expands.",
   },
   {
-    question: "Is cloud hosting available?",
-    answer: "Yes, we offer both on-premises and cloud-based deployment options. Cloud hosting provides benefits like scalability, automatic updates, and reduced infrastructure costs.",
+    question: "Can the ERP integrate with our existing software or systems?",
+    answer: "Yes. Our ERP supports integration with a wide range of systems, including Tally Accounting Software, SAP / SAP S4 HANA, SCADA or machine data systems, Barcode / QR code systems, WhatsApp integration, and Email and SMS alerts. We can also integrate with other existing business software or customer portals, ensuring seamless data flow across systems.",
   },
   {
-    question: "How do you handle system upgrades?",
-    answer: "We provide scheduled upgrades with zero downtime for cloud deployments. For on-premises installations, we coordinate with your team to ensure smooth transitions.",
+    question: "How does the ERP help improve manufacturing productivity?",
+    answer: "Our ERP includes Smart Production and MES capabilities that help manufacturers monitor and optimize operations. Key features include production planning and scheduling, machine performance monitoring, productivity tracking, downtime monitoring, and quality control and traceability. This enables management to identify bottlenecks, improve efficiency and make data-driven decisions.",
   },
   {
-    question: "What reporting capabilities does the system have?",
-    answer: "Our system includes advanced reporting and analytics tools with customizable dashboards, real-time data visualization, and the ability to create industry-specific reports.",
+    question: "How secure is our business data in the ERP system?",
+    answer: "Data security and ownership are very important for our clients. For maximum control and security, we generally recommend and implement on-premise servers at the client's location, ensuring that data ownership remains fully with the client. However, cloud deployment is also possible if the client prefers cloud-based infrastructure.",
   },
   {
-    question: "Can we scale the system as our business grows?",
-    answer: "Yes, scalability is built into our architecture. Whether you're growing your operations, adding new modules, or expanding to multiple locations, our system grows with you.",
+    question: "What is the pricing model for the ERP system?",
+    answer: "We charge all-inclusive one-time fees for development and deployment, based on the scope and terms defined in the contract. This pricing typically covers system design and development, customization, deployment and implementation, and user training. This model provides cost transparency and avoids recurring subscription costs.",
   },
   {
-    question: "How do you ensure system performance?",
-    answer: "We optimize database queries, implement caching strategies, and conduct regular performance audits. Load balancing and resource allocation are continuously monitored.",
+    question: "What support does Ishanya Infosoft provide after implementation?",
+    answer: "We provide reliable after-sales service and long-term support to ensure smooth system operation. Our support includes ERP implementation and training, system customization and enhancements, technical support and troubleshooting, and continuous improvement and upgrades. Our objective is to be a long-term digital transformation partner for our clients.",
   },
 ];
 
