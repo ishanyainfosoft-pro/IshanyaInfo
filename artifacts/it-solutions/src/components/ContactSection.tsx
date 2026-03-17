@@ -25,9 +25,9 @@ const contactItems = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-5 sm:py-6" style={{ background: "rgba(0,0,0,0.8)" }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-10">
+    <section id="contact" className="py-0" style={{ background: "rgba(0,0,0,0.8)", height: "80px" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-10 h-full">
 
           {/* Logo + Name */}
           <div className="flex-shrink-0 flex items-center gap-3">
@@ -72,7 +72,7 @@ export default function ContactSection() {
           </div>
 
           {/* Divider */}
-          <div style={{ width: "1px", height: 44, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
+          <div style={{ width: "1px", height: 60, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
 
           {/* Contact items strip */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-10">
