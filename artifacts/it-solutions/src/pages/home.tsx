@@ -6,6 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import LeadershipSection from "@/components/LeadershipSection";
 import CoreOfferingSection from "@/components/CoreOfferingSection";
 import MESSection from "@/components/MESSection";
+import BillingSoftwareSection from "@/components/BillingSoftwareSection";
 import FlagshipSection from "@/components/FlagshipSection";
 import MoreOfferingsSection from "@/components/MoreOfferingsSection";
 import ClientsSection from "@/components/ClientsSection";
@@ -26,6 +27,7 @@ export default function Home() {
       <LeadershipSection />
       <CoreOfferingSection />
       <MESSection />
+      <BillingSoftwareSection />
       <FlagshipSection />
       <MoreOfferingsSection />
       <ClientsSection />
