@@ -24,10 +24,10 @@ export default function MESSection() {
   return (
     <section id="mes-offering" className="py-10 sm:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
 
-          {/* Left — text */}
-          <div>
+          {/* Left — text (40%) */}
+          <div className="w-full" style={{ flex: "2" }}>
             <h2
               className="text-3xl sm:text-4xl font-bold mb-4"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: ACCENT }}
@@ -58,14 +58,14 @@ export default function MESSection() {
             </div>
           </div>
 
-          {/* Right — image */}
-          <div className="relative">
+          {/* Right — image (60%) */}
+          <div className="relative pb-8 w-full" style={{ flex: "3" }}>
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-30" style={{ background: ACCENT }} />
             <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `3px solid rgba(0,153,153,0.25)` }}>
               <img
                 src={MESDashboardImg}
                 alt="MES Manufacturing Dashboard"
-                className="w-full object-cover"
+                className="w-full h-auto object-cover"
               />
             </div>
             {/* Floating stat card */}

@@ -23,10 +23,10 @@ export default function CoreOfferingSection() {
       className="py-14 sm:py-20 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
 
-          {/* Left — image */}
-          <div className="relative pb-8">
+          {/* Left — image (60%) */}
+          <div className="relative pb-8 w-full" style={{ flex: "3" }}>
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
               className="rounded-2xl overflow-hidden"
@@ -38,7 +38,7 @@ export default function CoreOfferingSection() {
               <img
                 src={ERPDashboard}
                 alt="ERP Dashboard"
-                className="w-full object-cover"
+                className="w-full h-auto object-cover"
               />
             </div>
             <div
@@ -55,8 +55,8 @@ export default function CoreOfferingSection() {
             </div>
           </div>
 
-          {/* Right — text */}
-          <div>
+          {/* Right — text (40%) */}
+          <div className="w-full" style={{ flex: "2" }}>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
