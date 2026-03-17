@@ -58,10 +58,9 @@ export default function BillingSoftwareSection() {
 
             <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `3px solid rgba(0,153,153,0.2)` }}>
               <img
-                src="https://pdf-text-extractor--aviratk.replit.app/src/assets/images/success-1.jpg"
+                src={require("@assets/ChatGPT6_1773735384919.png")}
                 alt="Billing Software Dashboard"
-                className="w-full h-72 object-cover"
-                onError={(e) => { (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"; }}
+                className="w-full h-auto object-cover"
               />
             </div>
 
