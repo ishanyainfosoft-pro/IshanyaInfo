@@ -85,8 +85,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             className="text-2xl sm:text-3xl font-bold text-white"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em" }}
           >
-            Let's start the{" "}
-            <span style={{ color: BRAND.orange }}>conversation</span>
+            <span style={{ color: BRAND.orange }}>Let's start the conversation</span>
           </h2>
           <p className="mt-1 text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
             Fill out the form below and we'll get back to you shortly.
