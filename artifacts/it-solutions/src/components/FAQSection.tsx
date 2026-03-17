@@ -120,6 +120,22 @@ export default function FAQSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
+            {/* Active Question Number Display */}
+            <div className="mb-8">
+              <div
+                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl font-bold text-4xl"
+                style={{
+                  background: `linear-gradient(135deg, ${BRAND.teal}, ${BRAND.orange})`,
+                  color: BRAND.white,
+                }}
+              >
+                {activeIndex + 1}
+              </div>
+              <p className="mt-3 text-sm font-semibold" style={{ color: BRAND.gray }}>
+                Question {activeIndex + 1} of {faqs.length}
+              </p>
+            </div>
+
             <div className="space-y-3">
               {faqs.map((faq, i) => (
                 <button
@@ -170,18 +186,6 @@ export default function FAQSection() {
                 className="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-20"
                 style={{ background: BRAND.teal, transform: "translate(30%, -30%)" }}
               />
-
-              {/* Question number indicator */}
-              <div
-                className="absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg"
-                style={{
-                  background: BRAND.orange,
-                  color: BRAND.white,
-                  opacity: 0.8,
-                }}
-              >
-                {activeIndex + 1}
-              </div>
 
               {/* Answer content */}
               <div
