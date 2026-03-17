@@ -1,9 +1,11 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const BRAND = {
   orange: "#F7941D",
   teal: "#009999",
+  tealDark: "#007a7a",
   wine: "#C1277A",
+  wineDark: "#a01f64",
   gray: "#6D6E71",
   white: "#FFFFFF",
 };
@@ -11,50 +13,190 @@ const BRAND = {
 const faqs = [
   {
     question: "Is the ERP system already pre-built, tested and suitable for our application?",
-    answer: "Our ERP system is a customized solution designed around the specific needs of each client. However, many general-purpose modules are already pre-built and thoroughly tested, based on our experience across multiple industries. During implementation, these proven modules are adapted and integrated with client-specific workflows, ensuring faster deployment while still meeting your unique business requirements.",
+    answer:
+      "Our ERP system is a customized solution designed around the specific needs of each client. Many general-purpose modules are already pre-built and thoroughly tested, based on our experience across multiple industries. During implementation, these proven modules are adapted and integrated with client-specific workflows, ensuring faster deployment while still meeting your unique business requirements.",
   },
   {
     question: "Is the ERP system easy to use for shop-floor and office teams?",
-    answer: "Yes. Our ERP system is designed to be simple, practical and user-friendly, especially considering the working environment of MSME organizations and manufacturing teams. We focus on simple screens and intuitive navigation, minimal data entry effort, practical workflows aligned with real shop-floor processes, and quick training for operators, supervisors and office staff. This ensures smooth adoption by users and faster system deployment.",
+    answer:
+      "Yes — our ERP is designed to be simple, practical and user-friendly, especially for MSME organizations and manufacturing teams. We focus on:\n• Simple screens and intuitive navigation\n• Minimal data entry effort\n• Practical workflows aligned with real shop-floor processes\n• Quick training for operators, supervisors and office staff\n\nThis ensures smooth adoption and faster system deployment.",
   },
   {
     question: "Can our existing records, forms and processes continue in the new system?",
-    answer: "Yes. Our approach is to adapt the ERP system to your existing processes wherever practical, instead of forcing you to change everything. We can incorporate existing business forms, standard reports, current approval workflows, and existing operational processes. At the same time, we help streamline and digitize processes where improvements are beneficial.",
+    answer:
+      "Yes. Our approach is to adapt the ERP to your existing processes wherever practical — instead of forcing you to change everything. We can incorporate:\n• Existing business forms and standard reports\n• Current approval workflows\n• Existing operational processes\n\nAt the same time, we help streamline and digitize processes where improvements are beneficial.",
   },
   {
     question: "Can the ERP be customized according to our business process?",
-    answer: "Yes. The ERP is fully customizable and designed as a modular system. This allows us to configure the system to match your operational workflows, industry-specific requirements, management reporting needs, and customer-specific documentation. This flexibility ensures the ERP works exactly the way your business operates.",
+    answer:
+      "Yes. The ERP is fully customizable and designed as a modular system. This allows us to configure:\n• Operational workflows\n• Industry-specific requirements\n• Management reporting needs\n• Customer-specific documentation\n\nThis flexibility ensures the ERP works exactly the way your business operates.",
   },
   {
     question: "Can the ERP support multiple plants, branches or users?",
-    answer: "Yes. The system supports multi-user, multi-plant and multi-site operations. As your business grows, the ERP can scale to manage multiple manufacturing plants, multiple warehouses or offices, and large numbers of users across departments. This ensures the system remains future-ready and scalable as your business expands.",
+    answer:
+      "Yes. The system supports multi-user, multi-plant and multi-site operations. As your business grows, the ERP can scale to manage:\n• Multiple manufacturing plants\n• Multiple warehouses or offices\n• Large numbers of users across departments\n\nThis ensures the system remains future-ready and scalable as your business expands.",
   },
   {
     question: "Can the ERP integrate with our existing software or systems?",
-    answer: "Yes. Our ERP supports integration with a wide range of systems, including Tally Accounting Software, SAP / SAP S4 HANA, SCADA or machine data systems, Barcode / QR code systems, WhatsApp integration, and Email and SMS alerts. We can also integrate with other existing business software or customer portals, ensuring seamless data flow across systems.",
+    answer:
+      "Yes. Our ERP supports integration with a wide range of systems, including:\n• Tally Accounting Software\n• SAP / SAP S4 HANA\n• SCADA or machine data systems\n• Barcode / QR code systems\n• WhatsApp, Email and SMS alerts\n\nWe can also integrate with other existing business software or customer portals, ensuring seamless data flow.",
   },
   {
     question: "How does the ERP help improve manufacturing productivity?",
-    answer: "Our ERP includes Smart Production and MES capabilities that help manufacturers monitor and optimize operations. Key features include production planning and scheduling, machine performance monitoring, productivity tracking, downtime monitoring, and quality control and traceability. This enables management to identify bottlenecks, improve efficiency and make data-driven decisions.",
+    answer:
+      "Our ERP includes Smart Production and MES capabilities that help manufacturers monitor and optimize operations. Key features include:\n• Production planning and scheduling\n• Machine performance monitoring\n• Productivity and downtime tracking\n• Quality control and traceability\n\nThis enables management to identify bottlenecks, improve efficiency and make data-driven decisions.",
   },
   {
     question: "How secure is our business data in the ERP system?",
-    answer: "Data security and ownership are very important for our clients. For maximum control and security, we generally recommend and implement on-premise servers at the client's location, ensuring that data ownership remains fully with the client. However, cloud deployment is also possible if the client prefers cloud-based infrastructure.",
+    answer:
+      "Data security and ownership are very important to us. For maximum control and security, we generally recommend on-premise servers at the client's location — ensuring that data ownership remains fully with the client. However, cloud deployment is also possible if the client prefers cloud-based infrastructure.",
   },
   {
     question: "What is the pricing model for the ERP system?",
-    answer: "We charge all-inclusive one-time fees for development and deployment, based on the scope and terms defined in the contract. This pricing typically covers system design and development, customization, deployment and implementation, and user training. This model provides cost transparency and avoids recurring subscription costs.",
+    answer:
+      "We charge all-inclusive one-time fees for development and deployment, based on the scope defined in the contract. This typically covers:\n• System design and development\n• Customization and configuration\n• Deployment and implementation\n• User training\n\nThis model provides full cost transparency and avoids recurring subscription fees.",
   },
   {
     question: "What support does Ishanya Infosoft provide after implementation?",
-    answer: "We provide reliable after-sales service and long-term support to ensure smooth system operation. Our support includes ERP implementation and training, system customization and enhancements, technical support and troubleshooting, and continuous improvement and upgrades. Our objective is to be a long-term digital transformation partner for our clients.",
+    answer:
+      "We provide reliable after-sales service and long-term support to ensure smooth system operation. Our support includes:\n• ERP implementation and training\n• System customization and enhancements\n• Technical support and troubleshooting\n• Continuous improvement and upgrades\n\nOur objective is to be a long-term digital transformation partner for our clients.",
   },
 ];
 
+function formatAnswer(text: string) {
+  const lines = text.split("\n");
+  return lines.map((line, i) => {
+    if (line.startsWith("•")) {
+      return (
+        <div key={i} className="flex items-start gap-2 mt-1">
+          <span style={{ color: BRAND.orange, fontWeight: 700, flexShrink: 0, marginTop: 2 }}>
+            ›
+          </span>
+          <span>{line.slice(1).trim()}</span>
+        </div>
+      );
+    }
+    return line ? (
+      <p key={i} className="mt-2 first:mt-0">
+        {line}
+      </p>
+    ) : null;
+  });
+}
+
+function AccordionItem({
+  faq,
+  index,
+  isOpen,
+  onToggle,
+  isVisible,
+  delay,
+}: {
+  faq: { question: string; answer: string };
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+  isVisible: boolean;
+  delay: number;
+}) {
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const [hovered, setHovered] = useState(false);
+
+  const barBg = isOpen ? BRAND.wine : hovered ? BRAND.wine : BRAND.teal;
+
+  return (
+    <div
+      className={`rounded-xl overflow-hidden transition-all duration-700`}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0)" : "translateY(24px)",
+        transitionDelay: `${delay}ms`,
+        boxShadow: isOpen
+          ? "0 8px 28px rgba(193,39,122,0.18)"
+          : "0 2px 12px rgba(0,153,153,0.12)",
+        marginBottom: 10,
+      }}
+    >
+      {/* Question bar */}
+      <button
+        onClick={onToggle}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="w-full flex items-center justify-between gap-4 text-left"
+        style={{
+          background: barBg,
+          color: BRAND.white,
+          padding: "18px 24px",
+          border: "none",
+          outline: "none",
+          cursor: "pointer",
+          transition: "background 0.3s ease",
+          fontFamily: "'Inter', sans-serif",
+          fontWeight: 700,
+          fontSize: "1rem",
+          lineHeight: 1.4,
+          borderRadius: isOpen ? "12px 12px 0 0" : "12px",
+        }}
+      >
+        <span style={{ flex: 1 }}>
+          {index + 1}. {faq.question}
+        </span>
+
+        {/* Icon */}
+        <span
+          style={{
+            flexShrink: 0,
+            width: 28,
+            height: 28,
+            borderRadius: "50%",
+            background: "rgba(247,148,29,0.25)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "1.25rem",
+            fontWeight: 900,
+            color: BRAND.orange,
+            transition: "transform 0.35s ease, background 0.3s ease",
+            transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+            lineHeight: 1,
+          }}
+        >
+          +
+        </span>
+      </button>
+
+      {/* Answer panel — max-height transition */}
+      <div
+        ref={bodyRef}
+        style={{
+          maxHeight: isOpen ? "600px" : "0px",
+          overflow: "hidden",
+          transition: "max-height 0.4s ease-in-out",
+        }}
+      >
+        <div
+          style={{
+            background: `linear-gradient(160deg, ${BRAND.tealDark} 0%, #006666 100%)`,
+            padding: "20px 24px 24px",
+            borderRadius: "0 0 12px 12px",
+            color: BRAND.white,
+            fontFamily: "'Inter', sans-serif",
+            fontSize: "0.95rem",
+            lineHeight: 1.75,
+            animation: isOpen ? "faqFadeIn 0.35s ease-out" : "none",
+          }}
+        >
+          {formatAnswer(faq.answer)}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FAQSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -64,163 +206,129 @@ export default function FAQSection() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     );
-
-    if (ref.current) observer.observe(ref.current);
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
+  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+
   return (
     <section
-      ref={ref}
-      className="w-full py-8 sm:py-10 relative overflow-hidden"
+      ref={sectionRef}
+      id="faq"
+      className="w-full py-14 sm:py-20 relative overflow-hidden"
       style={{ background: "transparent" }}
     >
-      {/* Background shapes */}
+      {/* Subtle background blobs */}
       <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-5"
-        style={{ background: BRAND.teal, transform: "translate(50%, -50%)" }}
+        className="absolute pointer-events-none"
+        style={{
+          top: "5%",
+          right: "-6%",
+          width: 340,
+          height: 340,
+          borderRadius: "50%",
+          background: BRAND.teal,
+          opacity: 0.04,
+          filter: "blur(60px)",
+        }}
       />
       <div
-        className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl opacity-5"
-        style={{ background: BRAND.wine, transform: "translate(-50%, 50%)" }}
+        className="absolute pointer-events-none"
+        style={{
+          bottom: "5%",
+          left: "-6%",
+          width: 280,
+          height: 280,
+          borderRadius: "50%",
+          background: BRAND.wine,
+          opacity: 0.05,
+          filter: "blur(50px)",
+        }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Heading */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className="text-center mb-12"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.8s ease, transform 0.8s ease",
+          }}
         >
+          <p
+            className="text-sm font-semibold tracking-widest uppercase mb-3"
+            style={{ color: BRAND.orange, fontFamily: "'Inter', sans-serif" }}
+          >
+            Got Questions?
+          </p>
           <h2
-            className="text-4xl sm:text-5xl font-bold mb-4 leading-tight"
+            className="text-3xl sm:text-4xl font-bold mb-4 leading-tight"
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              letterSpacing: "-0.02em",
-              color: "#000000",
+              fontFamily: "'Playfair Display', serif",
+              color: "#1a1a1a",
             }}
           >
             Frequently Asked Questions
           </h2>
           <p
-            className="text-lg max-w-2xl mx-auto"
-            style={{ color: BRAND.gray }}
+            className="text-base sm:text-lg max-w-xl mx-auto"
+            style={{ color: BRAND.gray, fontFamily: "'Inter', sans-serif" }}
           >
-            Get answers to common questions about our ERP and MES solutions
+            Everything you need to know about our ERP &amp; MES solutions.
           </p>
-        </div>
 
-        {/* FAQ Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Left Side - Questions Panel */}
-          <div
-            className={`transition-all duration-1000 delay-100 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-            }`}
-          >
-            <div className="space-y-3">
-              {faqs.map((faq, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  onMouseEnter={() => setActiveIndex(i)}
-                  className="w-full text-left p-4 rounded-xl transition-all duration-300"
-                  style={{
-                    background:
-                      activeIndex === i
-                        ? BRAND.teal
-                        : "rgba(0,153,153,0.05)",
-                    color: activeIndex === i ? BRAND.white : "#000000",
-                    border:
-                      activeIndex === i
-                        ? `2px solid ${BRAND.teal}`
-                        : `2px solid transparent`,
-                    boxShadow:
-                      activeIndex === i
-                        ? `0 8px 24px rgba(0,153,153,0.2)`
-                        : "none",
-                  }}
-                >
-                  <span className="font-semibold text-sm sm:text-base">
-                    {i + 1}. {faq.question}
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Side - Answer Panel */}
-          <div
-            className={`transition-all duration-1000 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-            }`}
-          >
-            <div
-              className="relative rounded-2xl p-6 sm:p-8 min-h-96 overflow-hidden"
-              style={{
-                background: `linear-gradient(135deg, rgba(0,153,153,0.05) 0%, rgba(255,255,255,0.5) 100%)`,
-                border: `2px solid rgba(0,153,153,0.1)`,
-                boxShadow: "0 8px 32px rgba(0,153,153,0.08)",
-              }}
-            >
-              {/* Animated background accent */}
-              <div
-                className="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-20"
-                style={{ background: BRAND.teal, transform: "translate(30%, -30%)" }}
-              />
-
-              {/* Answer content */}
-              <div
-                key={activeIndex}
-                className="relative z-10 animate-fadeInUp"
-                style={{
-                  animation: "fadeInUp 0.5s ease-out",
-                }}
-              >
-                <h3
-                  className="text-xl sm:text-2xl font-bold mb-4"
-                  style={{
-                    color: BRAND.teal,
-                    fontFamily: "'Space Grotesk', sans-serif",
-                  }}
-                >
-                  {faqs[activeIndex].question}
-                </h3>
-                <p
-                  className="text-base leading-relaxed"
-                  style={{ color: BRAND.gray }}
-                >
-                  {faqs[activeIndex].answer}
-                </p>
-              </div>
-            </div>
+          {/* Decorative accent line */}
+          <div className="flex justify-center mt-5 gap-1">
+            <div style={{ width: 48, height: 3, borderRadius: 2, background: BRAND.teal }} />
+            <div style={{ width: 12, height: 3, borderRadius: 2, background: BRAND.orange }} />
+            <div style={{ width: 6, height: 3, borderRadius: 2, background: BRAND.wine }} />
           </div>
         </div>
 
-        {/* Mobile Indicator */}
-        <div className="mt-8 lg:hidden">
-          <p
-            className="text-center text-sm"
-            style={{ color: BRAND.gray }}
-          >
-            Click on questions above to see answers
-          </p>
+        {/* Accordion list */}
+        <div>
+          {faqs.map((faq, i) => (
+            <AccordionItem
+              key={i}
+              faq={faq}
+              index={i}
+              isOpen={openIndex === i}
+              onToggle={() => toggle(i)}
+              isVisible={isVisible}
+              delay={80 + i * 40}
+            />
+          ))}
         </div>
+
+        {/* Footer note */}
+        <p
+          className="text-center text-sm mt-10"
+          style={{
+            color: BRAND.gray,
+            fontFamily: "'Inter', sans-serif",
+            opacity: isVisible ? 1 : 0,
+            transition: "opacity 1s ease 1s",
+          }}
+        >
+          Still have questions?{" "}
+          <a
+            href="#contact"
+            style={{ color: BRAND.teal, fontWeight: 600, textDecoration: "underline" }}
+          >
+            Contact our team
+          </a>{" "}
+          — we're happy to help.
+        </p>
       </div>
 
-      {/* Animation Keyframes */}
       <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+        @keyframes faqFadeIn {
+          from { opacity: 0; transform: translateY(-6px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </section>
