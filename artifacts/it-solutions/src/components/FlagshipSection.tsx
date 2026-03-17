@@ -50,7 +50,7 @@ export default function FlagshipSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Needs */}
-          <div className="p-8 rounded-2xl border" style={{ background: "#f9fafb", borderColor: "#f0f0f0" }}>
+          <div className="p-8 rounded-2xl border" style={{ background: "rgba(255,255,255,0.45)", backdropFilter: "blur(8px)", borderColor: "rgba(0,153,153,0.15)" }}>
             <h3 className="text-lg font-bold mb-6 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>
               <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: "rgba(247,148,29,0.1)", color: BRAND.orange }}>📋</span>
               Needs &amp; Expectations

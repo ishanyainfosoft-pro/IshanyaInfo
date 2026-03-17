@@ -40,7 +40,7 @@ export default function MoreOfferingsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {softwareProducts.map((product, i) => (
-            <div key={i} className="p-8 rounded-2xl border hover:shadow-lg transition-all" style={{ background: BRAND.white, borderColor: "#f0f0f0" }}>
+            <div key={i} className="p-8 rounded-2xl border hover:shadow-lg transition-all" style={{ background: "rgba(255,255,255,0.45)", backdropFilter: "blur(8px)", borderColor: "rgba(0,153,153,0.15)" }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-5" style={{ background: product.bg }}>{product.icon}</div>
               <h3 className="text-xl font-bold mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>{product.title}</h3>
               <ul className="space-y-2.5">
@@ -68,7 +68,7 @@ export default function MoreOfferingsSection() {
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(13,8,0,0.85) 0%, transparent 60%)" }} />
                 </div>
-                <div className="px-4 py-3 flex items-center gap-2" style={{ background: BRAND.white }}>
+                <div className="px-4 py-3 flex items-center gap-2" style={{ background: "rgba(255,255,255,0.5)" }}>
                   <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: story.accent }} />
                   <p className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>{story.title}</p>
                 </div>
@@ -84,7 +84,7 @@ export default function MoreOfferingsSection() {
           <div className="flex flex-wrap justify-center gap-3">
             {verticals.map((v, i) => (
               <span key={i} className="px-5 py-2.5 rounded-xl text-sm font-medium border transition-all hover:shadow-sm"
-                style={{ background: BRAND.white, color: BRAND.orange, borderColor: "rgba(247,148,29,0.25)" }}>
+                style={{ background: "rgba(255,255,255,0.45)", backdropFilter: "blur(6px)", color: BRAND.orange, borderColor: "rgba(247,148,29,0.25)" }}>
                 {v}
               </span>
             ))}

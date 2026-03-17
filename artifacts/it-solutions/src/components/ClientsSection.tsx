@@ -36,7 +36,7 @@ export default function ClientsSection() {
         <div className="flex gap-6 animate-marquee" style={{ width: "max-content" }}>
           {all.map((client, i) => (
             <div key={i} className="flex items-center justify-center px-8 py-4 rounded-2xl flex-shrink-0 hover:shadow-md transition-all"
-              style={{ background: "#f9fafb", border: `1px solid rgba(247,148,29,0.15)`, minWidth: 180, height: 100 }}>
+              style={{ background: "rgba(255,255,255,0.45)", backdropFilter: "blur(8px)", border: `1px solid rgba(247,148,29,0.2)`, minWidth: 180, height: 100 }}>
               <img src={client.logo} alt={client.name} className="max-h-12 max-w-32 object-contain"
                 onError={(e) => {
                   const el = e.target as HTMLImageElement;
