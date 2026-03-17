@@ -1,80 +1,92 @@
+import ComplaintDashboard from "@assets/ChatGPT5_1773760395401.png";
+
 const BRAND = {
   orange: "#F7941D",
   teal: "#009999",
   wine: "#C1277A",
   gray: "#6D6E71",
-  white: "#FFFFFF",
 };
 
-const needs = [
-  "Ease of logging / Linkage to customer portal",
-  "Short term actions for quick resolution",
-  "Comprehensive 8D report generation",
-  "Tracking of actions till completion",
-  "Warranty / recall / field failure management",
-  "End-to-end audit compliant process",
-];
-
-const outputs = [
-  "Multi user, Multi plant, User friendly",
-  "Secured data with on-premise server",
+const complaintFeatures = [
+  "Ease of Logging & Customer Portal Linkage",
+  "Short-Term Actions for Quick Resolution",
+  "Comprehensive 8D Report Generation",
+  "Tracking of Actions Till Completion",
+  "Warranty / Recall / Field Failure Management",
+  "End-to-End Audit Compliant Process",
+  "Multi-User, Multi-Plant Support",
   "SAP / S4 HANA Integration",
-  "Transparent LT tracker for each step",
-  "CAPA in 8D / any customer format",
-  "Action tracker with Auto Emails/SMS & Escalations",
-  "Data traceability & customized analysis",
+  "CAPA in 8D / Any Customer Format",
+  "Auto Email / SMS & Escalation Alerts",
 ];
 
 export default function FlagshipSection() {
   return (
-    <section id="flagship" className="py-10 sm:py-14">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section id="flagship" className="py-14 sm:py-20 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
-          >
-            <span style={{ color: BRAND.wine }}>Customer Complaints Processing System</span>
-          </h2>
-          <p className="max-w-2xl mx-auto" style={{ color: BRAND.gray }}>
-            Successfully developed and deployed a fully customized, end-to-end processing system for a reputed multinational client.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Needs */}
-          <div className="p-8 rounded-2xl border" style={{ background: "rgba(255,255,255,0.45)", backdropFilter: "blur(8px)", borderColor: "rgba(0,153,153,0.15)" }}>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#1a1a1a" }}>
-              <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: "rgba(247,148,29,0.1)", color: BRAND.orange }}>📋</span>
-              Needs &amp; Expectations
-            </h3>
-            <ol className="space-y-3">
-              {needs.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white" style={{ background: BRAND.orange }}>{i + 1}</span>
-                  <span className="text-sm leading-relaxed" style={{ color: BRAND.gray }}>{item}</span>
-                </li>
-              ))}
-            </ol>
+          {/* Left — image */}
+          <div className="relative pb-8">
+            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.wine }} />
+            <div
+              className="rounded-2xl overflow-hidden"
+              style={{
+                border: "2px solid rgba(193,39,122,0.30)",
+                boxShadow: "0 20px 50px rgba(0,0,0,0.12), 0 0 30px rgba(193,39,122,0.10)",
+              }}
+            >
+              <img
+                src={ComplaintDashboard}
+                alt="Customer Complaint Management Dashboard"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div
+              className="absolute -bottom-2 -right-4 sm:-right-6 rounded-2xl px-6 py-4"
+              style={{ background: "#ffffff", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+            >
+              <div className="flex items-center gap-3">
+                <div>
+                  <div className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif", color: BRAND.wine }}>-70%</div>
+                  <div className="text-xs mt-0.5 font-medium" style={{ color: BRAND.gray }}>Resolution Time</div>
+                </div>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(193,39,122,0.10)" }}>📋</div>
+              </div>
+            </div>
           </div>
 
-          {/* Solution — dark orange background */}
-          <div className="p-8 rounded-2xl" style={{ background: "rgba(0,0,0,0.8)" }}>
-            <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: "rgba(247,148,29,0.15)", color: BRAND.orange }}>✅</span>
-              Our Solution Output
-            </h3>
-            <div className="h-0.5 w-12 mb-6 rounded-full" style={{ background: BRAND.orange }} />
-            <ul className="space-y-3">
-              {outputs.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex-shrink-0" style={{ color: BRAND.orange }}>✓</span>
-                  <span className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>{item}</span>
-                </li>
+          {/* Right — text */}
+          <div>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
+              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
+            >
+              Customer{" "}
+              <span style={{ color: BRAND.wine }}>Complaint</span>{" "}Management
+            </h2>
+            <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
+              Successfully developed and deployed a fully customized, end-to-end complaint processing system for a reputed multinational client — delivering faster resolutions, transparent tracking, and complete audit compliance.
+            </p>
+            <div className="flex flex-wrap gap-2.5 mb-8">
+              {complaintFeatures.map((f, i) => (
+                <span
+                  key={i}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
+                  style={{
+                    background: "rgba(255,255,255,0.6)",
+                    color: "#333333",
+                    border: "1px solid rgba(193,39,122,0.25)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.wine }} />
+                  {f}
+                </span>
               ))}
-            </ul>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
