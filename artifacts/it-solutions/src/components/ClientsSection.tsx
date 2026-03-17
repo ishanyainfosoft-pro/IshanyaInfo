@@ -6,8 +6,6 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-const BG = { beige: "#E7DCCB", cream: "#F3EBDD", accent: "#D9C4A5" };
-
 const clients = [
   { name: "Sparker Piezoceramics", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772945661088-BrJcES39.png" },
   { name: "Hendge Impex", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895032674-SWZQyy1X.png" },
@@ -21,56 +19,30 @@ export default function ClientsSection() {
   const all = [...clients, ...clients];
 
   return (
-    <section id="clients" className="py-14 sm:py-20 overflow-hidden" style={{ background: BG.cream, borderTop: `1px solid ${BG.accent}` }}>
+    <section id="clients" className="py-10 sm:py-14 overflow-hidden" style={{ background: BRAND.white }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <span
-          className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-          style={{ background: "rgba(247,148,29,0.15)", color: BRAND.orange, border: `1px solid rgba(247,148,29,0.3)` }}
-        >
-          Trusted By
-        </span>
-        <h2
-          className="text-3xl sm:text-4xl font-bold"
-          style={{ fontFamily: "'Playfair Display', serif", color: BRAND.teal }}
-        >
+        <h2 className="text-3xl sm:text-4xl font-bold"
+          style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>
           Our Esteemed{" "}<span style={{ color: BRAND.orange }}>Clients</span>
         </h2>
       </div>
 
       <div className="relative">
-        <div
-          className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: `linear-gradient(to right, ${BG.cream}, transparent)` }}
-        />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: `linear-gradient(to left, ${BG.cream}, transparent)` }}
-        />
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style={{ background: `linear-gradient(to right, ${BRAND.white}, transparent)` }} />
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style={{ background: `linear-gradient(to left, ${BRAND.white}, transparent)` }} />
 
         <div className="flex gap-6 animate-marquee" style={{ width: "max-content" }}>
           {all.map((client, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center px-8 py-4 rounded-2xl flex-shrink-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              style={{
-                background: BG.beige,
-                border: `1px solid ${BG.accent}`,
-                minWidth: 180,
-                height: 100,
-                boxShadow: "0 2px 12px rgba(209,196,165,0.3)",
-              }}
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="max-h-12 max-w-32 object-contain"
+            <div key={i} className="flex items-center justify-center px-8 py-4 rounded-2xl flex-shrink-0 hover:shadow-md transition-all"
+              style={{ background: "#f9fafb", border: `1px solid rgba(247,148,29,0.15)`, minWidth: 180, height: 100 }}>
+              <img src={client.logo} alt={client.name} className="max-h-12 max-w-32 object-contain"
                 onError={(e) => {
                   const el = e.target as HTMLImageElement;
                   el.style.display = "none";
-                  if (el.parentElement)
-                    el.parentElement.innerHTML = `<span style="font-size:11px;color:${BRAND.teal};text-align:center;padding:0 8px;font-family:'Inter',sans-serif;">${client.name}</span>`;
-                }}
-              />
+                  if (el.parentElement) el.parentElement.innerHTML = `<span style="font-size:11px;color:${BRAND.gray};text-align:center;padding:0 8px;">${client.name}</span>`;
+                }} />
             </div>
           ))}
         </div>

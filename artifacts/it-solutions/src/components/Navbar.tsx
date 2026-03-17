@@ -9,8 +9,6 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-const BG = { beige: "#E7DCCB", cream: "#F3EBDD", accent: "#D9C4A5" };
-
 interface NavbarProps {
   onGetStarted: () => void;
 }
@@ -40,10 +38,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? `${BG.cream}F5` : "transparent",
-        boxShadow: scrolled ? `0 2px 20px rgba(209,196,165,0.5)` : "none",
-        backdropFilter: scrolled ? "blur(14px)" : "none",
-        borderBottom: scrolled ? `1px solid ${BG.accent}` : "none",
+        background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
+        boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.1)" : "none",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,12 +80,11 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
 
             <span
               style={{
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Space Grotesk', sans-serif",
                 fontWeight: 700,
-                fontSize: "20px",
-                letterSpacing: "0",
-                color: scrolled ? BRAND.teal : BRAND.white,
-                transition: "color 0.3s",
+                fontSize: "22px",
+                letterSpacing: "-0.02em",
+                color: scrolled ? "#1a1a1a" : BRAND.white,
               }}
             >
               Ishanya Infosoft
@@ -107,23 +103,16 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
-                className="text-sm font-medium transition-all duration-300 hover:opacity-70"
-                style={{
-                  color: scrolled ? BRAND.teal : "rgba(255,255,255,0.88)",
-                  fontFamily: "'Inter', sans-serif",
-                }}
+                className="text-sm font-medium transition-opacity hover:opacity-60"
+                style={{ color: scrolled ? BRAND.gray : "rgba(255,255,255,0.88)" }}
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={handleGetStarted}
-              className="px-5 py-2 rounded-xl text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
-              style={{
-                background: `linear-gradient(135deg, ${BRAND.orange}, #e8820e)`,
-                boxShadow: "0 4px 15px rgba(247,148,29,0.35)",
-                fontFamily: "'Inter', sans-serif",
-              }}
+              className="px-5 py-2 rounded-lg text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
+              style={{ background: BRAND.orange }}
             >
               Get In Touch
             </button>
@@ -134,9 +123,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             {[0, 1, 2].map((i) => (
               <span
                 key={i}
-                className="block w-6 h-0.5 transition-all duration-300"
+                className="block w-6 h-0.5 transition-all"
                 style={{
-                  background: scrolled ? BRAND.teal : BRAND.white,
+                  background: scrolled ? BRAND.gray : BRAND.white,
                   transform:
                     i === 0 && menuOpen ? "rotate(45deg) translate(5px,5px)"
                     : i === 2 && menuOpen ? "rotate(-45deg) translate(5px,-5px)"
@@ -151,13 +140,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div
-          className="md:hidden px-4 py-4 flex flex-col gap-4"
-          style={{
-            background: BG.cream,
-            borderTop: `1px solid ${BG.accent}`,
-          }}
-        >
+        <div className="md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4" style={{ borderColor: "#f0f0f0" }}>
           {[
             { label: "About Us", id: "about" },
             { label: "Services", id: "core-offering" },
@@ -165,23 +148,11 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             { label: "Clients", id: "clients" },
             { label: "Contact", id: "contact" },
           ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className="text-sm font-medium text-left transition-opacity hover:opacity-70"
-              style={{ color: BRAND.teal, fontFamily: "'Inter', sans-serif" }}
-            >
+            <button key={item.id} onClick={() => scrollTo(item.id)} className="text-sm font-medium text-left" style={{ color: BRAND.gray }}>
               {item.label}
             </button>
           ))}
-          <button
-            onClick={handleGetStarted}
-            className="py-2.5 rounded-xl text-sm font-semibold text-white text-center transition-all hover:scale-105"
-            style={{
-              background: `linear-gradient(135deg, ${BRAND.orange}, #e8820e)`,
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
+          <button onClick={handleGetStarted} className="py-2 rounded-lg text-sm font-semibold text-white text-center" style={{ background: BRAND.orange }}>
             Get In Touch
           </button>
         </div>

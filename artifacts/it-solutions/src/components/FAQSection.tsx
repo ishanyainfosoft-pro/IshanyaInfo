@@ -8,8 +8,6 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-const BG = { beige: "#E7DCCB", cream: "#F3EBDD", accent: "#D9C4A5" };
-
 const faqs = [
   {
     question: "Is the ERP system already pre-built, tested and suitable for our application?",
@@ -68,6 +66,7 @@ export default function FAQSection() {
       },
       { threshold: 0.1 }
     );
+
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
@@ -75,45 +74,39 @@ export default function FAQSection() {
   return (
     <section
       ref={ref}
-      className="w-full py-14 sm:py-20 relative overflow-hidden"
-      style={{ background: BG.beige, borderTop: `1px solid ${BG.accent}` }}
+      className="w-full py-8 sm:py-10 relative overflow-hidden"
+      style={{ background: "#FFFFFF" }}
     >
-      {/* Soft background orbs */}
+      {/* Background shapes */}
       <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-20"
+        className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-5"
         style={{ background: BRAND.teal, transform: "translate(50%, -50%)" }}
       />
       <div
-        className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl opacity-15"
+        className="absolute bottom-0 left-0 w-80 h-80 rounded-full blur-3xl opacity-5"
         style={{ background: BRAND.wine, transform: "translate(-50%, 50%)" }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
+        {/* Section Header */}
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-            style={{ background: "rgba(0,153,153,0.12)", color: BRAND.teal, border: `1px solid rgba(0,153,153,0.2)` }}
-          >
-            FAQs
-          </span>
           <h2
             className="text-4xl sm:text-5xl font-bold mb-4 leading-tight"
             style={{
-              fontFamily: "'Playfair Display', serif",
-              color: BRAND.teal,
+              fontFamily: "'Space Grotesk', sans-serif",
+              letterSpacing: "-0.02em",
+              color: "#000000",
             }}
           >
-            Frequently Asked{" "}
-            <span style={{ color: BRAND.wine }}>Questions</span>
+            Frequently Asked Questions
           </h2>
           <p
             className="text-lg max-w-2xl mx-auto"
-            style={{ fontFamily: "'Inter', sans-serif", color: BRAND.teal, opacity: 0.8 }}
+            style={{ color: BRAND.gray }}
           >
             Get answers to common questions about our ERP and MES solutions
           </p>
@@ -121,24 +114,24 @@ export default function FAQSection() {
 
         {/* FAQ Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Left — Questions */}
+          {/* Left Side - Questions Panel */}
           <div
             className={`transition-all duration-1000 delay-100 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}
           >
+            {/* Active Question Number Display */}
             <div className="mb-8">
               <div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl font-bold text-4xl shadow-lg"
+                className="inline-flex items-center justify-center w-16 h-16 rounded-2xl font-bold text-4xl"
                 style={{
                   background: `linear-gradient(135deg, ${BRAND.teal}, ${BRAND.orange})`,
                   color: BRAND.white,
-                  fontFamily: "'Playfair Display', serif",
                 }}
               >
                 {activeIndex + 1}
               </div>
-              <p className="mt-3 text-sm font-semibold" style={{ fontFamily: "'Inter', sans-serif", color: BRAND.teal, opacity: 0.7 }}>
+              <p className="mt-3 text-sm font-semibold" style={{ color: BRAND.gray }}>
                 Question {activeIndex + 1} of {faqs.length}
               </p>
             </div>
@@ -151,11 +144,19 @@ export default function FAQSection() {
                   onMouseEnter={() => setActiveIndex(i)}
                   className="w-full text-left p-4 rounded-xl transition-all duration-300"
                   style={{
-                    background: activeIndex === i ? BRAND.teal : BG.cream,
-                    color: activeIndex === i ? BRAND.white : BRAND.teal,
-                    border: activeIndex === i ? `2px solid ${BRAND.teal}` : `2px solid ${BG.accent}`,
-                    boxShadow: activeIndex === i ? `0 8px 24px rgba(0,153,153,0.2)` : "0 2px 8px rgba(209,196,165,0.2)",
-                    fontFamily: "'Inter', sans-serif",
+                    background:
+                      activeIndex === i
+                        ? BRAND.teal
+                        : "rgba(0,153,153,0.05)",
+                    color: activeIndex === i ? BRAND.white : "#000000",
+                    border:
+                      activeIndex === i
+                        ? `2px solid ${BRAND.teal}`
+                        : `2px solid transparent`,
+                    boxShadow:
+                      activeIndex === i
+                        ? `0 8px 24px rgba(0,153,153,0.2)`
+                        : "none",
                   }}
                 >
                   <span className="font-semibold text-sm sm:text-base">
@@ -166,7 +167,7 @@ export default function FAQSection() {
             </div>
           </div>
 
-          {/* Right — Answer */}
+          {/* Right Side - Answer Panel */}
           <div
             className={`transition-all duration-1000 delay-200 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
@@ -175,33 +176,37 @@ export default function FAQSection() {
             <div
               className="relative rounded-2xl p-6 sm:p-8 min-h-96 overflow-hidden"
               style={{
-                background: BG.cream,
-                border: `2px solid ${BG.accent}`,
-                boxShadow: "0 8px 32px rgba(209,196,165,0.4)",
+                background: `linear-gradient(135deg, rgba(0,153,153,0.05) 0%, rgba(255,255,255,0.5) 100%)`,
+                border: `2px solid rgba(0,153,153,0.1)`,
+                boxShadow: "0 8px 32px rgba(0,153,153,0.08)",
               }}
             >
+              {/* Animated background accent */}
               <div
-                className="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-30"
+                className="absolute top-0 right-0 w-32 h-32 rounded-full blur-2xl opacity-20"
                 style={{ background: BRAND.teal, transform: "translate(30%, -30%)" }}
               />
+
+              {/* Answer content */}
               <div
                 key={activeIndex}
-                className="relative z-10"
-                style={{ animation: "fadeInUp 0.5s ease-out" }}
+                className="relative z-10 animate-fadeInUp"
+                style={{
+                  animation: "fadeInUp 0.5s ease-out",
+                }}
               >
                 <h3
                   className="text-xl sm:text-2xl font-bold mb-4"
                   style={{
-                    color: BRAND.wine,
-                    fontFamily: "'Playfair Display', serif",
+                    color: BRAND.teal,
+                    fontFamily: "'Space Grotesk', sans-serif",
                   }}
                 >
                   {faqs[activeIndex].question}
                 </h3>
-                <div className="h-0.5 w-12 mb-4 rounded-full" style={{ background: `linear-gradient(to right, ${BRAND.orange}, ${BRAND.teal})` }} />
                 <p
                   className="text-base leading-relaxed"
-                  style={{ fontFamily: "'Inter', sans-serif", color: BRAND.teal }}
+                  style={{ color: BRAND.gray }}
                 >
                   {faqs[activeIndex].answer}
                 </p>
@@ -210,17 +215,28 @@ export default function FAQSection() {
           </div>
         </div>
 
+        {/* Mobile Indicator */}
         <div className="mt-8 lg:hidden">
-          <p className="text-center text-sm" style={{ fontFamily: "'Inter', sans-serif", color: BRAND.teal, opacity: 0.7 }}>
+          <p
+            className="text-center text-sm"
+            style={{ color: BRAND.gray }}
+          >
             Click on questions above to see answers
           </p>
         </div>
       </div>
 
+      {/* Animation Keyframes */}
       <style>{`
         @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </section>
