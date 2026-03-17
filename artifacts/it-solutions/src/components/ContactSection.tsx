@@ -39,8 +39,8 @@ export default function ContactSection() {
           <div className="flex-shrink-0 flex items-center gap-3">
             <div
               style={{
-                width: 44,
-                height: 44,
+                width: 72,
+                height: 72,
                 borderRadius: "50%",
                 overflow: "hidden",
                 background: BRAND.white,
