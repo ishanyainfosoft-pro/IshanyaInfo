@@ -23,6 +23,12 @@ const contactItems = [
   },
 ];
 
+const socialLinks = [
+  { icon: "in", label: "LinkedIn", href: "https://www.linkedin.com/company/ishanya-infosoft" },
+  { icon: "f", label: "Facebook", href: "https://www.facebook.com/ishanyainfosoft" },
+  { icon: "▶", label: "YouTube", href: "https://www.youtube.com/@ishanyainfosoft" },
+];
+
 export default function ContactSection() {
   return (
     <section id="contact" className="py-0" style={{ background: "rgba(0,0,0,0.8)", height: "80px" }}>
@@ -95,6 +101,40 @@ export default function ContactSection() {
                     {line}
                   </p>
                 ))}
+              </a>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div style={{ width: "1px", height: 60, background: "rgba(255,255,255,0.15)" }} className="hidden sm:block" />
+
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((link, i) => (
+              <a
+                key={i}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-all hover:scale-110"
+                title={link.label}
+              >
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 32,
+                    height: 32,
+                    borderRadius: "50%",
+                    background: BRAND.orange,
+                    color: BRAND.white,
+                    fontSize: "14px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {link.icon}
+                </span>
               </a>
             ))}
           </div>
