@@ -65,7 +65,7 @@ export default function MESSection() {
             </span>
             <h2
               className="text-3xl sm:text-4xl font-bold mb-4"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
+              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: ACCENT }}
             >
               Customized{" "}
               <span style={{ color: ACCENT }}>MES </span> Solutions

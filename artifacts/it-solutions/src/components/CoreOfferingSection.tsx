@@ -37,10 +37,10 @@ export default function CoreOfferingSection() {
             </span>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
+              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
             >
               Customized{" "}
-              <span style={{ color: BRAND.orange }}>ERP</span>{" "}Solutions
+              <span style={{ color: BRAND.wine }}>ERP</span>{" "}Solutions
             </h2>
             <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
               Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
