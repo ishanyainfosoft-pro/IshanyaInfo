@@ -91,7 +91,7 @@ export default function ContactSection() {
                 className="no-underline transition-opacity hover:opacity-80"
               >
                 <p
-                  className="text-xs font-semibold uppercase tracking-wider mb-0.5 text-center sm:text-left"
+                  className="font-semibold uppercase tracking-wider mb-0.5 text-center sm:text-left text-[18px]"
                   style={{ color: BRAND.orange, fontSize: "10px" }}
                 >
                   {item.label}
