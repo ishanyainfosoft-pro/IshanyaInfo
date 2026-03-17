@@ -29,7 +29,6 @@ export default function Home() {
       <Navbar onGetStarted={() => setModalOpen(true)} />
       <HeroSection />
       <SlideShowSection />
-      <LeadershipSection />
       <MESSection />
       <CoreOfferingSection />
       <BillingSoftwareSection />
@@ -37,6 +36,7 @@ export default function Home() {
       <FlagshipSection />
       <ClientsSection />
       <FAQSection />
+      <LeadershipSection />
       <ContactSection />
       <Footer />
       <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
