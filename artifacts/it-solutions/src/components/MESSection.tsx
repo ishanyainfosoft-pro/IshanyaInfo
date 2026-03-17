@@ -57,12 +57,7 @@ export default function MESSection() {
 
           {/* Right — text */}
           <div className="order-2">
-            <span
-              className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-4"
-              style={{ background: "rgba(0,153,153,0.12)", color: ACCENT }}
-            >
-              Core Offering
-            </span>
+
             <h2
               className="text-3xl sm:text-4xl font-bold mb-4"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: ACCENT }}
