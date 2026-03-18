@@ -28,21 +28,19 @@ export default function ECommerceSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
 
-          {/* Left — image (60%) like ERP */}
-          <ScrollReveal direction="left" className="relative pb-8 w-full" style={{ flex: "3" }}>
+          {/* Left — image like Billing */}
+          <ScrollReveal direction="left" className="relative pb-8 w-full" style={{ flex: "2" }}>
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
               className="rounded-2xl overflow-hidden shadow-2xl"
               style={{
                 border: "2px solid rgba(0,153,153,0.25)",
-                maxHeight: "420px",
               }}
             >
               <img
                 src={ECommerceDashboard}
                 alt="E-Commerce Platform"
-                className="w-full h-full object-cover"
-                style={{ maxHeight: "420px", objectFit: "cover" }}
+                className="w-full h-auto object-cover"
               />
             </div>
             <div
