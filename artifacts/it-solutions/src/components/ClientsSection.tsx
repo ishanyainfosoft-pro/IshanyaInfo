@@ -47,20 +47,19 @@ export default function ClientsSection() {
           {all.map((client, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center px-8 py-4 rounded-2xl flex-shrink-0 transition-all hover:shadow-lg"
+              className="flex items-center justify-center px-4 py-3 rounded-xl flex-shrink-0 transition-all hover:shadow-lg"
               style={{
                 background: "rgba(255,255,255,0.55)",
                 backdropFilter: "blur(8px)",
                 border: `1px solid rgba(247,148,29,0.2)`,
-                minWidth: 220,
-                height: 140,
-                gap: 8,
+                width: 160,
+                height: 90,
               }}
             >
               <img
                 src={client.logo}
                 alt={client.name}
-                className="max-h-20 max-w-44 object-contain"
+                className="w-full h-full object-contain"
                 onError={(e) => {
                   const el = e.target as HTMLImageElement;
                   el.style.display = "none";
