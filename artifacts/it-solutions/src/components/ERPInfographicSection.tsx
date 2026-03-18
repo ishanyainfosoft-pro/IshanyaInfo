@@ -141,7 +141,7 @@ export default function ERPInfographicSection() {
                   border: active?.id === mod.id ? `1.5px solid ${mod.color}88` : "1px solid rgba(247,148,29,0.20)",
                   flexDirection: "row-reverse",
                   textAlign: "right",
-                  boxShadow: active?.id === mod.id ? `0 4px 16px ${mod.color}28` : "none",
+                  boxShadow: active?.id === mod.id ? `0 4px 16px ${mod.color}28` : "0 2px 10px rgba(0,0,0,0.08), 0 1px 3px rgba(247,148,29,0.10)",
                 }}
               >
                 <span style={{ fontSize: 18, flexShrink: 0 }}>{mod.emoji}</span>
@@ -245,7 +245,7 @@ export default function ERPInfographicSection() {
                     transition: `left ${TRANS_MS}ms ease-in-out, top ${TRANS_MS}ms ease-in-out, transform 0.25s ease, filter 0.25s`,
                     filter: isHov || isAct
                       ? `drop-shadow(0 6px 22px ${mod.color}70)`
-                      : "drop-shadow(0 3px 10px rgba(0,0,0,0.14))",
+                      : "drop-shadow(0 4px 14px rgba(0,0,0,0.18)) drop-shadow(0 1px 4px rgba(247,148,29,0.12))",
                   }}
                 >
                   <span style={{ fontSize: 26, lineHeight: 1 }}>{mod.emoji}</span>
@@ -273,7 +273,7 @@ export default function ERPInfographicSection() {
                 style={{
                   background: active?.id === mod.id ? `${mod.color}18` : "rgba(243,235,221,0.75)",
                   border: active?.id === mod.id ? `1.5px solid ${mod.color}88` : "1px solid rgba(247,148,29,0.20)",
-                  boxShadow: active?.id === mod.id ? `0 4px 16px ${mod.color}28` : "none",
+                  boxShadow: active?.id === mod.id ? `0 4px 16px ${mod.color}28` : "0 2px 10px rgba(0,0,0,0.08), 0 1px 3px rgba(247,148,29,0.10)",
                 }}
               >
                 <span style={{ fontSize: 18, flexShrink: 0 }}>{mod.emoji}</span>
