@@ -16,7 +16,7 @@ const testimonials = [
     role: "Plant Manager",
     rating: 5,
     accent: BRAND.orange,
-    text: "Ishanya Infosoft's ERP solution completely transformed our production planning and inventory management. We now have real-time visibility across all departments, and our order fulfilment accuracy has improved by over 60%. Their team was hands-on from day one — truly a partner, not just a vendor.",
+    text: "Ishanya Infosoft's ERP solution completely transformed our production planning and inventory management. We now have real-time visibility across all departments, and our order fulfilment accuracy has improved significantly. Their team was hands-on from day one — truly a partner, not just a vendor.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895032674-SWZQyy1X.png",
