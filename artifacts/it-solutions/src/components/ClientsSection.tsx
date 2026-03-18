@@ -52,15 +52,15 @@ export default function ClientsSection() {
                 background: "rgba(255,255,255,0.55)",
                 backdropFilter: "blur(8px)",
                 border: `1px solid rgba(247,148,29,0.2)`,
-                minWidth: 180,
-                height: 100,
+                minWidth: 220,
+                height: 140,
                 gap: 8,
               }}
             >
               <img
                 src={client.logo}
                 alt={client.name}
-                className="max-h-12 max-w-32 object-contain"
+                className="max-h-20 max-w-44 object-contain"
                 onError={(e) => {
                   const el = e.target as HTMLImageElement;
                   el.style.display = "none";
