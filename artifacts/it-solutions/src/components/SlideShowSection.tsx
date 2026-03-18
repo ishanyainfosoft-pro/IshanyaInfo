@@ -1,9 +1,9 @@
 import { useState, useEffect, type ReactNode } from "react";
-import Dashboard from "@/assets/Dashboard.png";
-import Report from "@/assets/Report.png";
-import ECommerce from "@/assets/ECommerce.png";
-import ComplaintManagement from "@/assets/ComplaintManagement.png";
-import MESDashboard from "@/assets/MESDashboard.png";
+import IshanyaLogo from "@assets/LOGO_(1)_1773850741268.png";
+import ECommerce from "@assets/E-Commerce_TCPL_1773855646277.png";
+import ComplaintManagement from "@assets/Complaint_Mgmt_1773855372896.png";
+import MESDashboard from "@assets/MES_Dashboard_1773855753164.png";
+import BillingSoftware from "@assets/Billing_Software_1773855438202.png";
 
 const BRAND = {
   orange: "#F7941D",
@@ -14,11 +14,11 @@ const BRAND = {
 };
 
 const slides = [
-  { image: Dashboard, title: "Dashboard" },
-  { image: Report, title: "Report" },
+  { image: IshanyaLogo, title: "Ishanya Infosoft" },
+  { image: MESDashboard, title: "MES Dashboard" },
   { image: ECommerce, title: "E-Commerce" },
   { image: ComplaintManagement, title: "Complaint Management" },
-  { image: MESDashboard, title: "MES Dashboard" },
+  { image: BillingSoftware, title: "Billing Software" },
 ];
 
 type Feature = { label: string; logo?: ReactNode };
