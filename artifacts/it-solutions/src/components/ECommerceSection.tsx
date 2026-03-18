@@ -30,23 +30,11 @@ export default function ECommerceSection() {
 
           {/* Left — image like Billing */}
           <ScrollReveal direction="left" className="relative pb-8 w-full" style={{ flex: "2" }}>
-            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-30" style={{ background: BRAND.teal }} />
-            {/* Offset backing plate behind the image card */}
-            <div
-              className="absolute rounded-2xl"
-              style={{
-                top: 10, left: 10, right: -10, bottom: -10,
-                background: BRAND.teal,
-                opacity: 0.12,
-                zIndex: 0,
-              }}
-            />
+            <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
               className="rounded-2xl overflow-hidden shadow-2xl"
               style={{
-                border: "3px solid rgba(0,153,153,0.25)",
-                position: "relative",
-                zIndex: 1,
+                border: "2px solid rgba(0,153,153,0.25)",
               }}
             >
               <img
