@@ -37,7 +37,9 @@ export default function Home() {
         <SlideShowSection />
       </ScrollReveal>
 
-      <ERPInfographicSection />
+      <ScrollReveal direction="up">
+        <ERPInfographicSection />
+      </ScrollReveal>
 
       <div style={{ height: 80 }} />
 
