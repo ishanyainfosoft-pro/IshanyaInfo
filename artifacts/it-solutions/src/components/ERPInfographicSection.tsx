@@ -128,7 +128,7 @@ export default function ERPInfographicSection() {
           </div>
 
           {/* ── LEFT: modules 0–3 (always visible) ── */}
-          <div className="flex flex-col gap-3" style={{ width: 405 }}>
+          <div className="flex flex-col gap-3" style={{ width: 205 }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-1 text-right"
               style={{ color: BRAND.orange }}>Click to explore</p>
             {MODULES.slice(0, 4).map((mod) => (
@@ -262,7 +262,7 @@ export default function ERPInfographicSection() {
           </div>
 
           {/* ── RIGHT: modules 4–7 (always visible) ── */}
-          <div className="flex flex-col gap-3" style={{ width: 405 }}>
+          <div className="flex flex-col gap-3" style={{ width: 205 }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-1"
               style={{ color: BRAND.orange }}>Click to explore</p>
             {MODULES.slice(4, 8).map((mod) => (
