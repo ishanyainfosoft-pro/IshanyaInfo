@@ -11,13 +11,13 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {["20+ Years IT / ITES Experience", "Full Stack Developer", "ERP Architect"].map((tag, i) => (
+          {["Customer Centric", "Trust", "Reliable Service Support"].map((tag, i) => (
             <span key={i} className="flex items-center gap-2">
               <span
                 className="px-3 py-1 rounded-full text-xs font-medium"
                 style={{
                   background: "rgba(247,148,29,0.10)",
-                  color: BRAND.orange,
+                  color: "#000000",
                   border: "1px solid rgba(247,148,29,0.25)",
                 }}
               >
