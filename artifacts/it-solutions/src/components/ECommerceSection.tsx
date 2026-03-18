@@ -65,7 +65,7 @@ export default function ECommerceSection() {
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.teal }}
             >
               Customized{" "}
-              <span style={{ color: BRAND.teal }}>E-Commerce</span>{" "}Software
+              <span style={{ color: BRAND.teal }}>E-Commerce</span>{" "}Web Solution
             </h2>
             <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
               Our tailored E-Commerce platform helps businesses sell online with confidence — from product listing and order management to payment processing and customer engagement, all in one fully integrated solution.
