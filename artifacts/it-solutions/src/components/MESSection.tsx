@@ -1,4 +1,4 @@
-import MESDashboardImg from "@assets/ChatGPT2_1773752074389.png";
+import MESDashboardImg from "@assets/MES_Dashboard_1773855753164.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {
