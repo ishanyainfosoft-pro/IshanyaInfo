@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import LeadershipSection from "@/components/LeadershipSection";
 import SlideShowSection from "@/components/SlideShowSection";
 import MESSection from "@/components/MESSection";
-import CoreOfferingSection from "@/components/CoreOfferingSection";
 import ERPInfographicSection from "@/components/ERPInfographicSection";
 import BillingSoftwareSection from "@/components/BillingSoftwareSection";
 import ECommerceSection from "@/components/ECommerceSection";
@@ -36,12 +35,6 @@ export default function Home() {
 
       <ScrollReveal direction="up">
         <SlideShowSection />
-      </ScrollReveal>
-
-      <div style={{ height: 80 }} />
-
-      <ScrollReveal direction="up">
-        <CoreOfferingSection />
       </ScrollReveal>
 
       <ERPInfographicSection />

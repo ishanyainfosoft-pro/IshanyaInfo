@@ -57,7 +57,7 @@ export default function ERPInfographicSection() {
   return (
     <section
       className="py-14 sm:py-20 overflow-hidden"
-      style={{ background: "#E7DCCB" }}
+      style={{ background: "transparent" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -67,7 +67,7 @@ export default function ERPInfographicSection() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#2a2a2a" }}
           >
-            Customized <span style={{ color: BRAND.orange }}>ERP</span> Solution
+            Customized <span style={{ color: BRAND.wine }}>ERP</span> Solution
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.</p>
         </div>
