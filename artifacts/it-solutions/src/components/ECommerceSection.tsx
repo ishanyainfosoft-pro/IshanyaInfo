@@ -1,4 +1,5 @@
 import ECommerceDashboard from "@assets/ChatGPT4_1773746522083.png";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {
   orange: "#F7941D",
@@ -30,7 +31,7 @@ export default function ECommerceSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left — image */}
-          <div className="relative pb-8">
+          <ScrollReveal direction="left" className="relative pb-8">
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
               className="rounded-2xl overflow-hidden"
@@ -57,10 +58,10 @@ export default function ECommerceSection() {
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(0,153,153,0.10)" }}>🛒</div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right — text */}
-          <div>
+          <ScrollReveal direction="right" delay={1}>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.teal }}
@@ -88,7 +89,7 @@ export default function ECommerceSection() {
                 </span>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

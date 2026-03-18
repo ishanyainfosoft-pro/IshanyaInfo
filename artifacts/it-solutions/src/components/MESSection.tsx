@@ -1,4 +1,5 @@
 import MESDashboardImg from "@assets/ChatGPT2_1773752074389.png";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {
   orange: "#F7941D",
@@ -27,7 +28,7 @@ export default function MESSection() {
         <div className="flex flex-col lg:flex-row gap-12 items-center">
 
           {/* Left — text (40%) */}
-          <div className="w-full" style={{ flex: "2" }}>
+          <ScrollReveal direction="left" className="w-full" style={{ flex: "2" }}>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: ACCENT }}
@@ -55,10 +56,10 @@ export default function MESSection() {
                 </span>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right — image (60%) */}
-          <div className="relative pb-8 w-full" style={{ flex: "3" }}>
+          <ScrollReveal direction="right" delay={1} className="relative pb-8 w-full" style={{ flex: "3" }}>
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-30" style={{ background: ACCENT }} />
             <div className="rounded-2xl overflow-hidden shadow-2xl" style={{ border: `3px solid rgba(0,153,153,0.25)` }}>
               <img
@@ -80,7 +81,7 @@ export default function MESSection() {
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.2)" }}>🏭</div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

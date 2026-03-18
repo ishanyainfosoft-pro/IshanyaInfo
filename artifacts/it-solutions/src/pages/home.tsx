@@ -13,6 +13,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import ContactModal from "@/components/ContactModal";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -27,21 +28,60 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full" style={{ fontFamily: "'Inter', 'Space Grotesk', sans-serif", background: "linear-gradient(to bottom, #c8ecec 0%, #f0f0f0 18%, #fde0c0 35%, #f0f0f0 50%, #c8ecec 65%, #f0f0f0 78%, #f9d0a0 88%, #c8ecec 94%, #d8d8d8 100%)" }}>
       <Navbar onGetStarted={() => setModalOpen(true)} />
+
+      {/* Hero — always visible, no reveal */}
       <HeroSection />
-      <SlideShowSection />
+
+      <ScrollReveal direction="up">
+        <SlideShowSection />
+      </ScrollReveal>
+
       <div style={{ height: 80 }} />
-      <CoreOfferingSection />
+
+      <ScrollReveal direction="up">
+        <CoreOfferingSection />
+      </ScrollReveal>
+
       <div style={{ height: 80 }} />
-      <MESSection />
+
+      <ScrollReveal direction="up">
+        <MESSection />
+      </ScrollReveal>
+
       <div style={{ height: 80 }} />
-      <ECommerceSection />
-      <BillingSoftwareSection />
-      <FlagshipSection />
-      <ClientsSection />
-      <FAQSection onOpenModal={() => setModalOpen(true)} />
-      <LeadershipSection />
-      <ContactSection />
-      <Footer />
+
+      <ScrollReveal direction="up">
+        <ECommerceSection />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up">
+        <BillingSoftwareSection />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up">
+        <FlagshipSection />
+      </ScrollReveal>
+
+      <ScrollReveal direction="fade">
+        <ClientsSection />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up">
+        <FAQSection onOpenModal={() => setModalOpen(true)} />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up">
+        <LeadershipSection />
+      </ScrollReveal>
+
+      <ScrollReveal direction="fade">
+        <ContactSection />
+      </ScrollReveal>
+
+      <ScrollReveal direction="fade">
+        <Footer />
+      </ScrollReveal>
+
       <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
