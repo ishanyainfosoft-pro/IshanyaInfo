@@ -66,7 +66,7 @@ const testimonials = [
     role: "Managing Director",
     rating: 5,
     accent: BRAND.wine,
-    text: "Our e-commerce portal built by Ishanya Infosoft is fast, scalable, and perfectly integrated with our warehouse ERP. E-commerce site has helped us to serve remote customers and helped us grew sales. The product catalogue management, automated order routing, and customer dashboards are exactly what we envisioned — delivered on time.",
+    text: "Our e-commerce portal built by Ishanya Infosoft is fast, scalable, and perfectly integrated with our pre-existing system. E-commerce site has helped us to serve remote customers and helped us grew sales. The product catalogue management, automated order routing, and customer dashboards are exactly what we envisioned — delivered on time.",
   },
 ];
 
