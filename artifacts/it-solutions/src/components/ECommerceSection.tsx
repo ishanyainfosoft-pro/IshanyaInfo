@@ -1,4 +1,4 @@
-import ECommerceDashboard from "@assets/E-Commerce_TCPL_1773857073413.png";
+import ECommerceDashboard from "@assets/Gemini_Generated_Image_d845lld845lld845_1773862659154.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {

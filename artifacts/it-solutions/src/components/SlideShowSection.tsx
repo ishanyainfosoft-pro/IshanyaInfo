@@ -1,5 +1,5 @@
 import { useState, useEffect, type ReactNode } from "react";
-import ECommerce from "@assets/Gemini_Generated_Image_d845lld845lld845_1773862498199.png";
+import ECommerce from "@assets/Gemini_Generated_Image_d845lld845lld845_1773862659154.png";
 import Reports from "@assets/Gemini_Generated_Image_7s4wl87s4wl87s4w_1773862498200.png";
 import Dashboard from "@assets/Gemini_Generated_Image_fuisz6fuisz6fuis_1773862498202.png";
 import BillingSoftware from "@assets/Billing_Software_1773862569156.png";
