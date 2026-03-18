@@ -36,7 +36,7 @@ const testimonials = [
     role: "Director",
     rating: 5,
     accent: BRAND.wine,
-    text: "The MES platform gave us shop-floor traceability we never thought possible at our scale. Every machine, every operator, every batch — all tracked live. Defect rates fell by 35% in the first quarter post-deployment. Ishanya Infosoft's domain knowledge in manufacturing is exceptional.",
+    text: "Quality and compliance are non-negotiable in our industry. The Complaint Management System from Ishanya Infosoft gave us end-to-end audit trails and automated 8D reporting, saving countless man-hours during customer audits. We achieved zero NCRs in our last three quality reviews.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895191996-Brusp16H.png",
@@ -56,7 +56,7 @@ const testimonials = [
     role: "Plant Manager",
     rating: 5,
     accent: BRAND.teal,
-    text: "Quality and compliance are non-negotiable in our industry. The Complaint Management System from Ishanya Infosoft gave us end-to-end audit trails and automated 8D reporting, saving countless man-hours during customer audits. We achieved zero NCRs in our last three quality reviews.",
+    text: "The MES platform gave us shop-floor traceability we never thought possible at our scale. Every machine, every operator, every batch — all tracked live. Ishanya Infosoft's domain knowledge in manufacturing is exceptional.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/Tools_County_1772904162265-BybJ4DOy.jpeg",
