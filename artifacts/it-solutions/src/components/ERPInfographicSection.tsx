@@ -23,10 +23,10 @@ const MODULES: Mod[] = [
     features: ["Lead Management", "Inquiry + Quotes", "Customer Support", "Task Management", "WhatsApp Integration", "Analysis + Reports"] },
 ];
 
-const CX       = 265;   // container half-width / center
-const ORBIT_R  = 198;   // radius of orbit
-const HEX_W    = 108;                        // hexagon width
-const HEX_H    = Math.round(108 * 0.866);   // perfect regular hexagon height ≈ 94
+const CX       = 310;   // container half-width / center
+const ORBIT_R  = 238;   // radius of orbit
+const HEX_W    = 118;                        // hexagon width
+const HEX_H    = Math.round(118 * 0.866);   // perfect regular hexagon height ≈ 102
 const CLIP     = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)";
 const STEP_MS  = 5000;  // orbit step interval
 const TRANS_MS = 1500;  // orbit transition duration
