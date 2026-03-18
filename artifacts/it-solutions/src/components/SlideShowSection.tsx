@@ -1,8 +1,10 @@
 import { useState, useEffect, type ReactNode } from "react";
-import ECommerce from "@assets/E-Commerce_TCPL_1773857073413.png";
-import ComplaintManagement from "@assets/Complaint_Mgmt_1773855372896.png";
-import MESDashboard from "@assets/MES_Dashboard_1773855753164.png";
-import BillingSoftware from "@assets/Billing_Software_1773855438202.png";
+import ECommerce from "@assets/Gemini_Generated_Image_d845lld845lld845_1773862498199.png";
+import Reports from "@assets/Gemini_Generated_Image_7s4wl87s4wl87s4w_1773862498200.png";
+import Dashboard from "@assets/Gemini_Generated_Image_fuisz6fuisz6fuis_1773862498202.png";
+import BillingSoftware from "@assets/Billing_Software_1773862569156.png";
+import ComplaintManagement from "@assets/Complaint_Mgmt_1773862577083.png";
+import MESDashboard from "@assets/MES_Dashboard_1773862589929.png";
 
 const BRAND = {
   orange: "#F7941D",
@@ -13,6 +15,8 @@ const BRAND = {
 };
 
 const slides = [
+  { image: Dashboard, title: "ERP Dashboard" },
+  { image: Reports, title: "Reports" },
   { image: MESDashboard, title: "MES Dashboard" },
   { image: ECommerce, title: "E-Commerce" },
   { image: ComplaintManagement, title: "Complaint Management" },
