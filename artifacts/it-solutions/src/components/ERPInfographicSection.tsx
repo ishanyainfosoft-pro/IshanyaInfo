@@ -106,12 +106,21 @@ export default function ERPInfographicSection() {
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.</p>
         </div>
 
-        {/* ── Desktop: orbital 3-col + right description ── */}
+        {/* ── Desktop: [left detail] | [left modules] | [orbital] | [right modules] | [right detail] ── */}
         <div className="hidden lg:block">
-        <div className="flex flex-row items-center gap-6">
+        <div className="flex flex-row items-center gap-4">
+
+          {/* ── FAR LEFT: detail card when a left module is active ── */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            {activeLeft && (
+              <div style={{ animation: "fadeSlideDown 0.22s ease" }}>
+                <DetailCard mod={activeLeft} />
+              </div>
+            )}
+          </div>
 
           {/* ── LEFT: modules 0–3 (always visible) ── */}
-          <div className="flex flex-col gap-3" style={{ width: 175 }}>
+          <div className="flex flex-col gap-3" style={{ width: 160 }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-1 text-right"
               style={{ color: BRAND.orange }}>Click to explore</p>
             {MODULES.slice(0, 4).map((mod) => (
@@ -245,7 +254,7 @@ export default function ERPInfographicSection() {
           </div>
 
           {/* ── RIGHT: modules 4–7 (always visible) ── */}
-          <div className="flex flex-col gap-3" style={{ width: 175 }}>
+          <div className="flex flex-col gap-3" style={{ width: 160 }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-1"
               style={{ color: BRAND.orange }}>Click to explore</p>
             {MODULES.slice(4, 8).map((mod) => (
@@ -268,48 +277,11 @@ export default function ERPInfographicSection() {
             ))}
           </div>
 
-          {/* ── RIGHT OPEN SPACE: detail card or idle prompt ── */}
-          <div style={{ flex: 1, minWidth: 220, alignSelf: "center" }}>
-            {active ? (
-              <div
-                className="rounded-2xl p-5"
-                style={{
-                  background: "#F3EBDD",
-                  border: `2px solid ${active.color}55`,
-                  boxShadow: `0 12px 36px ${active.color}28`,
-                  animation: "fadeSlideDown 0.22s ease",
-                }}
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span style={{ fontSize: 34, lineHeight: 1 }}>{active.emoji}</span>
-                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 800, color: active.color }}>{active.name}</h3>
-                  <button
-                    onClick={() => setActive(null)}
-                    style={{ marginLeft: "auto", color: active.color, fontSize: 18, fontWeight: 700, background: "none", border: "none", cursor: "pointer", lineHeight: 1 }}
-                  >✕</button>
-                </div>
-                <ul className="space-y-1.5">
-                  {active.features.map((f, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: active.color, flexShrink: 0 }} />
-                      <span style={{ fontSize: 13, fontWeight: 500, color: "#444" }}>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : (
-              <div
-                className="rounded-2xl p-6 flex flex-col items-center justify-center text-center"
-                style={{
-                  border: "1.5px dashed rgba(247,148,29,0.30)",
-                  background: "rgba(247,148,29,0.04)",
-                  minHeight: 180,
-                }}
-              >
-                <span style={{ fontSize: 32, marginBottom: 10 }}>🖱️</span>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: "#aaa" }}>
-                  Click any module to<br />explore its features
-                </p>
+          {/* ── FAR RIGHT: detail card when a right module is active ── */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            {activeRight && (
+              <div style={{ animation: "fadeSlideDown 0.22s ease" }}>
+                <DetailCard mod={activeRight} />
               </div>
             )}
           </div>
