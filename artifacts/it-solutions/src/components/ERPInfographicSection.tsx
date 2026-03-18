@@ -73,9 +73,7 @@ export default function ERPInfographicSection() {
           >
             ERP <span style={{ color: BRAND.orange }}>Modules</span> &amp; Key Features
           </h2>
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>
-            A fully integrated suite of modules built to streamline every aspect of your business.
-          </p>
+          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.</p>
         </div>
 
         {/* ── Main layout ── */}
