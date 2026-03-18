@@ -7,16 +7,15 @@ const BRAND = {
 };
 
 const clients = [
-  { name: "Sparker Piezoceramics", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772945661088-BrJcES39.png" },
-  { name: "Hendge Impex", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895032674-SWZQyy1X.png" },
-  { name: "Excel Micron Poona", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895062575-CRO96Qha.png" },
-  { name: "SV Group", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895191996-Brusp16H.png" },
-  { name: "Refractory Shapes Limited", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895238284-BmXx9CSs.png" },
-  { name: "Tools County", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/Tools_County_1772904162265-BybJ4DOy.jpeg" },
+  { name: "Sparker Piezoceramics", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772945661088-BrJcES39.png", url: "https://www.sparklerceramics.com/" },
+  { name: "Hendge Impex", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895032674-SWZQyy1X.png", url: "" },
+  { name: "Excel Micron Poona", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895062575-CRO96Qha.png", url: "https://www.excelmicron.com/" },
+  { name: "SV Group", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895191996-Brusp16H.png", url: "" },
+  { name: "Refractory Shapes Limited", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895238284-BmXx9CSs.png", url: "https://refshape.com/" },
+  { name: "Tools County", logo: "https://pdf-text-extractor--aviratk.replit.app/assets/Tools_County_1772904162265-BybJ4DOy.jpeg", url: "https://www.toolscounty.com/" },
 ];
 
 export default function ClientsSection() {
-  /* Triple the list so the loop is always seamless */
   const all = [...clients, ...clients, ...clients];
 
   return (
@@ -30,10 +29,8 @@ export default function ClientsSection() {
         </h2>
       </div>
 
-      {/* Marquee wrapper — overflow:hidden is essential */}
       <div className="relative" style={{ overflow: "hidden" }}>
 
-        {/* Fade edges using transparent gradients */}
         <div
           className="absolute left-0 top-0 bottom-0 w-28 z-10 pointer-events-none"
           style={{ background: "linear-gradient(to right, rgba(200,236,236,0.85), transparent)" }}
@@ -44,32 +41,49 @@ export default function ClientsSection() {
         />
 
         <div className="flex gap-6 animate-marquee" style={{ width: "max-content" }}>
-          {all.map((client, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center px-4 py-3 rounded-xl flex-shrink-0 transition-all hover:shadow-lg"
-              style={{
-                background: "rgba(255,255,255,0.55)",
-                backdropFilter: "blur(8px)",
-                border: `1px solid rgba(247,148,29,0.2)`,
-                width: 160,
-                height: 90,
-              }}
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="w-full h-full object-contain"
-                onError={(e) => {
-                  const el = e.target as HTMLImageElement;
-                  el.style.display = "none";
-                  if (el.parentElement) {
-                    el.parentElement.innerHTML = `<span style="font-size:12px;font-weight:600;color:${BRAND.gray};text-align:center;padding:0 8px;line-height:1.4;">${client.name}</span>`;
-                  }
+          {all.map((client, i) => {
+            const card = (
+              <div
+                className="flex items-center justify-center px-4 py-3 rounded-xl flex-shrink-0 transition-all hover:shadow-lg"
+                style={{
+                  background: "rgba(255,255,255,0.55)",
+                  backdropFilter: "blur(8px)",
+                  border: `1px solid rgba(247,148,29,0.2)`,
+                  width: 160,
+                  height: 90,
+                  cursor: client.url ? "pointer" : "default",
                 }}
-              />
-            </div>
-          ))}
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    const el = e.target as HTMLImageElement;
+                    el.style.display = "none";
+                    if (el.parentElement) {
+                      el.parentElement.innerHTML = `<span style="font-size:12px;font-weight:600;color:${BRAND.gray};text-align:center;padding:0 8px;line-height:1.4;">${client.name}</span>`;
+                    }
+                  }}
+                />
+              </div>
+            );
+
+            return client.url ? (
+              <a
+                key={i}
+                href={client.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={client.name}
+                style={{ textDecoration: "none" }}
+              >
+                {card}
+              </a>
+            ) : (
+              <div key={i}>{card}</div>
+            );
+          })}
         </div>
       </div>
     </section>
