@@ -214,7 +214,7 @@ export default function ERPInfographicSection() {
                 display: "flex", flexDirection: "column",
                 alignItems: "center", justifyContent: "center",
                 zIndex: 10,
-                filter: "drop-shadow(0 10px 28px rgba(247,148,29,0.50))",
+                filter: "drop-shadow(-4px -4px 6px rgba(255,255,255,0.85)) drop-shadow(5px 5px 9px rgba(0,0,0,0.45)) drop-shadow(0 8px 22px rgba(247,148,29,0.55))",
               }}
             >
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 38, fontWeight: 900, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>ERP</span>
@@ -237,8 +237,8 @@ export default function ERPInfographicSection() {
                     width: HEX_W, height: HEX_H,
                     clipPath: CLIP,
                     background: isAct
-                      ? `linear-gradient(135deg, ${mod.color}ee 0%, ${mod.color} 50%, ${mod.color}bb 100%)`
-                      : "linear-gradient(145deg, #fff8f2 0%, #f5e8d5 45%, #e8d4bb 100%)",
+                      ? `linear-gradient(145deg, ${mod.color}cc 0%, ${mod.color} 40%, ${mod.color}aa 100%)`
+                      : "linear-gradient(145deg, #fdf6ee 0%, #f0dfc8 50%, #ddc8a8 100%)",
                     display: "flex", flexDirection: "column",
                     alignItems: "center", justifyContent: "center",
                     gap: 4, cursor: "pointer",
@@ -246,8 +246,8 @@ export default function ERPInfographicSection() {
                     transform: `scale(${isHov || isAct ? 1.12 : 1})`,
                     transition: `left ${TRANS_MS}ms ease-in-out, top ${TRANS_MS}ms ease-in-out, transform 0.25s ease, filter 0.25s`,
                     filter: isHov || isAct
-                      ? `drop-shadow(0 12px 28px ${mod.color}90) drop-shadow(5px 8px 12px rgba(0,0,0,0.32)) drop-shadow(-2px -3px 8px rgba(255,255,255,0.55))`
-                      : "drop-shadow(0 8px 22px rgba(0,0,0,0.28)) drop-shadow(4px 5px 8px rgba(0,0,0,0.20)) drop-shadow(-2px -2px 6px rgba(255,255,255,0.60)) drop-shadow(0 2px 6px rgba(247,148,29,0.18))",
+                      ? `drop-shadow(-4px -4px 6px rgba(255,255,255,0.85)) drop-shadow(4px 5px 8px rgba(0,0,0,0.45)) drop-shadow(0 8px 20px ${mod.color}60)`
+                      : "drop-shadow(-3px -3px 5px rgba(255,255,255,0.90)) drop-shadow(4px 4px 7px rgba(0,0,0,0.38)) drop-shadow(0 2px 4px rgba(0,0,0,0.15))",
                   }}
                 >
                   <span style={{ fontSize: 26, lineHeight: 1 }}>{mod.emoji}</span>
