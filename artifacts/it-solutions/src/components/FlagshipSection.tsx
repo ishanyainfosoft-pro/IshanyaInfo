@@ -9,16 +9,12 @@ const BRAND = {
 };
 
 const complaintFeatures = [
-  "Ease of Logging & Customer Portal Linkage",
-  "Short-Term Actions for Quick Resolution",
-  "Comprehensive 8D Report Generation",
-  "Tracking of Actions Till Completion",
-  "Warranty / Recall / Field Failure Management",
-  "End-to-End Audit Compliant Process",
-  "Multi-User, Multi-Plant Support",
-  "SAP / S4 HANA Integration",
-  "CAPA in 8D / Any Customer Format",
+  "Ease of Logging via WhatsApp integration",
+  "End-to-End process transparency",
+  "Dashboards with SLAs compliance",
   "Auto Email / SMS & Escalation Alerts",
+  "SAP / S4 HANA Integration",
+  "CAPA in 8D / Audit ready process",
 ];
 
 export default function FlagshipSection() {
