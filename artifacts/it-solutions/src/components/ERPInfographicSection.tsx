@@ -236,7 +236,9 @@ export default function ERPInfographicSection() {
                     position: "absolute", left, top,
                     width: HEX_W, height: HEX_H,
                     clipPath: CLIP,
-                    background: isAct ? mod.color : "#F3EBDD",
+                    background: isAct
+                      ? `linear-gradient(135deg, ${mod.color}ee 0%, ${mod.color} 50%, ${mod.color}bb 100%)`
+                      : "linear-gradient(145deg, #fff8f2 0%, #f5e8d5 45%, #e8d4bb 100%)",
                     display: "flex", flexDirection: "column",
                     alignItems: "center", justifyContent: "center",
                     gap: 4, cursor: "pointer",
@@ -244,8 +246,8 @@ export default function ERPInfographicSection() {
                     transform: `scale(${isHov || isAct ? 1.12 : 1})`,
                     transition: `left ${TRANS_MS}ms ease-in-out, top ${TRANS_MS}ms ease-in-out, transform 0.25s ease, filter 0.25s`,
                     filter: isHov || isAct
-                      ? `drop-shadow(0 6px 22px ${mod.color}70)`
-                      : "drop-shadow(0 4px 14px rgba(0,0,0,0.18)) drop-shadow(0 1px 4px rgba(247,148,29,0.12))",
+                      ? `drop-shadow(0 12px 28px ${mod.color}90) drop-shadow(5px 8px 12px rgba(0,0,0,0.32)) drop-shadow(-2px -3px 8px rgba(255,255,255,0.55))`
+                      : "drop-shadow(0 8px 22px rgba(0,0,0,0.28)) drop-shadow(4px 5px 8px rgba(0,0,0,0.20)) drop-shadow(-2px -2px 6px rgba(255,255,255,0.60)) drop-shadow(0 2px 6px rgba(247,148,29,0.18))",
                   }}
                 >
                   <span style={{ fontSize: 26, lineHeight: 1 }}>{mod.emoji}</span>
