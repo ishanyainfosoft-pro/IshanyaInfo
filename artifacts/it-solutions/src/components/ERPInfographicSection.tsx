@@ -95,8 +95,8 @@ export default function ERPInfographicSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* ── Header (mobile only) ── */}
-        <div className="text-center mb-10 lg:hidden">
+        {/* ── Header ── */}
+        <div className="text-center mb-12">
           <h2
             className="text-3xl sm:text-4xl font-bold leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
@@ -268,57 +268,52 @@ export default function ERPInfographicSection() {
             ))}
           </div>
 
-          {/* ── DESCRIPTION: right free space ── */}
-          <div style={{ flex: 1, minWidth: 220, paddingLeft: 8 }}>
-            <h2
-              className="text-3xl xl:text-4xl font-bold leading-tight mb-4"
-              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
-            >
-              Customized ERP Solution
-            </h2>
-            <p className="text-sm leading-relaxed mb-5" style={{ color: "#6b6b6b" }}>
-              Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
-              style={{ background: BRAND.wine, boxShadow: `0 4px 16px ${BRAND.wine}40` }}
-            >
-              Get a Free Demo →
-            </a>
+          {/* ── RIGHT OPEN SPACE: detail card or idle prompt ── */}
+          <div style={{ flex: 1, minWidth: 220, alignSelf: "center" }}>
+            {active ? (
+              <div
+                className="rounded-2xl p-5"
+                style={{
+                  background: "#F3EBDD",
+                  border: `2px solid ${active.color}55`,
+                  boxShadow: `0 12px 36px ${active.color}28`,
+                  animation: "fadeSlideDown 0.22s ease",
+                }}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <span style={{ fontSize: 34, lineHeight: 1 }}>{active.emoji}</span>
+                  <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 17, fontWeight: 800, color: active.color }}>{active.name}</h3>
+                  <button
+                    onClick={() => setActive(null)}
+                    style={{ marginLeft: "auto", color: active.color, fontSize: 18, fontWeight: 700, background: "none", border: "none", cursor: "pointer", lineHeight: 1 }}
+                  >✕</button>
+                </div>
+                <ul className="space-y-1.5">
+                  {active.features.map((f, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: active.color, flexShrink: 0 }} />
+                      <span style={{ fontSize: 13, fontWeight: 500, color: "#444" }}>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div
+                className="rounded-2xl p-6 flex flex-col items-center justify-center text-center"
+                style={{
+                  border: "1.5px dashed rgba(247,148,29,0.30)",
+                  background: "rgba(247,148,29,0.04)",
+                  minHeight: 180,
+                }}
+              >
+                <span style={{ fontSize: 32, marginBottom: 10 }}>🖱️</span>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, color: "#aaa" }}>
+                  Click any module to<br />explore its features
+                </p>
+              </div>
+            )}
           </div>
         </div>
-
-        {/* ── Desktop detail panel (below the 3 columns) ── */}
-        {active && (
-          <div
-            className="mt-6 mx-auto rounded-2xl p-5 flex items-start gap-5"
-            style={{
-              maxWidth: 560,
-              background: "#F3EBDD",
-              border: `2px solid ${active.color}55`,
-              boxShadow: `0 12px 36px ${active.color}28`,
-              animation: "fadeSlideDown 0.22s ease",
-            }}
-          >
-            <span style={{ fontSize: 38, lineHeight: 1, flexShrink: 0 }}>{active.emoji}</span>
-            <div style={{ flex: 1 }}>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 800, color: active.color, marginBottom: 10 }}>{active.name}</h3>
-              <ul style={{ display: "flex", flexWrap: "wrap", gap: "6px 20px" }}>
-                {active.features.map((f, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: active.color, flexShrink: 0 }} />
-                    <span style={{ fontSize: 12.5, fontWeight: 500, color: "#444" }}>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <button
-              onClick={() => setActive(null)}
-              style={{ color: active.color, fontSize: 18, fontWeight: 700, lineHeight: 1, flexShrink: 0, background: "none", border: "none", cursor: "pointer" }}
-            >✕</button>
-          </div>
-        )}
         </div>
 
         {/* ── Mobile grid (hidden on lg+) ── */}
