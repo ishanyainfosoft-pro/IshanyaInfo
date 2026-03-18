@@ -9,6 +9,7 @@ import BillingSoftwareSection from "@/components/BillingSoftwareSection";
 import ECommerceSection from "@/components/ECommerceSection";
 import FlagshipSection from "@/components/FlagshipSection";
 import ClientsSection from "@/components/ClientsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import ContactModal from "@/components/ContactModal";
@@ -65,6 +66,8 @@ export default function Home() {
       <ScrollReveal direction="fade">
         <ClientsSection />
       </ScrollReveal>
+
+      <TestimonialsSection />
 
       <ScrollReveal direction="up">
         <FAQSection onOpenModal={() => setModalOpen(true)} />
