@@ -192,7 +192,7 @@ export default function SlideShowSection() {
           {/* ─── RIGHT: Vertical Conveyor Belt ─── */}
           <div
             className="w-full flex flex-col"
-            style={{ flex: "1", paddingTop: 4 }}
+            style={{ flex: "1", paddingTop: 4, paddingRight: 15 }}
           >
             {/* Label */}
             <div className="flex items-center gap-2 mb-5">
