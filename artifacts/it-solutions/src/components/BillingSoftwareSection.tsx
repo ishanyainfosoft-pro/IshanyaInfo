@@ -1,4 +1,4 @@
-import BillingDashboard from "@assets/ChatGPT6_1773832422816.png";
+import BillingDashboard from "@assets/Billing_Software_1773855438202.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {
