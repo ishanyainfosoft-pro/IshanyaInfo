@@ -63,7 +63,7 @@ export default function FlagshipSection() {
               <span style={{ color: BRAND.wine }}>Complaint</span>{" "}Management
             </h2>
             <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
-              Successfully developed and deployed a fully customized, end-to-end complaint processing system for a reputed multinational client — delivering faster resolutions, transparent tracking, and complete audit compliance.
+              Successfully developed and deployed a fully customized, end-to-end complaint processing system for a reputed MNC client — delivering faster resolutions, transparent tracking, and complete audit compliance.
             </p>
             <div className="flex flex-wrap gap-2.5 mb-8">
               {complaintFeatures.map((f, i) => (
