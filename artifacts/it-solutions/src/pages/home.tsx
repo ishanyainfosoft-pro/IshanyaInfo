@@ -5,6 +5,7 @@ import LeadershipSection from "@/components/LeadershipSection";
 import SlideShowSection from "@/components/SlideShowSection";
 import MESSection from "@/components/MESSection";
 import CoreOfferingSection from "@/components/CoreOfferingSection";
+import ERPInfographicSection from "@/components/ERPInfographicSection";
 import BillingSoftwareSection from "@/components/BillingSoftwareSection";
 import ECommerceSection from "@/components/ECommerceSection";
 import FlagshipSection from "@/components/FlagshipSection";
@@ -42,6 +43,8 @@ export default function Home() {
       <ScrollReveal direction="up">
         <CoreOfferingSection />
       </ScrollReveal>
+
+      <ERPInfographicSection />
 
       <div style={{ height: 80 }} />
 
