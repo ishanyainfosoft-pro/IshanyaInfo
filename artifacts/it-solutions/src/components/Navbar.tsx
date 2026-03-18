@@ -40,9 +40,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? "rgba(255,255,255,0.97)" : "transparent",
+        background: "rgba(255,255,255,0.97)",
         boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.1)" : "none",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
+        backdropFilter: "blur(12px)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
