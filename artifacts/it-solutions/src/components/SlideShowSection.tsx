@@ -149,7 +149,7 @@ export default function SlideShowSection() {
           >
             <div
               className="relative rounded-2xl overflow-hidden shadow-2xl"
-              style={{ aspectRatio: "4/5", background: "#f4f4f4" }}
+              style={{ aspectRatio: "4/3", background: "#f4f4f4" }}
             >
               {slides.map((slide, i) => (
                 <div
