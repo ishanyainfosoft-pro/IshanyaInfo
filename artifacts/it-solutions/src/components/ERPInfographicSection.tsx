@@ -60,30 +60,38 @@ export default function ERPInfographicSection() {
 
   const DetailCard = ({ mod }: { mod: Mod }) => (
     <div
-      className="rounded-2xl p-5"
+      className="rounded-2xl"
       style={{
         background: "#F3EBDD",
         border: `2px solid ${mod.color}55`,
-        boxShadow: `0 12px 36px ${mod.color}28`,
+        boxShadow: `0 12px 40px ${mod.color}28`,
         flex: 1,
+        padding: "28px 24px 22px",
       }}
     >
-      <div className="flex items-center gap-3 mb-3">
-        <span style={{ fontSize: 32 }}>{mod.emoji}</span>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 800, color: mod.color }}>{mod.name}</h3>
+      {/* Header */}
+      <div className="flex items-center gap-3" style={{ marginBottom: 18 }}>
+        <span style={{ fontSize: 42, lineHeight: 1 }}>{mod.emoji}</span>
+        <div>
+          <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 800, color: mod.color, lineHeight: 1.1 }}>{mod.name}</h3>
+          <p style={{ fontSize: 11, color: "#aaa", fontWeight: 500, marginTop: 2 }}>Module Features</p>
+        </div>
       </div>
-      <ul className="space-y-2 mb-4">
+
+      {/* Feature list */}
+      <ul style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 20 }}>
         {mod.features.map((f, i) => (
-          <li key={i} className="flex items-start gap-2">
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: mod.color, flexShrink: 0, marginTop: 4 }} />
-            <span style={{ fontSize: 12.5, fontWeight: 500, color: "#444", lineHeight: 1.4 }}>{f}</span>
+          <li key={i} className="flex items-center gap-2.5">
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: mod.color, flexShrink: 0, opacity: 0.85 }} />
+            <span style={{ fontSize: 13.5, fontWeight: 500, color: "#3a3a3a", lineHeight: 1.5 }}>{f}</span>
           </li>
         ))}
       </ul>
+
       <button
         onClick={() => setActive(null)}
-        className="w-full py-1.5 rounded-xl text-xs font-semibold transition-opacity hover:opacity-80"
-        style={{ background: `${mod.color}1a`, color: mod.color, border: `1.5px solid ${mod.color}44` }}
+        className="w-full rounded-xl text-sm font-semibold transition-opacity hover:opacity-80"
+        style={{ background: `${mod.color}18`, color: mod.color, border: `1.5px solid ${mod.color}44`, padding: "8px 0" }}
       >✕ Close</button>
     </div>
   );
