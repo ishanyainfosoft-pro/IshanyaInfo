@@ -23,7 +23,7 @@ const leaders = [
     role: "Partner",
     image: shailendraImg,
     accent: BRAND.teal,
-    points: ["25+ years Industrial Experience", "VP Mfg / Plant Head / Board Member", "Director of Operation Excellence"],
+    points: ["25+ years Industrial Experience as Senior Leader", "Hands-on experience as Plant Head of a German MNC", "Regional Director of Operation Excellence for Asia"],
     tagLabel: "Specialization",
     tags: ["Process Digitalization", "MES", "Quality Systems", "Customer Interface"],
   },
