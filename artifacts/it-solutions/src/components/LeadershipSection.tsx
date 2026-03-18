@@ -14,7 +14,7 @@ const leaders = [
     role: "Director / Founder",
     image: mrunalImg,
     accent: BRAND.orange,
-    points: ["20+ years of IT / ITES Experience", "Full Stack Development", "Customized applications across India & APAC"],
+    points: ["20+ years of IT / ITES Experience", "Full Stack Development Expert", "ERP Architect / Consultant"],
     tagLabel: "Tech Stack",
     tags: ["React JS", "Node JS", "Python", "SQL Server", "Flutter", "ASP.Net"],
   },
