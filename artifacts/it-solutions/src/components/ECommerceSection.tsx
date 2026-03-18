@@ -32,16 +32,17 @@ export default function ECommerceSection() {
           <ScrollReveal direction="left" className="relative pb-8 w-full" style={{ flex: "3" }}>
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
-              className="rounded-2xl overflow-hidden"
+              className="rounded-2xl overflow-hidden shadow-2xl"
               style={{
-                border: "2px solid rgba(0,153,153,0.30)",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.12), 0 0 30px rgba(0,153,153,0.10)",
+                border: "2px solid rgba(0,153,153,0.25)",
+                maxHeight: "420px",
               }}
             >
               <img
                 src={ECommerceDashboard}
                 alt="E-Commerce Platform"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
+                style={{ maxHeight: "420px", objectFit: "cover" }}
               />
             </div>
             <div
