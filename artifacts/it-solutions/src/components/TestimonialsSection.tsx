@@ -26,7 +26,7 @@ const testimonials = [
     role: "Director",
     rating: 5,
     accent: BRAND.teal,
-    text: "We struggled for years with disconnected spreadsheets and manual billing. After deploying Ishanya's Billing Software, our invoice processing time dropped by 40% and reconciliation errors are almost zero. The customization they offered perfectly matched our trade compliance requirements.",
+    text: "We struggled for years with disconnected spreadsheets and manual billing. After deploying Ishanya Infosoft's Billing Software, our invoice processing time dropped by 40% and reconciliation errors are almost zero. The customization they offered perfectly matched our trade compliance requirements.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895062575-CRO96Qha.png",
@@ -36,7 +36,7 @@ const testimonials = [
     role: "Director",
     rating: 5,
     accent: BRAND.wine,
-    text: "The MES platform gave us shop-floor traceability we never thought possible at our scale. Every machine, every operator, every batch — all tracked live. Defect rates fell by 35% in the first quarter post-deployment. Ishanya's domain knowledge in manufacturing is exceptional.",
+    text: "The MES platform gave us shop-floor traceability we never thought possible at our scale. Every machine, every operator, every batch — all tracked live. Defect rates fell by 35% in the first quarter post-deployment. Ishanya Infosoft's domain knowledge in manufacturing is exceptional.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895191996-Brusp16H.png",
@@ -46,7 +46,7 @@ const testimonials = [
     role: "Managing Director",
     rating: 5,
     accent: BRAND.orange,
-    text: "Rolling out an ERP across four business units simultaneously is no small feat, but Ishanya made it seamless. Their implementation methodology, training support, and post-go-live handholding set a benchmark. Our group-level MIS reporting is now fully automated and available in real time.",
+    text: "Rolling out an ERP across four business units simultaneously is no small feat, but Ishanya Infosoft made it seamless. Their implementation methodology, training support, and post-go-live handholding set a benchmark. Our group-level MIS reporting is now fully automated and available in real time.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895238284-BmXx9CSs.png",
@@ -56,7 +56,7 @@ const testimonials = [
     role: "Plant Manager",
     rating: 5,
     accent: BRAND.teal,
-    text: "Quality and compliance are non-negotiable in our industry. The Complaint Management System from Ishanya gave us end-to-end audit trails and automated 8D reporting, saving countless man-hours during customer audits. We achieved zero NCRs in our last three quality reviews.",
+    text: "Quality and compliance are non-negotiable in our industry. The Complaint Management System from Ishanya Infosoft gave us end-to-end audit trails and automated 8D reporting, saving countless man-hours during customer audits. We achieved zero NCRs in our last three quality reviews.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/Tools_County_1772904162265-BybJ4DOy.jpeg",
@@ -66,7 +66,7 @@ const testimonials = [
     role: "Managing Director",
     rating: 5,
     accent: BRAND.wine,
-    text: "Our e-commerce portal built by Ishanya is fast, scalable, and perfectly integrated with our warehouse ERP. Sales grew 55% within six months of launch. The product catalogue management, automated order routing, and customer dashboards are exactly what we envisioned — delivered on time.",
+    text: "Our e-commerce portal built by Ishanya Infosoft is fast, scalable, and perfectly integrated with our warehouse ERP. Sales grew 55% within six months of launch. The product catalogue management, automated order routing, and customer dashboards are exactly what we envisioned — delivered on time.",
   },
 ];
 
