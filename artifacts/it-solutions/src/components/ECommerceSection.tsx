@@ -13,8 +13,8 @@ const ecomFeatures = [
   "Smart Shopping Cart & Wishlist",
   "Secure Payment Gateway Integration",
   "Real-Time Order & Delivery Tracking",
-  "GST-Compliant Auto Invoicing",
-  "Discount, Coupon & Offer Engine",
+  "UPI, WhatsApp, Tally Integration",
+  "Discount, Coupon & Offers flash",
   "Multi-Vendor & Seller Management",
   "Sales Analytics & Reports Dashboard",
 ];
