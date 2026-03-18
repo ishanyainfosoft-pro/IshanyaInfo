@@ -36,7 +36,7 @@ const testimonials = [
     role: "Director",
     rating: 5,
     accent: BRAND.wine,
-    text: "Quality and compliance are non-negotiable in our industry. The Complaint Management System from Ishanya Infosoft gave us end-to-end audit trails and automated 8D reporting, saving countless man-hours during customer audits. We achieved zero NCRs in our last three quality reviews.",
+    text: "Data security is paramount for us — we could not risk our sensitive business data on a cloud platform. Ishanya Infosoft understood our concern immediately and delivered the entire ERP solution on an on-premises server within our facility. Having full control over our data has given us genuine peace of mind, and we have not looked back since.",
   },
   {
     logo: "https://pdf-text-extractor--aviratk.replit.app/assets/image_1772895191996-Brusp16H.png",
