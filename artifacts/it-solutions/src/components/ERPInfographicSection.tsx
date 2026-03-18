@@ -119,7 +119,7 @@ export default function ERPInfographicSection() {
         <div className="flex flex-row items-center justify-center gap-4">
 
           {/* ── FAR LEFT: detail card when a left module is active ── */}
-          <div style={{ flex: 1, minWidth: 400 }}>
+          <div style={{ flex: 1, minWidth: 500 }}>
             {activeLeft && (
               <div style={{ animation: "fadeSlideDown 0.22s ease" }}>
                 <DetailCard mod={activeLeft} />
@@ -286,7 +286,7 @@ export default function ERPInfographicSection() {
           </div>
 
           {/* ── FAR RIGHT: detail card when a right module is active ── */}
-          <div style={{ flex: 1, minWidth: 400 }}>
+          <div style={{ flex: 1, minWidth: 500 }}>
             {activeRight && (
               <div style={{ animation: "fadeSlideDown 0.22s ease" }}>
                 <DetailCard mod={activeRight} />
