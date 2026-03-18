@@ -164,7 +164,7 @@ export default function SlideShowSection() {
               {/* Gradient top */}
               <div
                 className="absolute top-0 left-0 right-0 z-10 pointer-events-none"
-                style={{ height: 80, background: "linear-gradient(to bottom, rgba(0,0,0,0.95), transparent)" }}
+                style={{ height: 80, background: "linear-gradient(to bottom, rgba(0,0,0,0.40), transparent)" }}
               />
               {/* Frame border */}
               <div
@@ -191,7 +191,7 @@ export default function SlideShowSection() {
               {/* Title overlay */}
               <div
                 className="absolute bottom-0 left-0 right-0 p-4 z-10"
-                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.95), transparent)" }}
+                style={{ background: "linear-gradient(to top, rgba(0,0,0,0.40), transparent)" }}
               >
                 <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                   {slides[current].title}
