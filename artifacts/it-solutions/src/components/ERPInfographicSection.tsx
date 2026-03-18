@@ -25,8 +25,8 @@ const MODULES: Mod[] = [
 
 const CX       = 265;   // container half-width / center
 const ORBIT_R  = 198;   // radius of orbit
-const HEX_W    = 108;   // hexagon width
-const HEX_H    = 108;   // hexagon height
+const HEX_W    = 108;                        // hexagon width
+const HEX_H    = Math.round(108 * 0.866);   // perfect regular hexagon height ≈ 94
 const CLIP     = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)";
 const STEP_MS  = 5000;  // orbit step interval
 const TRANS_MS = 1500;  // orbit transition duration
@@ -66,9 +66,7 @@ export default function ERPInfographicSection() {
           <span
             className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
             style={{ background: "rgba(247,148,29,0.15)", color: BRAND.orange, border: "1px solid rgba(247,148,29,0.35)" }}
-          >
-            Integrated Platform
-          </span>
+          >Customized ERP Solution</span>
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#2a2a2a" }}
@@ -209,7 +207,7 @@ export default function ERPInfographicSection() {
 
             {active ? (
               /* Detail card */
-              <div
+              (<div
                 className="rounded-2xl p-7"
                 style={{
                   background: "#F3EBDD",
@@ -236,10 +234,10 @@ export default function ERPInfographicSection() {
                   className="mt-6 w-full py-2 rounded-xl text-sm font-semibold transition-opacity hover:opacity-80"
                   style={{ background: `${active.color}1a`, color: active.color, border: `1.5px solid ${active.color}44` }}
                 >✕ Close</button>
-              </div>
+              </div>)
             ) : (
               /* Module list */
-              <div className="space-y-2.5">
+              (<div className="space-y-2.5">
                 <p
                   className="text-xs font-semibold uppercase tracking-wider mb-4"
                   style={{ color: BRAND.orange }}
@@ -263,7 +261,7 @@ export default function ERPInfographicSection() {
                     <span style={{ marginLeft: "auto", fontSize: 14, color: mod.color, opacity: 0.7 }}>›</span>
                   </div>
                 ))}
-              </div>
+              </div>)
             )}
           </div>
         </div>
