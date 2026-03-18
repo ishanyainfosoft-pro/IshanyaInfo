@@ -25,9 +25,9 @@ export default function BillingSoftwareSection() {
   return (
     <section
       id="billing-software"
-      className="py-14 sm:py-20 relative overflow-hidden"
+      className="py-10 sm:py-14"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
 
           {/* Left — text (40%) like MES */}
@@ -50,7 +50,7 @@ export default function BillingSoftwareSection() {
                   style={{
                     background: "rgba(255,255,255,0.6)",
                     color: "#333333",
-                    border: "1px solid rgba(247,148,29,0.28)",
+                    border: "1px solid rgba(0,153,153,0.25)",
                     backdropFilter: "blur(6px)",
                   }}
                 >

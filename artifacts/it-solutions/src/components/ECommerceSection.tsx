@@ -25,9 +25,9 @@ export default function ECommerceSection() {
   return (
     <section
       id="ecommerce"
-      className="py-14 sm:py-20 relative overflow-hidden"
+      className="py-10 sm:py-14"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
 
           {/* Left — image (60%) like ERP */}
@@ -84,7 +84,7 @@ export default function ECommerceSection() {
                     backdropFilter: "blur(6px)",
                   }}
                 >
-                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.teal }} />
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: BRAND.orange }} />
                   {f}
                 </span>
               ))}
