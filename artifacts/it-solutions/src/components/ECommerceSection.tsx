@@ -15,9 +15,7 @@ const ecomFeatures = [
   "Real-Time Order & Delivery Tracking",
   "GST-Compliant Auto Invoicing",
   "Discount, Coupon & Offer Engine",
-  "Customer Account & Loyalty Portal",
   "Multi-Vendor & Seller Management",
-  "WhatsApp / SMS Order Alerts",
   "Sales Analytics & Reports Dashboard",
 ];
 

@@ -11,12 +11,10 @@ const BRAND = {
 const billingFeatures = [
   "Automated Invoice & Quotation Generation",
   "GST & Tax Compliance Ready",
-  "Revenue Overview & Payment Status",
   "Pending, Paid & Overdue Tracking",
   "Customer & Vendor Ledger Management",
   "Region-Wise Revenue Analytics",
   "Upcoming Payment Reminders",
-  "Multi-Currency & Multi-Branch Support",
   "Barcode / QR Code Billing",
   "Seamless ERP & Tally Integration",
 ];
