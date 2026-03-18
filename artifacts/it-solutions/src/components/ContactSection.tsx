@@ -46,7 +46,7 @@ const socialLinks = [
   },
   {
     label: "YouTube",
-    href: "https://www.youtube.com/@ishanyainfosoft",
+    href: "https://www.youtube.com/@IshanyaInfosoft-e8i",
     bg: "#FF0000",
     svg: (
       <svg width="18" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
