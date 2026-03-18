@@ -160,7 +160,7 @@ export default function SlideShowSection() {
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   />
                 </div>
               ))}
