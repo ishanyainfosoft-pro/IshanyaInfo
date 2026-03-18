@@ -95,10 +95,10 @@ export default function ERPInfographicSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* ── Header ── */}
-        <div className="text-center mb-12">
+        {/* ── Header (mobile only) ── */}
+        <div className="text-center mb-10 lg:hidden">
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl font-bold leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
           >
             Customized ERP Solution
@@ -106,12 +106,12 @@ export default function ERPInfographicSection() {
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.</p>
         </div>
 
-        {/* ── Desktop: 3-col layout ── */}
+        {/* ── Desktop: orbital 3-col + right description ── */}
         <div className="hidden lg:block">
-        <div className="flex flex-row items-center justify-center gap-6">
+        <div className="flex flex-row items-center gap-6">
 
           {/* ── LEFT: modules 0–3 (always visible) ── */}
-          <div className="flex flex-col gap-3" style={{ width: 200 }}>
+          <div className="flex flex-col gap-3" style={{ width: 175 }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-1 text-right"
               style={{ color: BRAND.orange }}>Click to explore</p>
             {MODULES.slice(0, 4).map((mod) => (
@@ -245,7 +245,7 @@ export default function ERPInfographicSection() {
           </div>
 
           {/* ── RIGHT: modules 4–7 (always visible) ── */}
-          <div className="flex flex-col gap-3" style={{ width: 200 }}>
+          <div className="flex flex-col gap-3" style={{ width: 175 }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-1"
               style={{ color: BRAND.orange }}>Click to explore</p>
             {MODULES.slice(4, 8).map((mod) => (
@@ -266,6 +266,26 @@ export default function ERPInfographicSection() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* ── DESCRIPTION: right free space ── */}
+          <div style={{ flex: 1, minWidth: 220, paddingLeft: 8 }}>
+            <h2
+              className="text-3xl xl:text-4xl font-bold leading-tight mb-4"
+              style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
+            >
+              Customized ERP Solution
+            </h2>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: "#6b6b6b" }}>
+              Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
+              style={{ background: BRAND.wine, boxShadow: `0 4px 16px ${BRAND.wine}40` }}
+            >
+              Get a Free Demo →
+            </a>
           </div>
         </div>
 
