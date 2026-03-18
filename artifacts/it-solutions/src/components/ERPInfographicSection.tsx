@@ -142,7 +142,7 @@ export default function ERPInfographicSection() {
               style={{
                 position: "absolute",
                 left: CX, top: CX,
-                width: 152, height: 152,
+                width: 152, height: 132,
                 transform: "translate(-50%, -50%)",
                 clipPath: CLIP,
                 background: "linear-gradient(145deg, #f7941d 0%, #c86000 100%)",
@@ -271,7 +271,7 @@ export default function ERPInfographicSection() {
           <div className="flex justify-center mb-6">
             <div
               style={{
-                width: 110, height: 110,
+                width: 110, height: 95,
                 clipPath: CLIP,
                 background: "linear-gradient(145deg, #f7941d, #c86000)",
                 display: "flex", flexDirection: "column",
@@ -292,7 +292,7 @@ export default function ERPInfographicSection() {
               >
                 <div
                   style={{
-                    width: 76, height: 76,
+                    width: 76, height: 66,
                     clipPath: CLIP,
                     background: active?.id === mod.id ? mod.color : "#F3EBDD",
                     display: "flex", flexDirection: "column",
