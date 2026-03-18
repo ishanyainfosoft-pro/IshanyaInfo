@@ -106,12 +106,12 @@ export default function SlideShowSection() {
       style={{ background: "transparent", paddingTop: 0, paddingBottom: 48, marginTop: -200 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-10 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 items-start justify-between">
 
           {/* ─── LEFT: Slideshow (aligned left) ─── */}
           <div
             className="w-full"
-            style={{ flex: "1.6" }}
+            style={{ flex: "2.2" }}
             onMouseEnter={() => setAutoPlay(false)}
             onMouseLeave={() => setAutoPlay(true)}
           >
@@ -192,7 +192,7 @@ export default function SlideShowSection() {
           {/* ─── RIGHT: Vertical Conveyor Belt ─── */}
           <div
             className="w-full flex flex-col"
-            style={{ flex: "1", paddingTop: 4, paddingRight: 15 }}
+            style={{ flex: "0.85", paddingTop: 4, paddingRight: 15, marginLeft: "auto" }}
           >
             {/* Label */}
             <div className="flex items-center gap-2 mb-5">
