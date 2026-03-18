@@ -65,9 +65,9 @@ export default function ERPInfographicSection() {
         <div className="text-center mb-12">
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#2a2a2a" }}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.wine }}
           >
-            Customized <span style={{ color: BRAND.wine }}>ERP</span> Solution
+            Customized ERP Solution
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.</p>
         </div>
@@ -217,7 +217,7 @@ export default function ERPInfographicSection() {
           <div className="flex flex-col gap-3" style={{ width: 200 }}>
             <p className="text-xs font-semibold uppercase tracking-wider mb-1"
               style={{ color: BRAND.orange }}>
-              &nbsp;
+              Click to explore
             </p>
             {MODULES.slice(4, 8).map((mod) => {
               const isAct = active?.id === mod.id;
