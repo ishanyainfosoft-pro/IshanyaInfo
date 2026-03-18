@@ -38,7 +38,7 @@ export default function Home() {
       <BillingSoftwareSection />
       <FlagshipSection />
       <ClientsSection />
-      <FAQSection />
+      <FAQSection onOpenModal={() => setModalOpen(true)} />
       <LeadershipSection />
       <ContactSection />
       <Footer />

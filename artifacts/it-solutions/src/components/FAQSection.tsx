@@ -184,7 +184,7 @@ function AccordionItem({
   );
 }
 
-export default function FAQSection() {
+export default function FAQSection({ onOpenModal }: { onOpenModal?: () => void }) {
   const [openLeft, setOpenLeft] = useState<number | null>(null);
   const [openRight, setOpenRight] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -280,9 +280,12 @@ export default function FAQSection() {
         <p className="text-center text-sm mt-10"
           style={{ color: BRAND.gray, fontFamily: "'Inter', sans-serif", opacity: isVisible ? 1 : 0, transition: "opacity 1s ease 1s" }}>
           Still have questions?{" "}
-          <a href="#contact" style={{ color: BRAND.teal, fontWeight: 600, textDecoration: "underline" }}>
+          <button
+            onClick={() => onOpenModal?.()}
+            style={{ color: BRAND.teal, fontWeight: 600, textDecoration: "underline", background: "none", border: "none", cursor: "pointer", padding: 0, font: "inherit" }}
+          >
             Contact our team
-          </a>{" "}
+          </button>{" "}
           — we're happy to help.
         </p>
       </div>
