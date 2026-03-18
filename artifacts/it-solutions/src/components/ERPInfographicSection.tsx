@@ -116,7 +116,7 @@ export default function ERPInfographicSection() {
 
         {/* ── Desktop: [left detail] | [left modules] | [orbital] | [right modules] | [right detail] ── */}
         <div className="hidden lg:block">
-        <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-row items-center justify-center gap-4">
 
           {/* ── FAR LEFT: detail card when a left module is active ── */}
           <div style={{ flex: 1, minWidth: 400 }}>
