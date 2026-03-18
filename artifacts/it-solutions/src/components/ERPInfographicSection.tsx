@@ -107,37 +107,33 @@ export default function ERPInfographicSection() {
         </div>
 
         {/* ── Desktop: 3-col layout ── */}
-        <div className="hidden lg:flex flex-row items-center justify-center gap-6">
+        <div className="hidden lg:block">
+        <div className="flex flex-row items-center justify-center gap-6">
 
-          {/* ── LEFT: modules 0–3 or detail ── */}
+          {/* ── LEFT: modules 0–3 (always visible) ── */}
           <div className="flex flex-col gap-3" style={{ width: 200 }}>
-            {activeLeft ? (
-              <DetailCard mod={activeLeft} />
-            ) : (
-              <>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-1 text-right"
-                  style={{ color: BRAND.orange }}>Click to explore</p>
-                {MODULES.slice(0, 4).map((mod) => (
-                  <div
-                    key={mod.id}
-                    onClick={() => toggle(mod)}
-                    className="flex items-center gap-3 rounded-xl px-3 py-2.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
-                    style={{
-                      background: "rgba(243,235,221,0.75)",
-                      border: "1px solid rgba(247,148,29,0.20)",
-                      flexDirection: "row-reverse",
-                      textAlign: "right",
-                    }}
-                  >
-                    <span style={{ fontSize: 18, flexShrink: 0 }}>{mod.emoji}</span>
-                    <div style={{ flex: 1 }}>
-                      <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 700, color: mod.color }}>{mod.name}</p>
-                      <p style={{ fontSize: 10.5, color: "#888", marginTop: 1, lineHeight: 1.3 }}>{mod.features[0]}</p>
-                    </div>
-                  </div>
-                ))}
-              </>
-            )}
+            <p className="text-xs font-semibold uppercase tracking-wider mb-1 text-right"
+              style={{ color: BRAND.orange }}>Click to explore</p>
+            {MODULES.slice(0, 4).map((mod) => (
+              <div
+                key={mod.id}
+                onClick={() => toggle(mod)}
+                className="flex items-center gap-3 rounded-xl px-3 py-2.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+                style={{
+                  background: active?.id === mod.id ? `${mod.color}18` : "rgba(243,235,221,0.75)",
+                  border: active?.id === mod.id ? `1.5px solid ${mod.color}88` : "1px solid rgba(247,148,29,0.20)",
+                  flexDirection: "row-reverse",
+                  textAlign: "right",
+                  boxShadow: active?.id === mod.id ? `0 4px 16px ${mod.color}28` : "none",
+                }}
+              >
+                <span style={{ fontSize: 18, flexShrink: 0 }}>{mod.emoji}</span>
+                <div style={{ flex: 1 }}>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 700, color: mod.color }}>{mod.name}</p>
+                  <p style={{ fontSize: 10.5, color: "#888", marginTop: 1, lineHeight: 1.3 }}>{mod.features[0]}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* ── CENTER: Orbital diagram ── */}
@@ -248,34 +244,61 @@ export default function ERPInfographicSection() {
             })}
           </div>
 
-          {/* ── RIGHT: modules 4–7 or detail ── */}
+          {/* ── RIGHT: modules 4–7 (always visible) ── */}
           <div className="flex flex-col gap-3" style={{ width: 200 }}>
-            {activeRight ? (
-              <DetailCard mod={activeRight} />
-            ) : (
-              <>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-1"
-                  style={{ color: BRAND.orange }}>Click to explore</p>
-                {MODULES.slice(4, 8).map((mod) => (
-                  <div
-                    key={mod.id}
-                    onClick={() => toggle(mod)}
-                    className="flex items-center gap-3 rounded-xl px-3 py-2.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
-                    style={{
-                      background: "rgba(243,235,221,0.75)",
-                      border: "1px solid rgba(247,148,29,0.20)",
-                    }}
-                  >
-                    <span style={{ fontSize: 18, flexShrink: 0 }}>{mod.emoji}</span>
-                    <div>
-                      <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 700, color: mod.color }}>{mod.name}</p>
-                      <p style={{ fontSize: 10.5, color: "#888", marginTop: 1, lineHeight: 1.3 }}>{mod.features[0]}</p>
-                    </div>
-                  </div>
-                ))}
-              </>
-            )}
+            <p className="text-xs font-semibold uppercase tracking-wider mb-1"
+              style={{ color: BRAND.orange }}>Click to explore</p>
+            {MODULES.slice(4, 8).map((mod) => (
+              <div
+                key={mod.id}
+                onClick={() => toggle(mod)}
+                className="flex items-center gap-3 rounded-xl px-3 py-2.5 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+                style={{
+                  background: active?.id === mod.id ? `${mod.color}18` : "rgba(243,235,221,0.75)",
+                  border: active?.id === mod.id ? `1.5px solid ${mod.color}88` : "1px solid rgba(247,148,29,0.20)",
+                  boxShadow: active?.id === mod.id ? `0 4px 16px ${mod.color}28` : "none",
+                }}
+              >
+                <span style={{ fontSize: 18, flexShrink: 0 }}>{mod.emoji}</span>
+                <div>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 700, color: mod.color }}>{mod.name}</p>
+                  <p style={{ fontSize: 10.5, color: "#888", marginTop: 1, lineHeight: 1.3 }}>{mod.features[0]}</p>
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+
+        {/* ── Desktop detail panel (below the 3 columns) ── */}
+        {active && (
+          <div
+            className="mt-6 mx-auto rounded-2xl p-5 flex items-start gap-5"
+            style={{
+              maxWidth: 560,
+              background: "#F3EBDD",
+              border: `2px solid ${active.color}55`,
+              boxShadow: `0 12px 36px ${active.color}28`,
+              animation: "fadeSlideDown 0.22s ease",
+            }}
+          >
+            <span style={{ fontSize: 38, lineHeight: 1, flexShrink: 0 }}>{active.emoji}</span>
+            <div style={{ flex: 1 }}>
+              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 800, color: active.color, marginBottom: 10 }}>{active.name}</h3>
+              <ul style={{ display: "flex", flexWrap: "wrap", gap: "6px 20px" }}>
+                {active.features.map((f, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: active.color, flexShrink: 0 }} />
+                    <span style={{ fontSize: 12.5, fontWeight: 500, color: "#444" }}>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button
+              onClick={() => setActive(null)}
+              style={{ color: active.color, fontSize: 18, fontWeight: 700, lineHeight: 1, flexShrink: 0, background: "none", border: "none", cursor: "pointer" }}
+            >✕</button>
+          </div>
+        )}
         </div>
 
         {/* ── Mobile grid (hidden on lg+) ── */}

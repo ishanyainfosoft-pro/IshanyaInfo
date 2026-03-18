@@ -233,6 +233,11 @@
   100% { opacity: 1;    box-shadow: 0 0 0px 0px rgba(247,148,29,0);    background: rgba(247,148,29,0.10); border-color: rgba(247,148,29,0.25); }
 }
 
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ── Global 10% side-margin reduction ───────────────────────
    max-w-7xl: 80rem → 84rem  (side margins shrink ~10%)
    max-w-6xl: 72rem → 77rem  (same ratio)
