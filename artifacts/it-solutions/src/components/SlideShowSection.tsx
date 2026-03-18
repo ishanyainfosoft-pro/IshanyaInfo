@@ -1,5 +1,5 @@
 import { useState, useEffect, type ReactNode } from "react";
-import ECommerce from "@assets/E-Commerce_TCPL_1773855646277.png";
+import ECommerce from "@assets/E-Commerce_TCPL_1773857073413.png";
 import ComplaintManagement from "@assets/Complaint_Mgmt_1773855372896.png";
 import MESDashboard from "@assets/MES_Dashboard_1773855753164.png";
 import BillingSoftware from "@assets/Billing_Software_1773855438202.png";

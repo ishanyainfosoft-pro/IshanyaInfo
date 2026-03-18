@@ -1,4 +1,4 @@
-import ECommerceDashboard from "@assets/E-Commerce_TCPL_1773855646277.png";
+import ECommerceDashboard from "@assets/E-Commerce_TCPL_1773857073413.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {
