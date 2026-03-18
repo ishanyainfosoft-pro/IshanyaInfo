@@ -63,15 +63,11 @@ export default function ERPInfographicSection() {
 
         {/* ── Header ── */}
         <div className="text-center mb-12">
-          <span
-            className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
-            style={{ background: "rgba(247,148,29,0.15)", color: BRAND.orange, border: "1px solid rgba(247,148,29,0.35)" }}
-          >Customized ERP Solution</span>
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#2a2a2a" }}
           >
-            ERP <span style={{ color: BRAND.orange }}>Modules</span> &amp; Key Features
+            Customized <span style={{ color: BRAND.orange }}>ERP</span> Solution
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our highly customized ERP system offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.</p>
         </div>
