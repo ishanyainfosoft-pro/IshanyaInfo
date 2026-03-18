@@ -55,9 +55,13 @@ export default function Home() {
         <ECommerceSection />
       </ScrollReveal>
 
+      <div style={{ height: 80 }} />
+
       <ScrollReveal direction="up">
         <BillingSoftwareSection />
       </ScrollReveal>
+
+      <div style={{ height: 80 }} />
 
       <ScrollReveal direction="up">
         <FlagshipSection />

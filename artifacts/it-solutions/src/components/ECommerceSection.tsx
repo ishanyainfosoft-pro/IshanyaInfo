@@ -1,4 +1,4 @@
-import ECommerceDashboard from "@assets/ChatGPT4_1773746522083.png";
+import ECommerceDashboard from "@assets/ChatGPT4_1773832249368.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {
@@ -9,16 +9,16 @@ const BRAND = {
 };
 
 const ecomFeatures = [
-  "Product Catalogue Management",
-  "Shopping Cart & Wishlist",
-  "GST-Ready Invoicing",
-  "Order & Delivery Tracking",
-  "Payment Gateway Integration",
-  "Multi-Vendor Support",
-  "Discount & Coupon Management",
-  "Mobile App Ready",
-  "WhatsApp Order Notifications",
-  "Analytics & Sales Reports",
+  "Multi-Category Product Catalogue",
+  "Smart Shopping Cart & Wishlist",
+  "Secure Payment Gateway Integration",
+  "Real-Time Order & Delivery Tracking",
+  "GST-Compliant Auto Invoicing",
+  "Discount, Coupon & Offer Engine",
+  "Customer Account & Loyalty Portal",
+  "Multi-Vendor & Seller Management",
+  "WhatsApp / SMS Order Alerts",
+  "Sales Analytics & Reports Dashboard",
 ];
 
 export default function ECommerceSection() {
@@ -28,10 +28,10 @@ export default function ECommerceSection() {
       className="py-14 sm:py-20 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
 
-          {/* Left — image */}
-          <ScrollReveal direction="left" className="relative pb-8">
+          {/* Left — image (60%) like ERP */}
+          <ScrollReveal direction="left" className="relative pb-8 w-full" style={{ flex: "3" }}>
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.teal }} />
             <div
               className="rounded-2xl overflow-hidden"
@@ -42,7 +42,7 @@ export default function ECommerceSection() {
             >
               <img
                 src={ECommerceDashboard}
-                alt="E-Commerce Platform Dashboard"
+                alt="E-Commerce Platform"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -60,17 +60,17 @@ export default function ECommerceSection() {
             </div>
           </ScrollReveal>
 
-          {/* Right — text */}
-          <ScrollReveal direction="right" delay={1}>
+          {/* Right — text (40%) like ERP */}
+          <ScrollReveal direction="right" delay={1} className="w-full" style={{ flex: "2" }}>
             <h2
               className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight"
               style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.teal }}
             >
               Customized{" "}
-              <span style={{ color: BRAND.teal }}>E-Commerce</span>{" "}Solutions
+              <span style={{ color: BRAND.teal }}>E-Commerce</span>{" "}Software
             </h2>
             <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
-              Our tailored E-Commerce platform helps businesses sell online with ease — from product listing and order management to payment processing and customer engagement, all in one integrated solution.
+              Our tailored E-Commerce platform helps businesses sell online with confidence — from product listing and order management to payment processing and customer engagement, all in one fully integrated solution.
             </p>
             <div className="flex flex-wrap gap-2.5 mb-8">
               {ecomFeatures.map((f, i) => (
