@@ -177,7 +177,7 @@ export default function TestimonialsSection() {
           </span>
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.orange }}
           >
             Trusted by Clients{" "}
             <span style={{ color: BRAND.orange }}>Across Industry</span>
