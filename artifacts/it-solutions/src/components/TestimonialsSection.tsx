@@ -179,11 +179,11 @@ export default function TestimonialsSection() {
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
           >
-            Trusted by{" "}
-            <span style={{ color: BRAND.orange }}>Industry Leaders</span>
+            Trusted by Clients{" "}
+            <span style={{ color: BRAND.orange }}>Across Industry</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#555555" }}>
-            Real results. Real businesses. See what our clients say about working with Ishanya Infosoft.
+            Real results. Real businesses. See what our clients say about working with us.
           </p>
         </div>
       </ScrollReveal>
