@@ -11,7 +11,7 @@ const BRAND = {
 const leaders = [
   {
     name: "Mrunal Kulkarni",
-    role: "Founder Director",
+    role: "Founder / Director",
     image: mrunalImg,
     accent: BRAND.orange,
     points: ["20+ years of IT / ITES Experience", "Full Stack Development Expert", "ERP Architect / Consultant"],
