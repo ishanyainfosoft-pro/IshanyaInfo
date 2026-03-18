@@ -26,7 +26,8 @@ export default function ScrollReveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add("sr-visible");
-          observer.unobserve(el);
+        } else {
+          el.classList.remove("sr-visible");
         }
       },
       { threshold: 0.07, rootMargin: "0px 0px -30px 0px" }
