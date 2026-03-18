@@ -206,3 +206,21 @@
 @media (prefers-reduced-motion: reduce) {
   .sr { opacity: 1; transform: none; transition: none; }
 }
+
+/* ── Global 10% side-margin reduction ───────────────────────
+   max-w-7xl: 80rem → 84rem  (side margins shrink ~10%)
+   max-w-6xl: 72rem → 77rem  (same ratio)
+   lg:px-8  : 2rem  → 1.8rem (inner padding -10%)
+   sm:px-6  : 1.5rem → 1.35rem
+   px-4     : 1rem  → 0.9rem
+──────────────────────────────────────────────────────────── */
+.max-w-7xl { max-width: 84rem !important; }
+.max-w-6xl { max-width: 77rem !important; }
+
+@media (min-width: 1024px) {
+  .lg\:px-8 { padding-left: 1.8rem !important; padding-right: 1.8rem !important; }
+}
+@media (min-width: 640px) {
+  .sm\:px-6 { padding-left: 1.35rem !important; padding-right: 1.35rem !important; }
+}
+.px-4 { padding-left: 0.9rem !important; padding-right: 0.9rem !important; }
