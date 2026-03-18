@@ -24,7 +24,7 @@ export default function FlagshipSection() {
         <div className="flex flex-col lg:flex-row gap-12 items-center">
 
           {/* Left — image */}
-          <ScrollReveal direction="left" className="relative pb-8 w-full" style={{ flex: "3" }}>
+          <ScrollReveal direction="left" className="relative pb-8 w-full" style={{ flex: "3.45" }}>
             <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl opacity-20" style={{ background: BRAND.wine }} />
             <div
               className="rounded-2xl overflow-hidden"
