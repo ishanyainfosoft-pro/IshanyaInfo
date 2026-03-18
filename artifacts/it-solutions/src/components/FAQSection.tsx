@@ -230,10 +230,6 @@ export default function FAQSection() {
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3"
-            style={{ color: BRAND.orange, fontFamily: "'Inter', sans-serif" }}>
-            Got Questions?
-          </p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}>
             Frequently Asked Questions
