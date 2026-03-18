@@ -20,7 +20,6 @@ export default function HeroSection() {
                   color: "#000000",
                   border: "1px solid rgba(247,148,29,0.25)",
                   animation: "pill-star 3s ease-in-out infinite",
-                  animationDelay: `${i * 1}s`,
                 }}
               >
                 {tag}
