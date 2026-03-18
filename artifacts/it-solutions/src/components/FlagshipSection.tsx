@@ -1,4 +1,4 @@
-import ComplaintDashboard from "@assets/ChatGPT5_1773760395401.png";
+import ComplaintDashboard from "@assets/Complaint_Mgmt_1773855372896.png";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const BRAND = {
