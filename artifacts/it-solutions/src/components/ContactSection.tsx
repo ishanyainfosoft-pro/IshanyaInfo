@@ -1,4 +1,4 @@
-import logoImg from "@assets/WhatsApp_Image_2026-03-09_at_4.33.45_PM_1773388136859.jpeg";
+import logoImg from "@assets/Ishanya_Info_Main_Logo_1773864691760.png";
 
 const BRAND = {
   orange: "#F7941D",
@@ -66,13 +66,13 @@ export default function ContactSection() {
           <div className="flex-shrink-0 flex items-center gap-3">
             <div
               style={{
-                width: 72,
-                height: 72,
+                width: 36,
+                height: 36,
                 borderRadius: "50%",
                 overflow: "hidden",
                 background: BRAND.white,
                 flexShrink: 0,
-                boxShadow: `0 0 0 2.5px ${BRAND.orange}55`,
+                boxShadow: `0 0 0 2px ${BRAND.orange}55`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -82,10 +82,9 @@ export default function ContactSection() {
                 src={logoImg}
                 alt="Ishanya Infosoft"
                 style={{
-                  width: "170%",
-                  height: "170%",
-                  objectFit: "cover",
-                  objectPosition: "center center",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
                   flexShrink: 0,
                 }}
               />
