@@ -64,7 +64,7 @@ export default function LeadershipSection() {
             >
               <div className="h-1 w-full" style={{ background: leader.accent }} />
               <div className="flex flex-col items-start pt-6 pb-2 px-6">
-                <div className="rounded-xl overflow-hidden mb-4" style={{ width: "110px", height: "110px" }}>
+                <div className="rounded-xl overflow-hidden mb-4" style={{ width: "160px", height: "160px" }}>
                   <img
                     src={leader.image}
                     alt={leader.name}

@@ -71,10 +71,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 src={logoImg}
                 alt="Ishanya Infosoft logo"
                 style={{
-                  width: "115%",
-                  height: "115%",
-                  objectFit: "cover",
-                  objectPosition: "center",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
                   flexShrink: 0,
                 }}
               />
