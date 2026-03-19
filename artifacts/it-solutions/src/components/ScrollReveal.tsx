@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode, CSSProperties } from "react";
+import { useEffect, useRef, ReactNode, CSSProperties, ElementType } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -6,7 +6,7 @@ interface ScrollRevealProps {
   delay?: 0 | 1 | 2 | 3 | 4 | 5;
   className?: string;
   style?: CSSProperties;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 }
 
 export default function ScrollReveal({
@@ -41,7 +41,7 @@ export default function ScrollReveal({
 
   return (
     <Tag
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       className={`sr ${dirClass} ${delayClass} ${className}`.trim()}
       style={style}
     >
