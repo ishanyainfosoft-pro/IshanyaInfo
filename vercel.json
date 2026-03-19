@@ -1,0 +1,10 @@
+{
+  "buildCommand": "PORT=3000 BASE_PATH=/ pnpm --filter @workspace/it-solutions run build",
+  "outputDirectory": "artifacts/it-solutions/dist/public",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}
