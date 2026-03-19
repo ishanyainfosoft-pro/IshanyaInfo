@@ -66,7 +66,7 @@ export default function CoreOfferingSection() {
               <span style={{ color: BRAND.wine }}>ERP</span>{" "}Solutions
             </h2>
             <p className="mb-8 leading-relaxed text-base sm:text-lg" style={{ color: "#555555" }}>
-              Our highly customized software solutions offers a comprehensive suite of modules, each equipped with robust features to streamline operations, enhance efficiency, and provide actionable insights.
+              Our highly customized software solutions offers a comprehensive suite of modules and features to streamline operations, enhance efficiency, and provide actionable insights.
             </p>
             <div className="flex flex-wrap gap-2.5 mb-8">
               {features.map((f, i) => (
