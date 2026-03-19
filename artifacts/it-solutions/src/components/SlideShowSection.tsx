@@ -135,7 +135,7 @@ export default function SlideShowSection() {
   return (
     <section
       className="w-full relative"
-      style={{ background: "transparent", paddingTop: 0, paddingBottom: 48, marginTop: -200 }}
+      style={{ background: "transparent", paddingTop: 0, paddingBottom: 48, marginTop: -80 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-10 items-start justify-between">
