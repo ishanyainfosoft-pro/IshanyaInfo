@@ -1,7 +1,6 @@
 {
-  "buildCommand": "pnpm --filter @workspace/it-solutions run build",
-  "outputDirectory": "artifacts/it-solutions/dist/public",
-  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "framework": null,
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/:path*" },
