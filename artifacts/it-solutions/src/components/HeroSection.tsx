@@ -10,21 +10,23 @@ export default function HeroSection() {
     <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "78vh" }}>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {["Customer Centric", "Trust", "Reliable Service Support"].map((tag, i) => (
-            <span key={i} className="flex items-center gap-2">
-              <span
-                className="px-3 py-1 rounded-full text-xs font-medium"
-                style={{
-                  background: "rgba(247,148,29,0.10)",
-                  color: "#000000",
-                  border: "1px solid rgba(247,148,29,0.25)",
-                  animation: "pill-star 3s ease-in-out infinite",
-                }}
-              >
-                {tag}
-              </span>
-              {i < 2 && <span style={{ color: "rgba(0,0,0,0.2)" }}>•</span>}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          {[
+            { label: "Customized ERP",      bg: BRAND.teal,            text: "#ffffff" },
+            { label: "Customized MES",      bg: BRAND.wine,            text: "#ffffff" },
+            { label: "E-Commerce Shop",     bg: BRAND.orange,          text: "#ffffff" },
+            { label: "Customized Software", bg: "#111111",             text: "#ffffff" },
+          ].map((tag, i) => (
+            <span
+              key={i}
+              className="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide"
+              style={{
+                background: tag.bg,
+                color: tag.text,
+                boxShadow: `0 2px 8px ${tag.bg}55`,
+              }}
+            >
+              {tag.label}
             </span>
           ))}
         </div>
