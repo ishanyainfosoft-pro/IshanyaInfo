@@ -36,7 +36,7 @@ export default function HeroSection() {
           className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.03em", color: "#1a1a1a" }}
         >
-          <span style={{ color: BRAND.orange }}>Customized Software Solutions, curated to your business needs</span>
+          <span style={{ color: BRAND.orange }} className="text-[#000000]">Customized Software Solutions, curated to your business needs</span>
         </h1>
 
         <p
