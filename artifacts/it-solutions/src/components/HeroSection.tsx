@@ -15,7 +15,7 @@ export default function HeroSection() {
             { label: "Customized ERP",      bg: BRAND.teal,   text: "#ffffff", delay: "0s"    },
             { label: "Customized MES",      bg: BRAND.wine,   text: "#ffffff", delay: "0.9s"  },
             { label: "E-Commerce Shop",     bg: BRAND.orange, text: "#ffffff", delay: "1.8s"  },
-            { label: "Customized Software", bg: "#4a4a4a",    text: "#ffffff", delay: "2.7s"  },
+            { label: "Customized Software", bg: "#888888",    text: "#ffffff", delay: "2.7s"  },
           ].map((tag, i) => (
             <span
               key={i}
