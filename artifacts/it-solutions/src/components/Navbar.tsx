@@ -40,7 +40,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: "rgba(255,255,255,0.97)",
+        background: "rgba(0,0,0,0.97)",
         boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.1)" : "none",
         backdropFilter: "blur(12px)",
       }}
@@ -104,7 +104,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
                 className="text-sm font-medium transition-opacity hover:opacity-60"
-                style={{ color: BRAND.gray }}
+                style={{ color: "#ffffff" }}
               >
                 {item.label}
               </button>
@@ -125,7 +125,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 key={i}
                 className="block w-6 h-0.5 transition-all"
                 style={{
-                  background: BRAND.gray,
+                  background: "#ffffff",
                   transform:
                     i === 0 && menuOpen ? "rotate(45deg) translate(5px,5px)"
                     : i === 2 && menuOpen ? "rotate(-45deg) translate(5px,-5px)"
@@ -139,7 +139,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
       </div>
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4" style={{ borderColor: "#f0f0f0" }}>
+        <div className="md:hidden border-t px-4 py-4 flex flex-col gap-4" style={{ background: "#000000", borderColor: "#333333" }}>
           {[
             { label: "Services", id: "core-offering" },
             { label: "Clients", id: "clients" },
@@ -147,7 +147,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             { label: "About Us", id: "leadership" },
             { label: "Contact", id: "contact" },
           ].map((item) => (
-            <button key={item.id} onClick={() => scrollTo(item.id)} className="text-sm font-medium text-left" style={{ color: BRAND.gray }}>
+            <button key={item.id} onClick={() => scrollTo(item.id)} className="text-sm font-medium text-left" style={{ color: "#ffffff" }}>
               {item.label}
             </button>
           ))}
