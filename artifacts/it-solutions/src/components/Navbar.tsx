@@ -83,7 +83,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
               style={{
                 fontFamily: "'Bahamas', 'Space Grotesk', sans-serif",
                 fontWeight: 700,
-                fontSize: "26px",
+                fontSize: "32px",
                 letterSpacing: "0.01em",
                 color: BRAND.orange,
               }}>
