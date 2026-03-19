@@ -44,7 +44,7 @@ export default function ECommerceSection() {
               />
             </div>
             <div
-              className="absolute -bottom-2 -right-4 sm:-right-6 rounded-2xl px-6 py-4"
+              className="absolute -bottom-2 right-2 lg:-right-6 rounded-2xl px-6 py-4"
               style={{ background: "#ffffff", boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
             >
               <div className="flex items-center gap-3">

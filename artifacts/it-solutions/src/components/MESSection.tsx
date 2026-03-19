@@ -70,7 +70,7 @@ export default function MESSection() {
             </div>
             {/* Floating stat card */}
             <div
-              className="absolute -bottom-6 -right-4 sm:-right-8 rounded-2xl px-6 py-4 shadow-2xl"
+              className="absolute -bottom-6 right-2 lg:-right-8 rounded-2xl px-6 py-4 shadow-2xl"
               style={{ background: ACCENT, color: "#ffffff" }}
             >
               <div className="flex items-center gap-3">

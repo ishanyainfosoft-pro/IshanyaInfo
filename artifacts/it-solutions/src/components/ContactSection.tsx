@@ -58,9 +58,9 @@ const socialLinks = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-0" style={{ height: "120px", background: "#111111" }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 lg:gap-10 h-full">
+    <section id="contact" className="py-6 sm:py-0" style={{ minHeight: "120px", background: "#111111" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" style={{ minHeight: "120px", display: "flex", alignItems: "center" }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-6 sm:gap-6 lg:gap-10 w-full py-4 sm:py-0">
 
           {/* Logo + Name */}
           <div className="flex-shrink-0 flex items-center gap-3">
