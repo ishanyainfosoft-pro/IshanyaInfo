@@ -81,13 +81,12 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
 
             <span
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: "22px",
-                letterSpacing: "-0.02em",
+                fontFamily: "'Bahamas', 'Space Grotesk', sans-serif",
+                fontWeight: 400,
+                fontSize: "26px",
+                letterSpacing: "0.01em",
                 color: "#1a1a1a",
-              }}
-              className="text-[29px]">
+              }}>
               Ishanya Infosoft
             </span>
           </div>
