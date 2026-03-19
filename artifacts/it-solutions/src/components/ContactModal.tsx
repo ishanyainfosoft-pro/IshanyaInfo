@@ -8,7 +8,6 @@ const BRAND = {
   white: "#FFFFFF",
 };
 
-
 const inputStyle: React.CSSProperties = {
   background: "rgba(255,255,255,0.07)",
   border: "1px solid rgba(247,148,29,0.3)",
@@ -28,20 +27,23 @@ interface Props {
 export default function ContactModal({ isOpen, onClose }: Props) {
   const [form, setForm] = useState({ fullName: "", workEmail: "", phone: "", requirements: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  /* Lock body scroll while modal is open */
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
-      /* Reset form when modal closes */
-      setTimeout(() => { setForm({ fullName: "", workEmail: "", phone: "", requirements: "" }); setSubmitted(false); }, 300);
+      setTimeout(() => {
+        setForm({ fullName: "", workEmail: "", phone: "", requirements: "" });
+        setSubmitted(false);
+        setError("");
+      }, 300);
     }
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  /* Close on Escape key */
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
@@ -49,6 +51,26 @@ export default function ContactModal({ isOpen, onClose }: Props) {
   }, [onClose]);
 
   if (!isOpen) return null;
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to send message.");
+      setSubmitted(true);
+    } catch (err: any) {
+      setError(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div
@@ -108,8 +130,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               </button>
             </div>
           ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
-
+            <form onSubmit={handleSubmit} className="space-y-4">
               {[
                 { key: "fullName", type: "text", placeholder: "Full Name", required: true },
                 { key: "workEmail", type: "email", placeholder: "Work Email", required: true },
@@ -138,12 +159,17 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                 />
               </div>
 
+              {error && (
+                <p className="text-sm text-center" style={{ color: "#ff6b6b" }}>{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95"
+                disabled={loading}
+                className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95 disabled:opacity-60"
                 style={{ background: BRAND.orange, boxShadow: "0 4px 20px rgba(247,148,29,0.35)" }}
               >
-                Submit
+                {loading ? "Sending..." : "Submit"}
               </button>
 
               <p className="text-center text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
