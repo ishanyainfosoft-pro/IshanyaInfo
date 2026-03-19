@@ -86,7 +86,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 fontSize: "32px",
                 letterSpacing: "0.01em",
                 color: BRAND.orange,
-                textShadow: "-1px -1px 1px rgba(255,255,255,0.7), 2px 2px 3px rgba(0,0,0,0.35)",
+                textShadow: "-1px -1px 1px rgba(255,255,255,0.7), 2px 2px 3px rgba(0,0,0,0.35), 0px 0px 10px rgba(255,220,50,0.5)",
               }}>
               Ishanya Infosoft
             </span>
