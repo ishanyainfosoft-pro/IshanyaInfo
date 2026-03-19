@@ -134,7 +134,7 @@ export default function SlideShowSection() {
 
   return (
     <section
-      className="w-full relative md:-mt-36"
+      className="w-full relative -mt-10 sm:-mt-16 md:-mt-36"
       style={{ background: "transparent", paddingTop: 0, paddingBottom: 48 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -7,7 +7,7 @@ const BRAND = {
 
 export default function HeroSection() {
   return (
-    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "78vh" }}>
+    <section className="relative flex items-center justify-center overflow-hidden pt-20 pb-4 md:pt-0 md:pb-0 md:min-h-[78vh]">
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
@@ -42,7 +42,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className="text-lg sm:text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
+          className="text-base sm:text-xl max-w-3xl mx-auto mb-6 sm:mb-10 leading-relaxed"
           style={{ color: "#555555" }}
         >
           Our fully customized, modular solutions are designed to fit your specific operations and guarantee a seamless digital transformation
