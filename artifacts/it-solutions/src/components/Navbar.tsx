@@ -85,7 +85,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 fontWeight: 700,
                 fontSize: "32px",
                 letterSpacing: "0.01em",
-                color: BRAND.orange,
+                color: "#1a1a1a",
               }}>
               Ishanya Infosoft
             </span>
