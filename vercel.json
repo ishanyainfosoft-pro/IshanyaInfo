@@ -1,5 +1,5 @@
 {
-  "buildCommand": "PORT=3000 BASE_PATH=/ pnpm --filter @workspace/it-solutions run build",
+  "buildCommand": "pnpm --filter @workspace/it-solutions run build",
   "outputDirectory": "artifacts/it-solutions/dist/public",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": null,
