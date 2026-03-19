@@ -96,10 +96,10 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-7">
             {[
-              { label: "About Us", id: "leadership" },
               { label: "Services", id: "core-offering" },
               { label: "Clients", id: "clients" },
               { label: "FAQ", id: "faq" },
+              { label: "About Us", id: "leadership" },
               { label: "Contact", id: "contact" },
             ].map((item) => (
               <button
@@ -143,10 +143,10 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
       {menuOpen && (
         <div className="md:hidden bg-white border-t px-4 py-4 flex flex-col gap-4" style={{ borderColor: "#f0f0f0" }}>
           {[
-            { label: "About Us", id: "leadership" },
             { label: "Services", id: "core-offering" },
             { label: "Clients", id: "clients" },
             { label: "FAQ", id: "faq" },
+            { label: "About Us", id: "leadership" },
             { label: "Contact", id: "contact" },
           ].map((item) => (
             <button key={item.id} onClick={() => scrollTo(item.id)} className="text-sm font-medium text-left" style={{ color: BRAND.gray }}>
