@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
-import logoImg from "@assets/WhatsApp_Image_2026-03-09_at_4.33.45_PM_1773388136859.jpeg";
+import logoImg from "@assets/Ishanya_Info_Main_Logo_1773864691760.png";
 
 const BRAND = {
   orange: "#F7941D",
@@ -71,10 +71,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                 src={logoImg}
                 alt="Ishanya Infosoft logo"
                 style={{
-                  width: "170%",
-                  height: "170%",
-                  objectFit: "cover",
-                  objectPosition: "center center",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
                   flexShrink: 0,
                 }}
               />
