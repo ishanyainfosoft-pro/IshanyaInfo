@@ -12,10 +12,10 @@ export default function HeroSection() {
 
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           {[
-            { label: "Customized ERP",      bg: BRAND.teal,            text: "#ffffff" },
-            { label: "Customized MES",      bg: BRAND.wine,            text: "#ffffff" },
-            { label: "E-Commerce Shop",     bg: BRAND.orange,          text: "#ffffff" },
-            { label: "Customized Software", bg: "#111111",             text: "#ffffff" },
+            { label: "Customized ERP",      bg: BRAND.teal,   text: "#ffffff", delay: "0s"    },
+            { label: "Customized MES",      bg: BRAND.wine,   text: "#ffffff", delay: "0.9s"  },
+            { label: "E-Commerce Shop",     bg: BRAND.orange, text: "#ffffff", delay: "1.8s"  },
+            { label: "Customized Software", bg: "#111111",    text: "#ffffff", delay: "2.7s"  },
           ].map((tag, i) => (
             <span
               key={i}
@@ -24,6 +24,7 @@ export default function HeroSection() {
                 background: tag.bg,
                 color: tag.text,
                 boxShadow: `0 2px 8px ${tag.bg}55`,
+                animation: `pill-star 3.6s ease-in-out ${tag.delay} infinite`,
               }}
             >
               {tag.label}

@@ -225,12 +225,11 @@
 .flash-box { animation: flash-glow 0.55s ease-out forwards; }
 
 @keyframes pill-star {
-  0%   { opacity: 1;    box-shadow: 0 0 0px 0px rgba(247,148,29,0);    background: rgba(247,148,29,0.10); border-color: rgba(247,148,29,0.25); }
-  25%  { opacity: 0.55; box-shadow: 0 0 0px 0px rgba(247,148,29,0);    background: rgba(247,148,29,0.06); border-color: rgba(247,148,29,0.15); }
-  50%  { opacity: 1;    box-shadow: 0 0 12px 3px rgba(247,148,29,0.40); background: rgba(247,148,29,0.22); border-color: rgba(247,148,29,0.70); }
-  65%  { opacity: 0.80; box-shadow: 0 0 6px  1px rgba(247,148,29,0.20); background: rgba(247,148,29,0.14); border-color: rgba(247,148,29,0.40); }
-  80%  { opacity: 1;    box-shadow: 0 0 14px 4px rgba(247,148,29,0.35); background: rgba(247,148,29,0.20); border-color: rgba(247,148,29,0.60); }
-  100% { opacity: 1;    box-shadow: 0 0 0px 0px rgba(247,148,29,0);    background: rgba(247,148,29,0.10); border-color: rgba(247,148,29,0.25); }
+  0%   { filter: brightness(1);    transform: scale(1);    opacity: 1;   }
+  8%   { filter: brightness(0.75); transform: scale(0.96); opacity: 0.7; }
+  16%  { filter: brightness(1.35); transform: scale(1.05); opacity: 1;   }
+  24%  { filter: brightness(1);    transform: scale(1);    opacity: 1;   }
+  100% { filter: brightness(1);    transform: scale(1);    opacity: 1;   }
 }
 
 @keyframes fadeSlideDown {
