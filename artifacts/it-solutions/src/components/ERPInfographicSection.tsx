@@ -111,7 +111,7 @@ export default function ERPInfographicSection() {
           >
             Customized ERP Solution
           </h2>
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our highly customized software solutions offers a comprehensive suite of modules and features to streamline operations, enhance efficiency, and provide actionable insights.</p>
+          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: "#6b6b6b" }}>Our fully customized, modular solutions are designed to fit your specific operations and guarantee a seamless digital transformation</p>
         </div>
 
         {/* ── Desktop: [left detail] | [left modules] | [orbital] | [right modules] | [right detail] ── */}

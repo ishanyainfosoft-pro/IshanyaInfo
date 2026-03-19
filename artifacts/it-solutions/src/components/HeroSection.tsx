@@ -43,7 +43,7 @@ export default function HeroSection() {
           className="text-lg sm:text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
           style={{ color: "#555555" }}
         >
-          Our highly customized software solutions offers a comprehensive suite of modules and features to streamline operations, enhance efficiency, and provide actionable insights.
+          Our fully customized, modular solutions are designed to fit your specific operations and guarantee a seamless digital transformation
         </p>
 
       </div>
