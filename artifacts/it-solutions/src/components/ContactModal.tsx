@@ -57,13 +57,18 @@ export default function ContactModal({ isOpen, onClose }: Props) {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Failed to send message.");
+      // Build WhatsApp message with form data
+      const msg = [
+        `*New Enquiry — Ishanya Infosoft Website*`,
+        ``,
+        `*Name:* ${form.fullName}`,
+        `*Email:* ${form.workEmail}`,
+        `*Phone:* ${form.phone || "—"}`,
+        `*Requirements:* ${form.requirements || "—"}`,
+      ].join("\n");
+
+      const waUrl = `https://wa.me/919823172231?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
       setSubmitted(true);
     } catch (err: any) {
       setError(err.message || "Something went wrong. Please try again.");
@@ -118,9 +123,11 @@ export default function ContactModal({ isOpen, onClose }: Props) {
         <div className="px-8 py-6">
           {submitted ? (
             <div className="py-10 text-center">
-              <div className="text-5xl mb-4">✅</div>
-              <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Thank You!</h3>
-              <p style={{ color: "rgba(255,255,255,0.5)" }}>We've received your message and will get back to you shortly.</p>
+              <div className="text-5xl mb-4">💬</div>
+              <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>WhatsApp Opened!</h3>
+              <p style={{ color: "rgba(255,255,255,0.5)" }}>
+                Your message has been pre-filled in WhatsApp. Just hit <strong style={{ color: "rgba(255,255,255,0.75)" }}>Send</strong> to reach us instantly.
+              </p>
               <button
                 onClick={onClose}
                 className="mt-6 px-6 py-2.5 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90"
@@ -169,11 +176,11 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                 className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-95 disabled:opacity-60"
                 style={{ background: BRAND.orange, boxShadow: "0 4px 20px rgba(247,148,29,0.35)" }}
               >
-                {loading ? "Sending..." : "Submit"}
+                {loading ? "Opening WhatsApp..." : "Send via WhatsApp"}
               </button>
 
               <p className="text-center text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-                By clicking Submit, you agree to our{" "}
+                By clicking Send, you agree to our{" "}
                 <a href="#" className="underline" style={{ color: "rgba(247,148,29,0.7)" }}>Privacy Policy</a>
               </p>
             </form>
