@@ -144,13 +144,13 @@ export default function ClientsSection() {
             }}
           >
             <h3
-              className="text-lg font-bold mb-1"
-              style={{ color: BRAND.teal, fontFamily: "'Space Grotesk', sans-serif" }}
+              className="text-lg font-bold mb-3"
+              style={{ color: BRAND.teal, fontFamily: "'Space Grotesk', sans-serif", paddingBottom: "6px", borderBottom: `2px solid ${BRAND.teal}40` }}
             >
               Industry Verticals
             </h3>
 
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col gap-3 mt-4">
               {VERTICALS.map((v) => (
                 <li key={v.label} className="flex items-center gap-3">
                   <span
