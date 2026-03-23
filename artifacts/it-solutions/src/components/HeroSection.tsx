@@ -8,7 +8,14 @@ const BRAND = {
 export default function HeroSection() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      const navbarHeight = 80; // navbar h-20 = 80px
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navbarHeight,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (

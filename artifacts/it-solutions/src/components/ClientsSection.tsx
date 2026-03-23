@@ -89,7 +89,6 @@ const VERTICALS = [
   { label: "Printing and Packaging",  icon: "box",       color: BRAND.orange },
   { label: "Food and Beverages",      icon: "utensils",  color: BRAND.wine   },
   { label: "Trading and Distribution",icon: "truck",     color: BRAND.teal   },
-  { label: "Automotive",              icon: "car",       color: BRAND.orange },
   { label: "EduTech",                 icon: "grad",      color: BRAND.wine   },
 ];
 
