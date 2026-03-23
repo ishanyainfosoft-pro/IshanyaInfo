@@ -104,7 +104,7 @@ export default function ClientsSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setFlipIndex((prev) => (prev + 1) % CLIENTS.length);
-    }, 3000); // Flip every 3 seconds
+    }, 4000); // Flip every 4 seconds (3s animation + 1s pause)
     return () => clearInterval(interval);
   }, []);
 
@@ -198,39 +198,114 @@ export default function ClientsSection() {
                 const client = getClientForCardIndex(cardIndex);
                 const card = (
                   <div
-                    className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl transition-all hover:shadow-md hover:-translate-y-0.5"
+                    className="hover:shadow-md hover:-translate-y-0.5 transition-shadow"
                     style={{
-                      background: "rgba(255,255,255,0.8)",
-                      border: "1px solid rgba(247,148,29,0.18)",
+                      perspective: "1000px",
                       minHeight: 110,
-                      animation: `fadeInOut 3s ease-in-out infinite`,
-                      animationDelay: `${cardIndex * 0.1}s`,
                     }}
                   >
                     <div
-                      className="flex items-center justify-center"
-                      style={{ width: "100%", height: 64 }}
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                        height: "100%",
+                        transition: "transform 0.8s ease-in-out",
+                        transformStyle: "preserve-3d",
+                        transform: flipIndex > cardIndex ? "rotateY(180deg)" : "rotateY(0deg)",
+                        animation: flipIndex === cardIndex ? `spinFlip 0.8s ease-in-out` : "none",
+                      }}
                     >
-                      <img
-                        key={`${cardIndex}-${flipIndex}`}
-                        src={client.logo}
-                        alt={client.name}
+                      {/* Front of card */}
+                      <div
                         style={{
-                          maxWidth: "100%",
-                          maxHeight: 64,
-                          objectFit: "contain",
-                          display: "block",
-                          animation: `fadeInOut 3s ease-in-out infinite`,
-                          animationDelay: `${cardIndex * 0.1}s`,
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
+                          backfaceVisibility: "hidden",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "8px",
+                          padding: "12px",
+                          borderRadius: "12px",
+                          background: "rgba(255,255,255,0.8)",
+                          border: "1px solid rgba(247,148,29,0.18)",
                         }}
-                      />
+                      >
+                        <div
+                          style={{ width: "100%", height: 64, display: "flex", alignItems: "center", justifyContent: "center" }}
+                        >
+                          <img
+                            src={client.logo}
+                            alt={client.name}
+                            style={{
+                              maxWidth: "100%",
+                              maxHeight: 64,
+                              objectFit: "contain",
+                              display: "block",
+                            }}
+                          />
+                        </div>
+                        <span
+                          className="text-center text-xs font-medium leading-tight"
+                          style={{ color: BRAND.gray }}
+                        >
+                          {client.name}
+                        </span>
+                      </div>
+
+                      {/* Back of card (next client in cycle) */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          width: "100%",
+                          height: "100%",
+                          backfaceVisibility: "hidden",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "8px",
+                          padding: "12px",
+                          borderRadius: "12px",
+                          background: "rgba(255,255,255,0.8)",
+                          border: "1px solid rgba(247,148,29,0.18)",
+                          transform: "rotateY(180deg)",
+                        }}
+                      >
+                        {(() => {
+                          const nextClient = CLIENTS[(getClientForCardIndex(cardIndex + 1)).name === client.name ? 
+                            (CLIENTS.findIndex(c => c.name === client.name) + 1) % CLIENTS.length : 
+                            (CLIENTS.findIndex(c => c.name === client.name) + 1) % CLIENTS.length];
+                          const nextClientInCycle = getClientForCardIndex(cardIndex + 1);
+                          return (
+                            <>
+                              <div
+                                style={{ width: "100%", height: 64, display: "flex", alignItems: "center", justifyContent: "center" }}
+                              >
+                                <img
+                                  src={nextClientInCycle.logo}
+                                  alt={nextClientInCycle.name}
+                                  style={{
+                                    maxWidth: "100%",
+                                    maxHeight: 64,
+                                    objectFit: "contain",
+                                    display: "block",
+                                  }}
+                                />
+                              </div>
+                              <span
+                                className="text-center text-xs font-medium leading-tight"
+                                style={{ color: BRAND.gray }}
+                              >
+                                {nextClientInCycle.name}
+                              </span>
+                            </>
+                          );
+                        })()}
+                      </div>
                     </div>
-                    <span
-                      className="text-center text-xs font-medium leading-tight"
-                      style={{ color: BRAND.gray, animation: `fadeInOut 3s ease-in-out infinite`, animationDelay: `${cardIndex * 0.1}s` }}
-                    >
-                      {client.name}
-                    </span>
                   </div>
                 );
 
@@ -240,12 +315,12 @@ export default function ClientsSection() {
                     href={client.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", display: "block" }}
                   >
                     {card}
                   </a>
                 ) : (
-                  <div key={`${cardIndex}-card`}>{card}</div>
+                  <div key={`${cardIndex}-card`} style={{ display: "block" }}>{card}</div>
                 );
               })}
             </div>
@@ -254,9 +329,9 @@ export default function ClientsSection() {
       </div>
 
       <style>{`
-        @keyframes fadeInOut {
-          0%, 100% { opacity: 1; }
-          45%, 55% { opacity: 0.3; }
+        @keyframes spinFlip {
+          0% { transform: rotateY(0deg); }
+          100% { transform: rotateY(180deg); }
         }
       `}</style>
     </section>
