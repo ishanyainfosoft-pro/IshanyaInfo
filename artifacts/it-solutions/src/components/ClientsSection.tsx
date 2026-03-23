@@ -104,7 +104,7 @@ export default function ClientsSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setFlipIndex((prev) => (prev + 1) % CLIENTS.length);
-    }, 4000); // Flip every 4 seconds (3s animation + 1s pause)
+    }, 8000); // Flip every 8 seconds (half speed)
     return () => clearInterval(interval);
   }, []);
 
@@ -196,12 +196,18 @@ export default function ClientsSection() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {Array.from({ length: 9 }).map((_, cardIndex) => {
                 const client = getClientForCardIndex(cardIndex);
+                
+                // Card flips when flipIndex reaches or passes its index
+                // This creates a sequential flip cascade (card 0 → 1 → 2 ... → 8)
+                const hasFlipped = flipIndex > cardIndex;
+                
                 const card = (
                   <div
                     className="hover:shadow-md hover:-translate-y-0.5 transition-shadow"
                     style={{
                       perspective: "1000px",
                       minHeight: 110,
+                      width: "100%",
                     }}
                   >
                     <div
@@ -209,10 +215,12 @@ export default function ClientsSection() {
                         position: "relative",
                         width: "100%",
                         height: "100%",
-                        transition: "transform 0.8s ease-in-out",
+                        minHeight: 110,
+                        transition: "transform 1.2s ease-in-out",
                         transformStyle: "preserve-3d",
-                        transform: flipIndex > cardIndex ? "rotateY(180deg)" : "rotateY(0deg)",
-                        animation: flipIndex === cardIndex ? `spinFlip 0.8s ease-in-out` : "none",
+                        transform: hasFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+                        // Stagger animation: each card delays based on index
+                        transitionDelay: `${cardIndex * 0.15}s`,
                       }}
                     >
                       {/* Front of card */}
@@ -221,6 +229,7 @@ export default function ClientsSection() {
                           position: "absolute",
                           width: "100%",
                           height: "100%",
+                          minHeight: 110,
                           backfaceVisibility: "hidden",
                           display: "flex",
                           flexDirection: "column",
@@ -249,7 +258,7 @@ export default function ClientsSection() {
                         </div>
                         <span
                           className="text-center text-xs font-medium leading-tight"
-                          style={{ color: BRAND.gray }}
+                          style={{ color: BRAND.gray, width: "100%" }}
                         >
                           {client.name}
                         </span>
@@ -261,6 +270,7 @@ export default function ClientsSection() {
                           position: "absolute",
                           width: "100%",
                           height: "100%",
+                          minHeight: 110,
                           backfaceVisibility: "hidden",
                           display: "flex",
                           flexDirection: "column",
@@ -275,9 +285,6 @@ export default function ClientsSection() {
                         }}
                       >
                         {(() => {
-                          const nextClient = CLIENTS[(getClientForCardIndex(cardIndex + 1)).name === client.name ? 
-                            (CLIENTS.findIndex(c => c.name === client.name) + 1) % CLIENTS.length : 
-                            (CLIENTS.findIndex(c => c.name === client.name) + 1) % CLIENTS.length];
                           const nextClientInCycle = getClientForCardIndex(cardIndex + 1);
                           return (
                             <>
@@ -297,7 +304,7 @@ export default function ClientsSection() {
                               </div>
                               <span
                                 className="text-center text-xs font-medium leading-tight"
-                                style={{ color: BRAND.gray }}
+                                style={{ color: BRAND.gray, width: "100%" }}
                               >
                                 {nextClientInCycle.name}
                               </span>
@@ -334,6 +341,7 @@ export default function ClientsSection() {
           100% { transform: rotateY(180deg); }
         }
       `}</style>
+      {/* Force re-render on flipIndex change */}
     </section>
   );
 }
