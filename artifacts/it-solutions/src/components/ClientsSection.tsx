@@ -119,7 +119,7 @@ export default function ClientsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 text-center">
         <h2
           className="text-3xl sm:text-4xl font-bold mb-3"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: "#1a1a1a" }}
+          style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.02em", color: BRAND.orange }}
         >
           Industries We Serve &amp;{" "}
           <span style={{ color: BRAND.orange }}>Our Esteemed Clients</span>
@@ -149,9 +149,6 @@ export default function ClientsSection() {
             >
               Industry Verticals
             </h3>
-            <p className="text-xs mb-5" style={{ color: BRAND.gray }}>
-              Cross-sector expertise powering our solutions
-            </p>
 
             <ul className="flex flex-col gap-3">
               {VERTICALS.map((v) => (
