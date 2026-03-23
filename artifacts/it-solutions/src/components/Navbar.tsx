@@ -43,7 +43,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: "rgba(32,32,32,0.97)",
+        background: "#2b3a4f",
         boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.1)" : "none",
         backdropFilter: "blur(12px)",
       }}
