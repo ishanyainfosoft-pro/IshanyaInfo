@@ -18,8 +18,8 @@ const contactItems = [
   },
   {
     label: "Email",
-    lines: ["Info@ishanyainfosoft.com", "mrunal.kulkarni79@gmail.com"],
-    href: "mailto:Info@ishanyainfosoft.com",
+    lines: ["ishanya.infosoft@gmail.com"],
+    href: "mailto:ishanya.infosoft@gmail.com",
   },
 ];
 
