@@ -117,10 +117,10 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                   }}
                 >
                   {[
-                    { label: "Customized ERP", id: "mes-offering" },
+                    { label: "Customized ERP", id: "erp-solution" },
                     { label: "Customized MES", id: "mes-offering" },
                     { label: "E-Commerce Shop", id: "ecommerce" },
-                    { label: "Customized Software", id: "billing-software" },
+                    { label: "Bespoke IT Solutions", id: "billing-software" },
                     { label: "Billing Software", id: "billing-software" },
                   ].map((item) => (
                     <button
@@ -194,10 +194,10 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             {dropdownOpen && (
               <div className="mt-2 ml-4 flex flex-col gap-2">
                 {[
-                  { label: "Customized ERP", id: "mes-offering" },
+                  { label: "Customized ERP", id: "erp-solution" },
                   { label: "Customized MES", id: "mes-offering" },
                   { label: "E-Commerce Shop", id: "ecommerce" },
-                  { label: "Customized Software", id: "billing-software" },
+                  { label: "Bespoke IT Solutions", id: "billing-software" },
                   { label: "Billing Software", id: "billing-software" },
                 ].map((item) => (
                   <button

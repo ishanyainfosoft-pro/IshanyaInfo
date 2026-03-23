@@ -17,20 +17,19 @@ export default function HeroSection() {
 
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           {[
-            { label: "Customized ERP",      border: BRAND.teal,   id: "mes-offering",      delay: "0s"    },
-            { label: "Customized MES",      border: BRAND.wine,   id: "mes-offering",      delay: "0.9s"  },
-            { label: "E-Commerce Shop",     border: BRAND.orange, id: "ecommerce",         delay: "1.8s"  },
-            { label: "Customized Software", border: "#000000",    id: "billing-software",  delay: "2.7s"  },
+            { label: "Customized ERP",       bg: BRAND.teal,   text: "#ffffff", id: "erp-solution",      delay: "0s"    },
+            { label: "Customized MES",       bg: BRAND.wine,   text: "#ffffff", id: "mes-offering",      delay: "0.9s"  },
+            { label: "E-Commerce Shop",      bg: BRAND.orange, text: "#ffffff", id: "ecommerce",         delay: "1.8s"  },
+            { label: "Bespoke IT Solutions", bg: "#888888",    text: "#ffffff", id: "billing-software",  delay: "2.7s"  },
           ].map((tag, i) => (
             <button
               key={i}
               onClick={() => scrollTo(tag.id)}
               className="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all hover:opacity-80 active:scale-95"
               style={{
-                background: "#888888",
-                color: "#ffffff",
-                border: `2px solid ${tag.border}`,
-                boxShadow: `0 2px 8px rgba(136,136,136,0.3)`,
+                background: tag.bg,
+                color: tag.text,
+                boxShadow: `0 2px 8px ${tag.bg}55`,
                 animation: `pill-star 3.6s ease-in-out ${tag.delay} infinite`,
                 cursor: "pointer",
               }}
@@ -41,16 +40,16 @@ export default function HeroSection() {
         </div>
 
         <h1
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.03em", color: "#1a1a1a", lineHeight: "1.05" }}
         >
           <span style={{ color: "#1a1a1a" }}>Customized Software Solutions{" "}</span>
           <span
-            style={{ color: "#6D6E71", fontSize: "40px", fontWeight: 700, display: "block", marginTop: "-4px" }}>curated to your business needs</span>
+            style={{ color: "#6D6E71", fontSize: "24px", fontWeight: 700, display: "block", marginTop: "-4px" }}>curated to your business needs</span>
         </h1>
 
         <p
-          className="text-base sm:text-xl max-w-3xl mx-auto mb-6 sm:mb-10 leading-relaxed"
+          className="text-xs sm:text-lg max-w-3xl mx-auto mb-6 sm:mb-10 leading-relaxed"
           style={{ color: "#555555" }}
         >
           Our fully customized, modular solutions are designed to fit your specific operations and guarantee a seamless digital transformation

@@ -98,6 +98,7 @@ export default function ERPInfographicSection() {
 
   return (
     <section
+      id="erp-solution"
       className="py-14 sm:py-20 overflow-hidden"
       style={{ background: "transparent" }}
     >
