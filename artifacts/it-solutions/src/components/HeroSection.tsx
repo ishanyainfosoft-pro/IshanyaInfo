@@ -41,7 +41,7 @@ export default function HeroSection() {
         </div>
 
         <h1
-          className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
           style={{ fontFamily: "'Space Grotesk', sans-serif", letterSpacing: "-0.03em", color: "#1a1a1a", lineHeight: "1.05" }}
         >
           <span style={{ color: "#1a1a1a" }}>Customized Software Solutions{" "}</span>
