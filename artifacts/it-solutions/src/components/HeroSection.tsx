@@ -46,7 +46,7 @@ export default function HeroSection() {
         >
           <span style={{ color: "#1a1a1a" }}>Customized Software Solutions{" "}</span>
           <span
-            style={{ color: "#6D6E71", fontSize: "24px", fontWeight: 700, display: "block", marginTop: "-4px" }}>curated to your business needs</span>
+            style={{ color: "#6D6E71", fontSize: "25px", fontWeight: 700, display: "block", marginTop: "-4px" }}>curated to your business needs</span>
         </h1>
 
         <p
