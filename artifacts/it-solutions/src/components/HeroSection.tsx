@@ -6,29 +6,37 @@ const BRAND = {
 };
 
 export default function HeroSection() {
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="relative flex items-center justify-center overflow-hidden pt-20 pb-4 md:pt-0 md:pb-0 md:min-h-[78vh]">
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           {[
-            { label: "Customized ERP",      bg: BRAND.teal,   text: "#ffffff", delay: "0s"    },
-            { label: "Customized MES",      bg: BRAND.wine,   text: "#ffffff", delay: "0.9s"  },
-            { label: "E-Commerce Shop",     bg: BRAND.orange, text: "#ffffff", delay: "1.8s"  },
-            { label: "Customized Software", bg: "#888888",    text: "#ffffff", delay: "2.7s"  },
+            { label: "Customized ERP",      border: BRAND.teal,   id: "mes-offering",      delay: "0s"    },
+            { label: "Customized MES",      border: BRAND.wine,   id: "mes-offering",      delay: "0.9s"  },
+            { label: "E-Commerce Shop",     border: BRAND.orange, id: "ecommerce",         delay: "1.8s"  },
+            { label: "Customized Software", border: "#000000",    id: "billing-software",  delay: "2.7s"  },
           ].map((tag, i) => (
-            <span
+            <button
               key={i}
-              className="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide"
+              onClick={() => scrollTo(tag.id)}
+              className="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all hover:opacity-80 active:scale-95"
               style={{
-                background: tag.bg,
-                color: tag.text,
-                boxShadow: `0 2px 8px ${tag.bg}55`,
+                background: "#888888",
+                color: "#ffffff",
+                border: `2px solid ${tag.border}`,
+                boxShadow: `0 2px 8px rgba(136,136,136,0.3)`,
                 animation: `pill-star 3.6s ease-in-out ${tag.delay} infinite`,
+                cursor: "pointer",
               }}
             >
               {tag.label}
-            </span>
+            </button>
           ))}
         </div>
 

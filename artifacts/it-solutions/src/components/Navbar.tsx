@@ -17,6 +17,7 @@ interface NavbarProps {
 export default function Navbar({ onGetStarted }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [, navigate] = useLocation();
 
   useEffect(() => {
@@ -27,12 +28,14 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
+    setDropdownOpen(false);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleGetStarted = () => {
     setMenuOpen(false);
+    setDropdownOpen(false);
     onGetStarted();
   };
 
@@ -92,9 +95,48 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
           </div>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden md:flex items-center gap-7 relative">
+            {/* Services with dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="text-sm font-medium transition-opacity hover:opacity-60 flex items-center gap-1"
+                style={{ color: "#ffffff" }}
+              >
+                Services
+                <span style={{ fontSize: "10px" }}>▼</span>
+              </button>
+              {dropdownOpen && (
+                <div
+                  className="absolute top-full left-0 mt-2 rounded-lg shadow-lg z-40"
+                  style={{
+                    background: "rgba(32,32,32,0.98)",
+                    border: `1px solid rgba(247,148,29,0.3)`,
+                    backdropFilter: "blur(12px)",
+                    minWidth: 200,
+                  }}
+                >
+                  {[
+                    { label: "Customized ERP", id: "mes-offering" },
+                    { label: "Customized MES", id: "mes-offering" },
+                    { label: "E-Commerce Shop", id: "ecommerce" },
+                    { label: "Customized Software", id: "billing-software" },
+                    { label: "Billing Software", id: "billing-software" },
+                  ].map((item) => (
+                    <button
+                      key={item.id + item.label}
+                      onClick={() => scrollTo(item.id)}
+                      className="w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-gray-700 border-b border-gray-700 last:border-b-0"
+                      style={{ color: "#ffffff" }}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {[
-              { label: "Services", id: "core-offering" },
               { label: "Clients", id: "clients" },
               { label: "FAQ", id: "faq" },
               { label: "About Us", id: "leadership" },
@@ -140,8 +182,38 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden border-t px-4 py-4 flex flex-col gap-4" style={{ background: "#202020", borderColor: "#3a3a3a" }}>
+          {/* Services dropdown for mobile */}
+          <div>
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="text-sm font-medium text-left w-full"
+              style={{ color: "#ffffff" }}
+            >
+              Services {dropdownOpen ? "▲" : "▼"}
+            </button>
+            {dropdownOpen && (
+              <div className="mt-2 ml-4 flex flex-col gap-2">
+                {[
+                  { label: "Customized ERP", id: "mes-offering" },
+                  { label: "Customized MES", id: "mes-offering" },
+                  { label: "E-Commerce Shop", id: "ecommerce" },
+                  { label: "Customized Software", id: "billing-software" },
+                  { label: "Billing Software", id: "billing-software" },
+                ].map((item) => (
+                  <button
+                    key={item.id + item.label}
+                    onClick={() => scrollTo(item.id)}
+                    className="text-sm text-left"
+                    style={{ color: "#aaaaaa" }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           {[
-            { label: "Services", id: "core-offering" },
             { label: "Clients", id: "clients" },
             { label: "FAQ", id: "faq" },
             { label: "About Us", id: "leadership" },
