@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import refractoryLogo   from "@assets/Refractory_Shapes_Ltd_1774267125634.png";
 import sparklerLogo     from "@assets/Sparkler_1774267125635.png";
 import excelMicronLogo  from "@assets/Excel_Micron_1774267125630.png";
@@ -66,13 +67,6 @@ const icons: Record<string, JSX.Element> = {
       <circle cx="18.5" cy="18.5" r="2.5"/>
     </svg>
   ),
-  car: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v9a2 2 0 0 1-2 2h-1"/>
-      <circle cx="7"  cy="17" r="2"/>
-      <circle cx="17" cy="17" r="2"/>
-    </svg>
-  ),
   grad: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
@@ -104,9 +98,22 @@ const CLIENTS = [
   { name: "GyanHouz Learning Hub",          logo: gyanHouzLogo,    url: ""                                },
 ];
 
-const marqueeClients = [...CLIENTS, ...CLIENTS, ...CLIENTS];
-
 export default function ClientsSection() {
+  const [flipIndex, setFlipIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlipIndex((prev) => (prev + 1) % CLIENTS.length);
+    }, 3000); // Flip every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  const getClientForCardIndex = (cardIndex: number) => {
+    const totalCombinations = CLIENTS.length;
+    const clientIndex = (cardIndex + flipIndex) % totalCombinations;
+    return CLIENTS[clientIndex];
+  };
+
   return (
     <section
       id="clients"
@@ -174,7 +181,7 @@ export default function ClientsSection() {
             </ul>
           </div>
 
-          {/* ── RIGHT: Client logo grid ───────────────────────────── */}
+          {/* ── RIGHT: Client logo grid with flip animation ───────────────────────────── */}
           <div className="flex-1">
             <h3
               className="text-lg font-bold mb-1"
@@ -187,7 +194,8 @@ export default function ClientsSection() {
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {CLIENTS.map((client) => {
+              {Array.from({ length: 9 }).map((_, cardIndex) => {
+                const client = getClientForCardIndex(cardIndex);
                 const card = (
                   <div
                     className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl transition-all hover:shadow-md hover:-translate-y-0.5"
@@ -195,6 +203,8 @@ export default function ClientsSection() {
                       background: "rgba(255,255,255,0.8)",
                       border: "1px solid rgba(247,148,29,0.18)",
                       minHeight: 110,
+                      animation: `fadeInOut 3s ease-in-out infinite`,
+                      animationDelay: `${cardIndex * 0.1}s`,
                     }}
                   >
                     <div
@@ -202,6 +212,7 @@ export default function ClientsSection() {
                       style={{ width: "100%", height: 64 }}
                     >
                       <img
+                        key={`${cardIndex}-${flipIndex}`}
                         src={client.logo}
                         alt={client.name}
                         style={{
@@ -209,12 +220,14 @@ export default function ClientsSection() {
                           maxHeight: 64,
                           objectFit: "contain",
                           display: "block",
+                          animation: `fadeInOut 3s ease-in-out infinite`,
+                          animationDelay: `${cardIndex * 0.1}s`,
                         }}
                       />
                     </div>
                     <span
                       className="text-center text-xs font-medium leading-tight"
-                      style={{ color: BRAND.gray }}
+                      style={{ color: BRAND.gray, animation: `fadeInOut 3s ease-in-out infinite`, animationDelay: `${cardIndex * 0.1}s` }}
                     >
                       {client.name}
                     </span>
@@ -223,7 +236,7 @@ export default function ClientsSection() {
 
                 return client.url ? (
                   <a
-                    key={client.name}
+                    key={`${cardIndex}-card`}
                     href={client.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -232,7 +245,7 @@ export default function ClientsSection() {
                     {card}
                   </a>
                 ) : (
-                  <div key={client.name}>{card}</div>
+                  <div key={`${cardIndex}-card`}>{card}</div>
                 );
               })}
             </div>
@@ -240,39 +253,12 @@ export default function ClientsSection() {
         </div>
       </div>
 
-      {/* ── Bottom marquee ──────────────────────────────────────────── */}
-      <div className="relative" style={{ overflow: "hidden" }}>
-        <div
-          className="absolute left-0 top-0 bottom-0 w-28 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, rgba(200,236,236,0.85), transparent)" }}
-        />
-        <div
-          className="absolute right-0 top-0 bottom-0 w-28 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, rgba(253,224,192,0.85), transparent)" }}
-        />
-
-        <div className="flex gap-6 animate-marquee" style={{ width: "max-content" }}>
-          {marqueeClients.map((client, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center px-4 py-3 rounded-xl flex-shrink-0"
-              style={{
-                background: "rgba(255,255,255,0.55)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(247,148,29,0.2)",
-                width: 160,
-                height: 90,
-              }}
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      <style>{`
+        @keyframes fadeInOut {
+          0%, 100% { opacity: 1; }
+          45%, 55% { opacity: 0.3; }
+        }
+      `}</style>
     </section>
   );
 }
