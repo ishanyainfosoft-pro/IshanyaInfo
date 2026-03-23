@@ -25,10 +25,11 @@ export default function HeroSection() {
             <button
               key={i}
               onClick={() => scrollTo(tag.id)}
-              className="px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all hover:opacity-80 active:scale-95"
+              className="px-3 py-1 rounded-full font-semibold tracking-wide transition-all hover:opacity-80 active:scale-95"
               style={{
                 background: tag.bg,
                 color: tag.text,
+                fontSize: "13px",
                 boxShadow: `0 2px 8px ${tag.bg}55`,
                 animation: `pill-star 3.6s ease-in-out ${tag.delay} infinite`,
                 cursor: "pointer",
