@@ -245,6 +245,14 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── Desktop zoom: 100% view = old 80% view ────────────────
+   Scales the whole page to 82% on wide screens so the layout
+   that looked ideal at 80% browser zoom now looks ideal at 100%.
+──────────────────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  html { zoom: 0.82; }
+}
+
 /* ── Global 10% side-margin reduction ───────────────────────
    max-w-7xl: 80rem → 84rem  (side margins shrink ~10%)
    max-w-6xl: 72rem → 77rem  (same ratio)

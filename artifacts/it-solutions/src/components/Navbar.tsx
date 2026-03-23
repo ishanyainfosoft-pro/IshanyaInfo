@@ -40,7 +40,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: "rgba(0,0,0,0.97)",
+        background: "rgba(32,32,32,0.97)",
         boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.1)" : "none",
         backdropFilter: "blur(12px)",
       }}
@@ -139,7 +139,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
       </div>
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t px-4 py-4 flex flex-col gap-4" style={{ background: "#000000", borderColor: "#333333" }}>
+        <div className="md:hidden border-t px-4 py-4 flex flex-col gap-4" style={{ background: "#202020", borderColor: "#3a3a3a" }}>
           {[
             { label: "Services", id: "core-offering" },
             { label: "Clients", id: "clients" },
