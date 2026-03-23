@@ -17,10 +17,10 @@ export default function HeroSection() {
 
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           {[
-            { label: "Customized ERP",       bg: BRAND.teal,   text: "#ffffff", id: "erp-solution",      delay: "0s"    },
-            { label: "Customized MES",       bg: BRAND.wine,   text: "#ffffff", id: "mes-offering",      delay: "0.9s"  },
-            { label: "E-Commerce Shop",      bg: BRAND.orange, text: "#ffffff", id: "ecommerce",         delay: "1.8s"  },
-            { label: "Bespoke IT Solutions", bg: "#888888",    text: "#ffffff", id: "billing-software",  delay: "2.7s"  },
+            { label: "Customized ERP",       bg: BRAND.teal,   text: "#ffffff", id: "erp-solution",  delay: "0s"    },
+            { label: "Customized MES",       bg: BRAND.wine,   text: "#ffffff", id: "mes-offering",  delay: "0.9s"  },
+            { label: "E-Commerce Shop",      bg: BRAND.orange, text: "#ffffff", id: "ecommerce",     delay: "1.8s"  },
+            { label: "Bespoke IT Solutions", bg: "#888888",    text: "#ffffff", id: "flagship",      delay: "2.7s"  },
           ].map((tag, i) => (
             <button
               key={i}

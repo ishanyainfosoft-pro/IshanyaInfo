@@ -120,7 +120,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                     { label: "Customized ERP", id: "erp-solution" },
                     { label: "Customized MES", id: "mes-offering" },
                     { label: "E-Commerce Shop", id: "ecommerce" },
-                    { label: "Bespoke IT Solutions", id: "billing-software" },
+                    { label: "Bespoke IT Solutions", id: "flagship" },
                     { label: "Billing Software", id: "billing-software" },
                   ].map((item) => (
                     <button
@@ -197,7 +197,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
                   { label: "Customized ERP", id: "erp-solution" },
                   { label: "Customized MES", id: "mes-offering" },
                   { label: "E-Commerce Shop", id: "ecommerce" },
-                  { label: "Bespoke IT Solutions", id: "billing-software" },
+                  { label: "Bespoke IT Solutions", id: "flagship" },
                   { label: "Billing Software", id: "billing-software" },
                 ].map((item) => (
                   <button
