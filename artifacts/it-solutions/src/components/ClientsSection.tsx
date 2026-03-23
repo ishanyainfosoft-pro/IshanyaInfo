@@ -264,7 +264,7 @@ export default function ClientsSection() {
                         </span>
                       </div>
 
-                      {/* Back of card (next client in cycle) */}
+                      {/* Back of card (offset by 5 to avoid duplicates) */}
                       <div
                         style={{
                           position: "absolute",
@@ -285,15 +285,16 @@ export default function ClientsSection() {
                         }}
                       >
                         {(() => {
-                          const nextClientInCycle = getClientForCardIndex(cardIndex + 1);
+                          const backClientIndex = (cardIndex + 5) % CLIENTS.length;
+                          const backClient = CLIENTS[backClientIndex];
                           return (
                             <>
                               <div
                                 style={{ width: "100%", height: 64, display: "flex", alignItems: "center", justifyContent: "center" }}
                               >
                                 <img
-                                  src={nextClientInCycle.logo}
-                                  alt={nextClientInCycle.name}
+                                  src={backClient.logo}
+                                  alt={backClient.name}
                                   style={{
                                     maxWidth: "100%",
                                     maxHeight: 64,
@@ -306,7 +307,7 @@ export default function ClientsSection() {
                                 className="text-center text-xs font-medium leading-tight"
                                 style={{ color: BRAND.gray, width: "100%" }}
                               >
-                                {nextClientInCycle.name}
+                                {backClient.name}
                               </span>
                             </>
                           );
