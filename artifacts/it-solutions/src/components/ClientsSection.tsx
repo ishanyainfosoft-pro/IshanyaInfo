@@ -173,14 +173,11 @@ export default function ClientsSection() {
           {/* ── RIGHT: Client logo grid with flip animation ───────────────────────────── */}
           <div className="flex-1">
             <h3
-              className="text-lg font-bold mb-1"
+              className="text-lg font-bold mb-5"
               style={{ color: BRAND.orange, fontFamily: "'Space Grotesk', sans-serif" }}
             >
               Our Clients
             </h3>
-            <p className="text-xs mb-5" style={{ color: BRAND.gray }}>
-              Trusted by industry leaders across Pune and beyond
-            </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {Array.from({ length: 9 }).map((_, cardIndex) => {
