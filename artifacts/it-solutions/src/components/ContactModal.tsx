@@ -141,7 +141,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               {[
                 { key: "fullName", type: "text", placeholder: "Full Name", required: true },
                 { key: "workEmail", type: "email", placeholder: "Work Email", required: true },
-                { key: "phone", type: "tel", placeholder: "Phone Number", required: false },
+                { key: "phone", type: "text", placeholder: "Phone Number", required: false },
               ].map(({ key, type, placeholder, required }) => (
                 <div key={key}>
                   <input
